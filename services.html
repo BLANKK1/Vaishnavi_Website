@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What We Offer — Value Talent Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1a3a2a;--green-mid:#2d5a3d;--green-btn:#2b4f38;
+  --cream:#f5f0e0;--cream-light:#faf7ef;
+  --gold:#a07c3a;--gold-light:#c4a052;
+  --text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#777;--border:#e2ddd0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
+
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;
+}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green-dark);font-weight:600}
+.btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:background .2s,transform .15s}
+.btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* PAGE HERO */
+.page-hero{
+  background:linear-gradient(to bottom,var(--cream-light),var(--cream),#fff);
+  padding:100px 56px 80px;text-align:center;position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:700px;height:500px;
+  background:radial-gradient(ellipse at 50% 20%,rgba(240,230,180,.55) 0%,transparent 65%);
+  pointer-events:none;
+}
+.page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:.78rem;color:var(--text-light);letter-spacing:.05em;margin-bottom:20px}
+.breadcrumb a{color:var(--green-dark);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.page-hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;
+  line-height:1.1;margin-bottom:20px;
+  animation:fadeUp .8s ease both;
+}
+.page-hero p{
+  font-size:1.05rem;color:var(--text-mid);line-height:1.8;max-width:560px;margin:0 auto;
+  animation:fadeUp .8s .15s ease both;
+}
+.section-label{text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:700;color:var(--gold);margin-bottom:10px}
+.rule{width:48px;height:3px;border-radius:2px}
+.rule-green{background:var(--green-dark)}
+.rule-gold{background:var(--gold)}
+
+/* SERVICES INTRO */
+.services-intro{padding:80px 56px 0;max-width:1160px;margin:0 auto}
+.services-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-bottom:80px;border-bottom:1px solid var(--border)}
+.intro-text h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;margin-bottom:16px;line-height:1.2}
+.intro-text p{color:var(--text-mid);font-size:.95rem;line-height:1.85;margin-bottom:14px}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.stat-box{background:var(--cream-light);border-radius:10px;padding:24px;border:1px solid var(--border)}
+.stat-box .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--green-dark);line-height:1}
+.stat-box .lbl{font-size:.82rem;color:var(--text-mid);margin-top:6px;line-height:1.4}
+
+/* SERVICE BLOCKS */
+.services-blocks{max-width:1160px;margin:0 auto;padding:0 56px 96px}
+.service-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;
+  padding:72px 0;border-bottom:1px solid var(--border);
+}
+.service-block:last-child{border-bottom:none}
+.service-block.flip .block-text{order:2}.service-block.flip .block-visual{order:1}
+.block-num{
+  font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;
+  color:rgba(26,58,42,.08);line-height:1;margin-bottom:4px;
+  letter-spacing:-.02em;
+}
+.block-tag{
+  display:inline-block;background:var(--cream);border:1px solid var(--border);
+  border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark);margin-bottom:16px;
+}
+.block-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:16px;line-height:1.25}
+.block-text p{color:var(--text-mid);font-size:.93rem;line-height:1.85;margin-bottom:12px}
+.block-includes{margin-top:24px}
+.block-includes h4{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dark);margin-bottom:12px}
+.block-includes ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.block-includes li{
+  display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-mid);
+}
+.block-includes li::before{
+  content:'';width:6px;height:6px;background:var(--green-dark);
+  border-radius:50%;margin-top:7px;flex-shrink:0;
+}
+.block-visual{
+  border-radius:14px;overflow:hidden;position:sticky;top:90px;
+}
+.block-visual-inner{
+  background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);
+  border-radius:14px;
+  aspect-ratio:4/3;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:flex-end;padding:32px;
+  position:relative;overflow:hidden;
+}
+.block-visual-inner::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(196,160,82,.12);
+}
+.visual-label{
+  font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:8px;
+}
+.visual-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.3}
+
+/* CTA STRIP */
+.cta-strip{
+  background:var(--green-dark);padding:72px 56px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-strip::before{
+  content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%);
+}
+.cta-strip h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:14px;position:relative}
+.cta-strip p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:480px;margin:0 auto 28px;line-height:1.8;position:relative}
+.btn-gold{
+  background:var(--gold);color:#fff;border:none;border-radius:6px;
+  padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:.03em;transition:all .2s;position:relative;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
+.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.76rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  nav{padding:0 24px}.nav-links{display:none}
+  .page-hero,.services-intro,.services-blocks,.cta-strip{padding-left:24px;padding-right:24px}
+  .services-intro-grid,.service-block{grid-template-columns:1fr;gap:40px}
+  .service-block.flip .block-text,.service-block.flip .block-visual{order:unset}
+  .block-visual{position:static}
+  footer{padding:32px 24px;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Value Talent Advisory</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-nav" onclick="window.location.href='index.html#contact'">Get in Touch</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+    <h1>What We Offer</h1>
+    <p>Six interconnected practice areas, each designed to translate people strategy into concrete business outcomes — for organisations at every stage of growth.</p>
+  </div>
+</div>
+
+<div style="max-width:1160px;margin:0 auto;padding:0 56px">
+  <div class="services-intro-grid reveal">
+    <div class="intro-text">
+      <p class="section-label">Our Practice Areas</p>
+      <h2 class="intro-text" style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:16px">Built for organisations that take talent seriously</h2>
+      <div class="rule rule-green" style="margin-bottom:24px"></div>
+      <p>Each engagement is scoped to your specific context — whether you're a founder building your first leadership team, a family business navigating succession, or a scaling company trying to keep culture intact through rapid growth.</p>
+      <p>We combine research-driven frameworks with practical, hands-on collaboration to deliver outcomes that last.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="stat-box reveal"><div class="num">6</div><div class="lbl">Specialised practice areas</div></div>
+      <div class="stat-box reveal"><div class="num">50+</div><div class="lbl">Organisations advised across industries</div></div>
+      <div class="stat-box reveal"><div class="num">100%</div><div class="lbl">Custom-scoped, never templated</div></div>
+      <div class="stat-box reveal"><div class="num">3×</div><div class="lbl">Average improvement in hiring speed post-engagement</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="services-blocks">
+
+  <div class="service-block reveal">
+    <div class="block-text">
+      <div class="block-num">01</div>
+      <span class="block-tag">Strategic Hiring</span>
+      <h2>Build hiring systems that scale with you</h2>
+      <p>Most organisations hire reactively. We help you build a deliberate, repeatable hiring system that attracts candidates aligned with both the role and the company's long-term direction.</p>
+      <p>From job architecture to interview frameworks to sourcing strategy — we design every component so your hiring decisions are consistent, fast, and bias-resistant.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Role architecture and job family design</li>
+          <li>Structured interview frameworks and scorecards</li>
+          <li>Talent sourcing strategy by function</li>
+          <li>Employer brand alignment workshop</li>
+          <li>Onboarding experience design</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#1a3a2a,#2d5a3d)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Strategic Hiring</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block flip reveal">
+    <div class="block-text">
+      <div class="block-num">02</div>
+      <span class="block-tag">Organisational Systems</span>
+      <h2>Create the structures that let people do their best work</h2>
+      <p>Unclear roles, misaligned incentives, and absent performance frameworks are among the most common — and most costly — people problems in growing organisations.</p>
+      <p>We help you design the operating backbone: role clarity, spans of control, performance frameworks, and career pathways that make your organisation feel coherent from the inside out.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Org design diagnostics and mapping</li>
+          <li>Role clarity and accountability matrices (RACI)</li>
+          <li>Performance framework design</li>
+          <li>Career pathway and levelling architecture</li>
+          <li>Compensation philosophy alignment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#2a1f0f,#6b4a2a)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Organisational Systems</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="block-text">
+      <div class="block-num">03</div>
+      <span class="block-tag">Leadership Pipeline</span>
+      <h2>Identify and develop your next generation of leaders</h2>
+      <p>Leadership transitions — whether planned or unexpected — are among the highest-stakes moments in any organisation. We help you prepare long before the moment arrives.</p>
+      <p>Through structured assessment, development planning, and facilitated conversations, we build leadership pipelines that are realistic, actionable, and tied to business strategy.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Leadership potential assessment framework</li>
+          <li>High-potential identification and mapping</li>
+          <li>Individual development plan design</li>
+          <li>Succession planning facilitation</li>
+          <li>Family business leadership transition support</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#0f1f2a,#1a3a50)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Leadership Pipeline</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block flip reveal">
+    <div class="block-text">
+      <div class="block-num">04</div>
+      <span class="block-tag">Workforce Alignment</span>
+      <h2>Close the gap between who you have and who you need</h2>
+      <p>As businesses evolve, the workforce they built for yesterday can become a constraint on tomorrow. Workforce alignment work surfaces those gaps early — before they become critical.</p>
+      <p>We run talent audits, skills mapping exercises, and scenario planning sessions to help leadership teams make proactive decisions about their people portfolio.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Current-state workforce diagnostic</li>
+          <li>Skills gap analysis by function</li>
+          <li>Team design and span optimisation</li>
+          <li>Strategic workforce planning roadmap</li>
+          <li>Build vs. buy vs. develop decision framework</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#1a2a1a,#3a5a3a)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Workforce Alignment</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="block-text">
+      <div class="block-num">05</div>
+      <span class="block-tag">Culture &amp; Values</span>
+      <h2>Codify your culture before it codifies itself</h2>
+      <p>Culture is already operating in your organisation — the question is whether it's intentional. When left unmanaged, culture defaults to the habits and assumptions of whoever has been there longest.</p>
+      <p>We help you articulate what you genuinely stand for, translate values into behaviours, and build the processes (hiring, performance, recognition) that make culture real and durable.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Culture diagnostics and listening sessions</li>
+          <li>Values definition and behaviour anchoring workshops</li>
+          <li>Culture integration into hiring and onboarding</li>
+          <li>Recognition and reinforcement system design</li>
+          <li>Leadership alignment on culture commitments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#2a1a2a,#5a2d5a)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Culture &amp; Values</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block flip reveal">
+    <div class="block-text">
+      <div class="block-num">06</div>
+      <span class="block-tag">Advisory Retainer</span>
+      <h2>A trusted thought partner, available when it matters most</h2>
+      <p>Some of the most important talent decisions don't fit neatly into a project scope. A retainer gives you access to strategic counsel on an ongoing basis — for the moments that demand clear thinking under pressure.</p>
+      <p>Retained clients get priority access, monthly strategy sessions, and ad-hoc support across any of our practice areas as needs evolve.</p>
+      <div class="block-includes">
+        <h4>What's included</h4>
+        <ul>
+          <li>Monthly strategy and advisory sessions</li>
+          <li>Ad-hoc support across all practice areas</li>
+          <li>Access to templates, tools, and diagnostics</li>
+          <li>Ongoing sounding-board for leadership decisions</li>
+          <li>Quarterly people strategy reviews</li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#1a1a2a,#2d3a5a)">
+        <span class="visual-label">Practice Area</span>
+        <p class="visual-title">Advisory Retainer</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-strip">
+  <h2>Not sure where to start?</h2>
+  <p>A short discovery call is often all it takes to identify the highest-leverage area for your organisation.</p>
+  <button class="btn-gold" onclick="window.location.href='index.html#contact'">Book a Free Discovery Call</button>
+</div>
+
+<footer>
+  <span class="footer-logo">Value Talent Advisory</span>
+  <ul class="footer-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 Value Talent Advisory. All rights reserved.</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

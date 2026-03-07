@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Studies — Value Talent Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1a3a2a;--green-mid:#2d5a3d;--green-btn:#2b4f38;
+  --cream:#f5f0e0;--cream-light:#faf7ef;
+  --gold:#a07c3a;--gold-light:#c4a052;
+  --text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#777;--border:#e2ddd0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green-dark);font-weight:600}
+.btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:all .2s}
+.btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* PAGE HERO */
+.page-hero{
+  background:linear-gradient(to bottom, var(--cream-light) 0%, var(--cream) 50%, #fff 100%);
+  padding:100px 56px 80px;position:relative;overflow:hidden;
+}
+.page-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 20%,rgba(240,230,180,.5) 0%,transparent 65%);pointer-events:none}
+.page-hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.breadcrumb{font-size:.78rem;color:var(--text-light);letter-spacing:.05em;margin-bottom:20px}
+.breadcrumb a{color:var(--green-dark);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,4rem);font-weight:900;line-height:1.08;margin-bottom:20px;animation:fadeUp .8s ease both}
+.page-hero p{font-size:1rem;color:var(--text-mid);line-height:1.85;max-width:480px;animation:fadeUp .8s .15s ease both}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;animation:fadeUp .8s .25s ease both}
+.hstat{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 20px}
+.hstat .n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green-dark);line-height:1}
+.hstat .l{font-size:.8rem;color:var(--text-mid);margin-top:5px;line-height:1.4}
+
+/* FILTER BAR */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 56px;position:sticky;top:68px;z-index:100}
+.filter-inner{max-width:1160px;margin:0 auto;display:flex;gap:0;overflow-x:auto}
+.filter-btn{
+  background:none;border:none;border-bottom:3px solid transparent;
+  padding:16px 20px;font-family:'Lato',sans-serif;font-size:.82rem;
+  font-weight:600;color:var(--text-light);cursor:pointer;white-space:nowrap;
+  letter-spacing:.04em;text-transform:uppercase;transition:all .2s;
+}
+.filter-btn:hover{color:var(--text-dark)}
+.filter-btn.active{color:var(--green-dark);border-bottom-color:var(--green-dark)}
+
+/* FEATURED CASE */
+.featured-wrap{max-width:1160px;margin:0 auto;padding:72px 56px 0}
+.featured-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.featured-card{
+  display:grid;grid-template-columns:1.1fr 1fr;
+  border:1px solid var(--border);border-radius:16px;overflow:hidden;
+  transition:box-shadow .3s;
+}
+.featured-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.featured-thumb{
+  background:linear-gradient(140deg,var(--green-dark) 0%,var(--green-mid) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:48px;min-height:420px;position:relative;overflow:hidden;
+}
+.featured-thumb::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(196,160,82,.1)}
+.featured-thumb::after{content:'';position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+.ft-tag{display:inline-block;background:rgba(196,160,82,.2);border:1px solid rgba(196,160,82,.4);color:var(--gold-light);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:16px;position:relative;z-index:1}
+.ft-industry{font-size:.8rem;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;position:relative;z-index:1}
+.featured-thumb h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1.25;position:relative;z-index:1}
+.featured-body{padding:48px;display:flex;flex-direction:column;gap:20px}
+.featured-body .challenge-block h4,.featured-body .result-block h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px}
+.featured-body p{font-size:.93rem;color:var(--text-mid);line-height:1.8}
+.featured-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:auto}
+.fstat{background:var(--cream-light);border-radius:8px;padding:16px 12px;text-align:center;border:1px solid var(--border)}
+.fstat .n{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green-dark);line-height:1}
+.fstat .l{font-size:.72rem;color:var(--text-light);margin-top:4px;line-height:1.35}
+.read-more{
+  display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);
+  font-weight:700;font-size:.88rem;text-decoration:none;letter-spacing:.02em;
+  margin-top:4px;transition:gap .2s,color .2s;
+}
+.read-more:hover{gap:14px;color:var(--gold)}
+.read-more svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* CASE GRID */
+.cases-section{max-width:1160px;margin:0 auto;padding:64px 56px 96px}
+.cases-section-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case-card{
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:box-shadow .25s,transform .25s;cursor:pointer;
+}
+.case-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
+.case-thumb{height:160px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:20px;position:relative;overflow:hidden}
+.case-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent)}
+.case-thumb-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);position:relative;z-index:1}
+.case-thumb-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;line-height:1.3;position:relative;z-index:1;margin-top:4px}
+.case-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:10px}
+.case-practice{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.case-body p{font-size:.85rem;color:var(--text-mid);line-height:1.72;flex:1}
+.case-stat-row{display:flex;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--border);margin-top:auto}
+.csn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--green-dark)}
+.csl{font-size:.75rem;color:var(--text-light);line-height:1.35}
+.case-link{display:inline-flex;align-items:center;gap:6px;color:var(--green-dark);font-weight:700;font-size:.8rem;text-decoration:none;margin-top:10px;transition:gap .2s,color .2s}
+.case-link:hover{gap:10px;color:var(--gold)}
+.case-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* INSIGHT STRIP */
+.insight-strip{background:var(--cream-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 56px}
+.insight-inner{max-width:1160px;margin:0 auto}
+.insight-inner h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:8px}
+.insight-rule{width:48px;height:3px;background:var(--gold);margin-bottom:40px}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.insight-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px;transition:box-shadow .25s}
+.insight-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.insight-card .label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.insight-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.3}
+.insight-card p{font-size:.85rem;color:var(--text-mid);line-height:1.7}
+
+/* CTA */
+.cta-strip{background:var(--green-dark);padding:80px 56px;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(196,160,82,.1) 0%,transparent 65%)}
+.cta-strip h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:14px;position:relative}
+.cta-strip p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:460px;margin:0 auto 28px;line-height:1.8;position:relative}
+.btn-gold{background:var(--gold);color:#fff;border:none;border-radius:6px;padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.03em;transition:all .2s;position:relative}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+
+footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
+.footer-copy{font-size:.81rem; align-self:center}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  nav{padding:0 24px}.nav-links{display:none}
+  .page-hero{padding:64px 24px 48px}.page-hero-inner{grid-template-columns:1fr;gap:40px}
+  .filter-bar{padding:0 24px}
+  .featured-wrap,.cases-section,.insight-strip,.cta-strip{padding-left:24px;padding-right:24px}
+  .featured-card{grid-template-columns:1fr}
+  .featured-thumb{min-height:260px}
+  .cases-grid,.insight-grid{grid-template-columns:1fr}
+  .featured-stats{grid-template-columns:repeat(3,1fr)}
+  footer{padding:32px 24px;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Value Talent Advisory</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="case-studies.html" class="active">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Case Studies</p>
+      <h1>Work in Practice</h1>
+      <p>Real organisations, real challenges, and what happened when people strategy was taken seriously. Each engagement is anonymised where requested.</p>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hstat"><div class="n">50+</div><div class="l">Organisations advised across industries</div></div>
+      <div class="hstat"><div class="n">8</div><div class="l">Industries represented in our work</div></div>
+      <div class="hstat"><div class="n">94%</div><div class="l">Client retention across engagements</div></div>
+      <div class="hstat"><div class="n">3×</div><div class="l">Average hiring speed improvement post-engagement</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCases('all',this)">All</button>
+    <button class="filter-btn" onclick="filterCases('org-systems',this)">Organisational Systems</button>
+    <button class="filter-btn" onclick="filterCases('leadership',this)">Leadership Pipeline</button>
+    <button class="filter-btn" onclick="filterCases('culture',this)">Culture &amp; Values</button>
+    <button class="filter-btn" onclick="filterCases('hiring',this)">Strategic Hiring</button>
+    <button class="filter-btn" onclick="filterCases('workforce',this)">Workforce Alignment</button>
+  </div>
+</div>
+
+<!-- FEATURED CASE -->
+<div class="featured-wrap reveal">
+  <p class="featured-label">Featured Case Study</p>
+  <div class="featured-card">
+    <div class="featured-thumb">
+      <span class="ft-tag">Organisational Systems</span>
+      <p class="ft-industry">Series B · SaaS · Technology</p>
+      <h2>Building Role Clarity in a Fast-Scaling Tech Team</h2>
+    </div>
+    <div class="featured-body">
+      <div class="challenge-block">
+        <h4>The Challenge</h4>
+        <p>A 60-person SaaS company had grown quickly but without intentional structure. Roles overlapped, performance conversations were inconsistent, and leadership was making hiring decisions reactively. The CEO described it as "everyone doing everything — and nothing getting owned properly."</p>
+      </div>
+      <div class="result-block">
+        <h4>What We Did</h4>
+        <p>Over 14 weeks, we ran a full organisational diagnostic, redesigned the role architecture across four functions, built a performance framework tied to business outcomes, and trained all 12 people managers on how to use it.</p>
+      </div>
+      <div class="featured-stats">
+        <div class="fstat"><div class="n">3×</div><div class="l">Faster hiring decisions</div></div>
+        <div class="fstat"><div class="n">↓62%</div><div class="l">Role overlap post-redesign</div></div>
+        <div class="fstat"><div class="n">14wk</div><div class="l">End-to-end engagement</div></div>
+      </div>
+      <a href="#" class="read-more">Read full case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ALL CASES GRID -->
+<div class="cases-section">
+  <h2 class="cases-section-title reveal">All Case Studies</h2>
+  <div class="cases-grid" id="casesGrid">
+
+    <div class="case-card reveal" data-cat="leadership">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#3a2a1a,#7a5a30)">
+        <span class="case-thumb-tag">Family Business · Retail</span>
+        <span class="case-thumb-title">Succession Planning Across Two Family Branches</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Leadership Pipeline</p>
+        <p>A third-generation family business needed to transition leadership for the first time outside the founding generation. Competing interests, unclear succession criteria, and no framework for the conversation made it a high-stakes challenge.</p>
+        <div class="case-stat-row">
+          <span class="csn">2</span>
+          <span class="csl">Future leaders identified &amp; development plans activated</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-cat="culture">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#2a1a3a,#5a2a6b)">
+        <span class="case-thumb-tag">Founder-Led · Consumer Brand</span>
+        <span class="case-thumb-title">Anchoring Culture Before a Series A Fundraise</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Culture &amp; Values</p>
+        <p>A fast-growing consumer brand was about to double headcount. The founder had always driven culture informally, but with scale coming, that approach would no longer hold. They needed culture made explicit before it got diluted by new hires.</p>
+        <div class="case-stat-row">
+          <span class="csn">↑40%</span>
+          <span class="csl">Engagement scores within 6 months of implementation</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-cat="hiring">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#0f1f2a,#1a3a55)">
+        <span class="case-thumb-tag">PE-Backed · Financial Services</span>
+        <span class="case-thumb-title">Rebuilding the Hiring Function Post-Acquisition</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Strategic Hiring</p>
+        <p>Following a private equity acquisition, a mid-size financial services firm needed to rebuild its hiring capability from scratch. The old approach was informal and inconsistent — PE demanded structure, accountability, and speed.</p>
+        <div class="case-stat-row">
+          <span class="csn">↓38%</span>
+          <span class="csl">Time-to-hire within first quarter of new system</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-cat="workforce">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#1a2a1a,#2a5040)">
+        <span class="case-thumb-tag">Series A · HealthTech</span>
+        <span class="case-thumb-title">Workforce Planning Ahead of Product Expansion</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Workforce Alignment</p>
+        <p>A HealthTech startup was launching two new product lines and needed to understand whether their current team could support the expansion — or whether they were hiring into the wrong gaps.</p>
+        <div class="case-stat-row">
+          <span class="csn">11</span>
+          <span class="csl">Critical skill gaps identified and prioritised for action</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-cat="org-systems">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#2a1a0f,#5a3a1a)">
+        <span class="case-thumb-tag">100+ Employees · Manufacturing</span>
+        <span class="case-thumb-title">Performance Management Overhaul in a Legacy Organisation</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Organisational Systems</p>
+        <p>A 120-person manufacturing company had been using the same performance review process for 11 years. It was feared, resented, and largely disconnected from how people actually worked. We rebuilt it entirely — with manager buy-in at the centre.</p>
+        <div class="case-stat-row">
+          <span class="csn">↑58%</span>
+          <span class="csl">Manager satisfaction with performance conversations</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+    <div class="case-card reveal" data-cat="leadership">
+      <div class="case-thumb" style="background:linear-gradient(140deg,#1a1a2a,#2a3060)">
+        <span class="case-thumb-tag">NGO · Education Sector</span>
+        <span class="case-thumb-title">Building a Leadership Pipeline in a Mission-Driven Organisation</span>
+      </div>
+      <div class="case-body">
+        <p class="case-practice">Leadership Pipeline</p>
+        <p>A well-respected education NGO had a senior team with an average tenure of 14 years. There was no internal pipeline, and the board was concerned about over-dependence on a small group of long-serving leaders.</p>
+        <div class="case-stat-row">
+          <span class="csn">6</span>
+          <span class="csl">High-potential individuals identified with tailored development plans</span>
+        </div>
+        <a href="#" class="case-link">Read case study <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- INSIGHT STRIP -->
+<div class="insight-strip">
+  <div class="insight-inner">
+    <div class="reveal">
+      <h2>Patterns We See</h2>
+      <div class="insight-rule"></div>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-card reveal">
+        <p class="label">Insight</p>
+        <h3>Most talent problems are diagnosed too late</h3>
+        <p>By the time an organisation notices a people problem — attrition, underperformance, hiring difficulty — it has usually been building for 12–18 months. Early diagnosis is almost always cheaper than late intervention.</p>
+      </div>
+      <div class="insight-card reveal">
+        <p class="label">Insight</p>
+        <h3>Culture doesn't drift — it defaults</h3>
+        <p>When values aren't made explicit, culture doesn't disappear. It defaults to the norms, habits, and assumptions of whoever has been there the longest. Intentional culture design is the only way to make it yours.</p>
+      </div>
+      <div class="insight-card reveal">
+        <p class="label">Insight</p>
+        <h3>Founders underestimate the cost of role ambiguity</h3>
+        <p>Unclear roles aren't just an HR problem — they're a performance drag that shows up in missed deadlines, duplicated work, and frustrated people. Clarity at the role level is one of the highest-leverage investments a growing organisation can make.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>See yourself in any of these?</h2>
+  <p>If a challenge here resonates, a short conversation is the fastest way to understand what's possible.</p>
+  <button class="btn-gold" onclick="window.location.href='contact.html'">Start a Conversation</button>
+</div>
+
+<footer>
+  <span class="footer-logo">Value Talent Advisory</span>
+
+  <span class="footer-copy">© 2026 Value Talent Advisory. All rights reserved.</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function filterCases(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.case-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){
+      card.style.display='flex';
+      setTimeout(()=>card.style.opacity='1',10);
+    } else {
+      card.style.opacity='0';
+      setTimeout(()=>card.style.display='none',200);
+    }
+  });
+}
+</script>
+</body>
+</html>
