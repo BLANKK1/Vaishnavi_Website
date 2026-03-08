@@ -201,6 +201,18 @@ nav{
 .btn-book:hover{background:var(--gold-light);transform:translateY(-2px)}
 .btn-book svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 
+.article-card{
+  display:flex;flex-direction:column;gap:10px;
+  border:1px solid var(--border);border-radius:12px;padding:26px 22px;
+  text-decoration:none;background:#fff;
+  transition:box-shadow .25s,transform .25s,border-color .25s;
+}
+.article-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.09);transform:translateY(-3px);border-color:var(--green-mid)}
+.article-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.article-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);line-height:1.4;flex:1}
+.article-link{font-size:.8rem;font-weight:700;color:var(--green-dark);margin-top:auto}
+.article-card:hover .article-link{color:var(--gold)}
+
 /* ── TESTIMONIALS ── */
 #testimonials{background:var(--cream-light);padding:96px 56px}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
@@ -250,21 +262,6 @@ footer{
 .footer-links a:hover{color:#fff}
 .footer-copy{font-size:.76rem}
 
-
-/* ── ARTICLE CARDS ── */
-.article-card{
-  display:flex;flex-direction:column;gap:10px;
-  border:1px solid var(--border);border-radius:12px;padding:26px 22px;
-  text-decoration:none;background:#fff;
-  transition:box-shadow .25s,transform .25s,border-color .25s;
-}
-.article-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.09);transform:translateY(-3px);border-color:var(--green-mid)}
-.article-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-.article-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);line-height:1.4;flex:1}
-.article-link{font-size:.8rem;font-weight:700;color:var(--green-dark);margin-top:auto}
-.article-card:hover .article-link{color:var(--gold)}
-@media(max-width:960px){#articles{padding:64px 24px!important}#articles .section-wrap>div:last-child{grid-template-columns:1fr!important}}
-
 /* ── ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -313,16 +310,16 @@ footer{
   </div>
 
   <div id="about" class="founder">
-    <div class="founder-img reveal"> <img src="Vaish.jpg" alt="Vaishnavi Chella" 
-       style="width:100%;height:100%;object-fit:cover;border-radius:14px;"/></div></div>
+    <div class="founder-img reveal">
+      <img src="Vaish.jpg" alt="Vaishnavi Chella" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:14px;"/></div>
     <div class="founder-text reveal">
       <h2>Meet the Founder</h2>
       <div class="rule rule-green"></div>
-      <h3>Vaishnavi Chella — Principal Consultant</h3>
-      <p>Vaishnavi is a seasoned consultant and trusted advisor to promoters and senior leadership teams of growth-stage organisations.</p>
-      <p>She partners directly with founders and leadership teams to navigate critical talent and leadership inflection points — particularly during phases of rapid growth, professionalisation, succession transition, or cultural realignment.</p>
-      <p>Her advisory approach is diagnostic-led, outcome-oriented, and deeply contextual. She believes that talent is not a support function, but a strategic lever for competitive advantage and long-term sustainability.</p>
-      <p>Beyond consulting, Vaishnavi publishes regularly on emerging workforce themes, leadership maturity, and the evolving realities of working parents in India.</p>
+      <h3>Vaishnavi Chella</h3>
+      <p>Vaishnavi Chella is a Talent Management professional with experience in strategic hiring, workforce alignment, and organizational advisory.</p>
+      <p>She works closely with leadership teams to design talent frameworks that drive measurable business outcomes.</p>
+      <p>With a research-driven approach and deep understanding of people strategy, Vaishnavi helps organizations build hiring systems and leadership pipelines that scale with long-term goals.</p>
       <a href="#" class="linkedin-link">
         <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         Connect on LinkedIn
@@ -390,18 +387,18 @@ footer{
     <div class="reveal" style="display:flex;justify-content:center">
       <div class="book-cover">
         <span class="book-cover-label">Forthcoming</span>
-        <h3>The Working Mother in India</h3>
+        <h3>The People-First Growth Playbook</h3>
         <p class="author">Vaishnavi Chella</p>
         <span class="coming">Coming Soon</span>
       </div>
     </div>
     <div class="book-info reveal">
       <p class="section-label">The Book</p>
-      <h2 class="section-title">Exploring Ambition, Caregiving &amp; Identity in Contemporary Professional Life</h2>
+      <h2 class="section-title">A Practical Guide to Talent Strategy for Ambitious Organisations</h2>
       <div class="rule rule-gold" style="margin:14px 0 24px"></div>
-      <p>Vaishnavi is currently authoring a book that explores the journeys of Indian working mothers — examining how ambition, caregiving, and identity intersect in contemporary professional life.</p>
-      <p>The book draws on deep research and lived narratives to surface what it truly means to build a career and a family in modern India — and what organisations and individuals can do differently.</p>
-      <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:8px">Publication date coming soon. Register your interest to be notified on launch.</p>
+      <p>Vaishnavi is currently writing a book drawing on years of hands-on advisory work with founders, family businesses, and leadership teams across industries.</p>
+      <p>It will offer a practical, research-backed framework for building organisations where talent strategy and business strategy are genuinely aligned — from first hire to leadership scale.</p>
+      <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:8px">Details and publication date coming soon. Register your interest to be notified on launch.</p>
       <button class="btn-book">
         <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
         Notify Me on Launch
@@ -493,7 +490,6 @@ footer{
     </div>
   </div>
 </section>
-
 <!-- CTA STRIP -->
 <div class="cta-strip">
   <h2>Ready to Build Something That Lasts?</h2>
@@ -506,7 +502,6 @@ footer{
 
 <footer>
   <span class="footer-logo">Value Talent Advisory</span>
-
   <span class="footer-copy">© 2025 Value Talent Advisory. All rights reserved.</span>
 </footer>
 
