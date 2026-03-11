@@ -17,7 +17,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
 
-/* NAV */
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px}
 .nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -26,7 +26,42 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:all .2s}
 .btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
 
-/* HERO — split green / cream */
+/* ── HAMBURGER ── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;cursor:pointer;
+  background:none;border:none;padding:6px;border-radius:8px;transition:background .2s;
+}
+.nav-hamburger:hover{background:var(--cream)}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--green-dark);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);
+  z-index:199;flex-direction:column;padding:32px 28px 40px;overflow-y:auto;
+  transform:translateY(-12px);opacity:0;transition:transform .3s ease,opacity .3s ease;
+}
+.mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.mobile-menu ul li a{
+  display:block;padding:14px 12px;font-size:1.05rem;font-weight:600;color:var(--text-dark);
+  text-decoration:none;border-radius:8px;letter-spacing:0.01em;
+  transition:background .2s,color .2s;border-bottom:1px solid var(--border);
+}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{background:var(--cream);color:var(--green-dark)}
+.mobile-menu-cta button{
+  width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;
+  padding:15px 24px;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:0.02em;transition:background .2s;
+}
+.mobile-menu-cta button:hover{background:var(--green-dark)}
+
+/* ── SPLIT HERO ── */
 .contact-hero{
   display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);
 }
@@ -70,7 +105,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .hl-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.65}
 .hl-quote cite{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:8px;display:block;font-style:normal}
 
-/* FORM SIDE */
+/* ── FORM SIDE ── */
 .hero-right{
   background:var(--cream-light);padding:80px 64px;
   display:flex;flex-direction:column;justify-content:center;
@@ -87,14 +122,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
   background:#fff;border:1.5px solid var(--border);border-radius:7px;
   padding:12px 14px;font-family:'Lato',sans-serif;font-size:.9rem;
   color:var(--text-dark);outline:none;transition:border-color .2s,box-shadow .2s;
+  /* Prevent iOS zoom on focus */
+  font-size:16px;
 }
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{
   border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(45,90,61,.08);
 }
-.form-group textarea{resize:vertical;min-height:110px}
+.form-group textarea{resize:vertical;min-height:110px;font-size:16px}
 .form-group select option{background:#fff}
 .checkbox-row{display:flex;align-items:flex-start;gap:10px;margin-top:4px}
-.checkbox-row input[type=checkbox]{width:16px;height:16px;margin-top:2px;accent-color:var(--green-dark);flex-shrink:0;cursor:pointer}
+.checkbox-row input[type=checkbox]{width:16px;height:16px;margin-top:3px;accent-color:var(--green-dark);flex-shrink:0;cursor:pointer}
 .checkbox-row label{font-size:.8rem;color:var(--text-mid);line-height:1.5;cursor:pointer}
 .btn-submit{
   background:var(--green-btn);color:#fff;border:none;border-radius:7px;
@@ -108,7 +145,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .btn-submit:hover svg{transform:translateX(4px)}
 .form-note{font-size:.76rem;color:var(--text-light);margin-top:4px}
 
-/* SUCCESS STATE */
+/* ── SUCCESS STATE ── */
 .success-state{
   display:none;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:48px;gap:16px;
@@ -118,17 +155,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .success-state h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700}
 .success-state p{color:var(--text-mid);font-size:.92rem;max-width:320px;line-height:1.7}
 
-/* WAYS TO ENGAGE */
+/* ── WAYS TO ENGAGE ── */
 .ways-section{background:#fff;padding:96px 56px;border-top:1px solid var(--border)}
 .ways-inner{max-width:1160px;margin:0 auto}
 .section-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .ways-inner h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:12px}
 .ways-rule{width:48px;height:3px;background:var(--green-dark);margin-bottom:48px}
 .ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.way-card{
-  border:1px solid var(--border);border-radius:12px;padding:32px 26px;
-  transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden;
-}
+.way-card{border:1px solid var(--border);border-radius:12px;padding:32px 26px;transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden}
 .way-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
 .way-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green-dark)}
 .way-card.gold-top::before{background:var(--gold)}
@@ -137,7 +171,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .way-card p{font-size:.87rem;color:var(--text-mid);line-height:1.75;margin-bottom:20px}
 .way-tag{display:inline-block;background:var(--cream-light);border:1px solid var(--border);color:var(--green-dark);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
 
-/* FAQ MINI */
+/* ── FAQ ── */
 .faq-section{background:var(--cream-light);padding:80px 56px;border-top:1px solid var(--border)}
 .faq-inner{max-width:760px;margin:0 auto}
 .faq-inner h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:12px}
@@ -148,28 +182,80 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .faq-q svg{width:18px;height:18px;stroke:var(--green-dark);fill:none;stroke-width:2;flex-shrink:0;transition:transform .25s}
 .faq-item.open .faq-q svg{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s}
-.faq-item.open .faq-a{max-height:160px;padding-top:10px}
+.faq-item.open .faq-a{max-height:200px;padding-top:10px}
 .faq-a p{font-size:.87rem;color:var(--text-mid);line-height:1.8}
 
+/* ── FOOTER ── */
 footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
-.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#fff}
 .footer-copy{font-size:.76rem}
 
+/* ── ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* ── TABLET ── */
 @media(max-width:960px){
-  nav{padding:0 24px}.nav-links{display:none}
-  .contact-hero{grid-template-columns:1fr;min-height:auto}
-  .hero-left,.hero-right{padding:56px 24px}
-  .form-row{grid-template-columns:1fr}
-  .ways-section,.faq-section{padding:64px 24px}
-  .ways-grid{grid-template-columns:1fr}
-  footer{padding:32px 24px;flex-direction:column;text-align:center}
+  nav{padding:0 28px}
+  .nav-links,.btn-nav{display:none}
+  .nav-hamburger{display:flex}
+
+  /* Stack hero: form on top (most important on mobile), info below */
+  .contact-hero{
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+    min-height:auto;
+  }
+  .hero-left{order:2;padding:56px 28px 48px}
+  .hero-right{order:1;padding:56px 28px 48px;justify-content:flex-start}
+
+  .form-row{grid-template-columns:1fr 1fr}
+
+  .ways-section{padding:72px 28px}
+  .ways-grid{grid-template-columns:1fr 1fr;gap:16px}
+
+  .faq-section{padding:64px 28px}
+  footer{padding:36px 28px;flex-direction:column;text-align:center}
+}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  nav{padding:0 20px;height:60px}
+  .mobile-menu{top:60px}
+
+  .hero-left{padding:44px 20px 40px}
+  .hero-right{padding:44px 20px 40px}
+
+  .hero-left h1{font-size:clamp(1.9rem,7.5vw,2.6rem)}
+  .hero-left .sub{font-size:.9rem;max-width:100%}
+
+  /* Contact details more compact */
+  .contact-item{gap:12px;margin-bottom:22px}
+  .ci-icon{width:36px;height:36px}
+  .ci-icon svg{width:15px;height:15px}
+  .ci-value{font-size:.88rem}
+  .ci-note{font-size:.74rem}
+
+  .hl-quote{margin-top:36px}
+  .hl-quote p{font-size:.95rem}
+
+  /* Form collapses to 1 column fully */
+  .form-row{grid-template-columns:1fr;gap:0}
+  .form-header h2{font-size:1.55rem}
+  .form-header p{font-size:.85rem}
+
+  .btn-submit{width:100%;justify-content:center;padding:15px 24px}
+
+  .ways-section{padding:52px 20px}
+  .ways-grid{grid-template-columns:1fr;gap:14px}
+  .way-card{padding:26px 22px}
+  .way-num{font-size:2rem}
+
+  .faq-section{padding:52px 20px}
+  .faq-q span{font-size:.88rem}
+
+  footer{padding:28px 20px;gap:12px}
 }
 </style>
 </head>
@@ -186,7 +272,25 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <button class="btn-nav" onclick="document.querySelector('.hero-right').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
+    <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
+    <li><a href="contact.html" class="active" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <button onclick="document.querySelector('.hero-right').scrollIntoView({behavior:'smooth'});closeMobileMenu()">Get in Touch</button>
+  </div>
+</div>
 
 <!-- FULL-HEIGHT SPLIT HERO -->
 <div class="contact-hero">
@@ -204,7 +308,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div>
           <p class="ci-label">Email</p>
-          <p class="ci-value">hello@valuetalentadvisory.com</p>
+          <p class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f9919c959596b98f98958c9c8d98959c978d989d8f908a968b80d79a9694">[email&#160;protected]</a></p>
           <p class="ci-note">We respond within 1–2 business days</p>
         </div>
       </div>
@@ -282,7 +386,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
             <option>Organisational Systems</option>
             <option>Leadership Pipeline</option>
             <option>Workforce Alignment</option>
-            <option>Culture & Values</option>
+            <option>Culture &amp; Values</option>
             <option>Advisory Retainer</option>
             <option>Not sure yet — I'd like to talk it through</option>
           </select>
@@ -383,14 +487,18 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 
 <footer>
   <span class="footer-logo">Value Talent Advisory</span>
-
   <span class="footer-copy">© 2025 Value Talent Advisory. All rights reserved.</span>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.1});
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})
+},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
+// FAQ accordion
 function toggleFaq(el){
   const item=el.closest('.faq-item');
   const open=item.classList.contains('open');
@@ -398,6 +506,7 @@ function toggleFaq(el){
   if(!open)item.classList.add('open');
 }
 
+// Form submit
 function handleSubmit(){
   const fname=document.getElementById('fname').value.trim();
   const email=document.getElementById('email').value.trim();
@@ -412,9 +521,33 @@ function handleSubmit(){
     document.getElementById('formWrap').style.display='none';
     const s=document.getElementById('successState');
     s.style.display='flex';
-    s.querySelector('p').textContent=`Thank you, ${fname}. We'll be in touch within 1–2 business days.`;
-  },1400);
+  },1200);
 }
+
+// Hamburger menu
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click',()=>{
+  mobileMenu.classList.contains('open')?closeMobileMenu():openMobileMenu();
+});
+function openMobileMenu(){
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMobileMenu(){
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+document.addEventListener('click',(e)=>{
+  if(mobileMenu.classList.contains('open')&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))
+    closeMobileMenu();
+});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()});
 </script>
 </body>
 </html>

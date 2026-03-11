@@ -26,14 +26,48 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:all .2s}
 .btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
 
+/* ── HAMBURGER ── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;cursor:pointer;
+  background:none;border:none;padding:6px;border-radius:8px;transition:background .2s;
+}
+.nav-hamburger:hover{background:var(--cream)}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--green-dark);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);
+  z-index:199;flex-direction:column;padding:32px 28px 40px;overflow-y:auto;
+  transform:translateY(-12px);opacity:0;transition:transform .3s ease,opacity .3s ease;
+}
+.mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.mobile-menu ul li a{
+  display:block;padding:14px 12px;font-size:1.05rem;font-weight:600;color:var(--text-dark);
+  text-decoration:none;border-radius:8px;letter-spacing:0.01em;
+  transition:background .2s,color .2s;border-bottom:1px solid var(--border);
+}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{background:var(--cream);color:var(--green-dark)}
+.mobile-menu-cta button{
+  width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;
+  padding:15px 24px;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:0.02em;transition:background .2s;
+}
+.mobile-menu-cta button:hover{background:var(--green-dark)}
+
 /* ── HERO ── */
 .page-hero{
   background:var(--green-dark);
   padding:110px 56px 96px;
   position:relative;overflow:hidden;
   display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
-  min-height:560px;
+  gap:80px;align-items:center;min-height:560px;
 }
 .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(196,160,82,.12) 0%,transparent 65%);pointer-events:none}
 .page-hero::after{content:'';position:absolute;bottom:-60px;left:40%;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.025);pointer-events:none}
@@ -47,9 +81,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .hero-pillars{display:flex;flex-direction:column;gap:16px}
 .pillar-chip{
   background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
-  border-radius:10px;padding:18px 22px;
-  display:flex;align-items:center;gap:16px;
-  transition:background .25s;
+  border-radius:10px;padding:18px 22px;display:flex;align-items:center;gap:16px;transition:background .25s;
 }
 .pillar-chip:hover{background:rgba(255,255,255,.12)}
 .pillar-icon{width:38px;height:38px;border-radius:8px;background:rgba(196,160,82,.18);flex-shrink:0;display:flex;align-items:center;justify-content:center}
@@ -64,7 +96,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 
 /* ── DIFFERENTIATORS ── */
 .diff-section{padding:100px 56px;max-width:1160px;margin:0 auto}
-.diff-section > .reveal > h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:12px}
+.diff-section>.reveal>h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;margin-bottom:12px}
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
 .diff-card{
   padding:44px 40px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);
@@ -72,10 +104,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 }
 .diff-card:nth-child(2n){border-right:none}
 .diff-card:nth-last-child(-n+2){border-bottom:none}
-.diff-card::before{
-  content:'';position:absolute;top:0;left:0;width:4px;height:0;
-  background:var(--green-dark);transition:height .4s ease;
-}
+.diff-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--green-dark);transition:height .4s ease}
 .diff-card:hover::before{height:100%}
 .diff-card:hover{background:var(--cream-light)}
 .diff-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(26,58,42,.07);line-height:1;margin-bottom:8px}
@@ -86,7 +115,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 /* ── PHILOSOPHY ── */
 .philosophy{background:var(--cream-light);padding:100px 56px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .philosophy-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.phil-text{}
 .phil-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:12px}
 .phil-text p{color:var(--text-mid);font-size:.95rem;line-height:1.9;margin-bottom:16px}
 .phil-principles{display:flex;flex-direction:column;gap:12px;margin-top:32px}
@@ -96,18 +124,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .principle strong{color:var(--text-dark)}
 .phil-visual{position:relative}
 .phil-card-stack{position:relative;height:480px}
-.pcard{
-  position:absolute;border-radius:14px;padding:32px;
-  display:flex;flex-direction:column;gap:12px;
-}
-.pcard-1{
-  background:var(--green-dark);width:82%;left:0;top:0;
-  box-shadow:0 20px 60px rgba(26,58,42,.25);z-index:2;
-}
-.pcard-2{
-  background:#fff;border:1px solid var(--border);width:72%;right:0;bottom:0;
-  box-shadow:0 12px 40px rgba(0,0,0,.08);z-index:1;
-}
+.pcard{position:absolute;border-radius:14px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.pcard-1{background:var(--green-dark);width:82%;left:0;top:0;box-shadow:0 20px 60px rgba(26,58,42,.25);z-index:2}
+.pcard-2{background:#fff;border:1px solid var(--border);width:72%;right:0;bottom:0;box-shadow:0 12px 40px rgba(0,0,0,.08);z-index:1}
 .pcard-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .pcard-1 .pcard-label{color:rgba(196,160,82,.7)}
 .pcard-2 .pcard-label{color:var(--gold)}
@@ -139,6 +158,18 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .cross{color:#ccc;font-size:1.1rem}
 .partial{color:var(--gold);font-size:.82rem;font-weight:600}
 
+/* Mobile comparison — card layout */
+.comp-cards{display:none;flex-direction:column;gap:12px;margin-top:40px}
+.comp-card{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.comp-card-label{padding:14px 18px;font-size:.88rem;font-weight:600;color:var(--text-dark);background:var(--cream-light);border-bottom:1px solid var(--border)}
+.comp-card-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+.comp-card-row:last-child{border-bottom:none}
+.comp-card-col{padding:12px 18px;display:flex;flex-direction:column;gap:4px}
+.comp-card-col:first-child{border-right:1px solid var(--border)}
+.comp-col-head{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.comp-col-head.us{color:var(--gold)}
+.comp-col-head.them{color:var(--text-light)}
+
 /* ── CREDENTIALS ── */
 .credentials{background:var(--green-dark);padding:100px 56px;position:relative;overflow:hidden}
 .credentials::before{content:'';position:absolute;right:-80px;top:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%)}
@@ -169,19 +200,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .testi-quote{font-size:.88rem;color:var(--text-mid);line-height:1.8;flex:1}
 .testi-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 
-/* ── FOUNDER SECTION ── */
+/* ── FOUNDER ── */
 .founder-section{padding:100px 56px;border-top:1px solid var(--border)}
 .founder-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
 .founder-img-wrap{position:relative}
 .founder-img{background:var(--cream);border-radius:14px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:.85rem;letter-spacing:.06em;border:1px solid var(--border)}
-.founder-badge{
-  position:absolute;bottom:-20px;right:-20px;
-  background:var(--green-dark);border-radius:12px;padding:18px 22px;
-  box-shadow:0 12px 40px rgba(26,58,42,.3);
-}
+.founder-badge{position:absolute;bottom:-20px;right:-20px;background:var(--green-dark);border-radius:12px;padding:18px 22px;box-shadow:0 12px 40px rgba(26,58,42,.3)}
 .founder-badge .n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1}
 .founder-badge .l{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px}
-.founder-text{}
 .founder-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:12px}
 .founder-text p{color:var(--text-mid);font-size:.95rem;line-height:1.85;margin-bottom:14px}
 .expertise-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
@@ -191,10 +217,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .linkedin-link:hover{color:var(--gold)}
 
 /* ── CTA ── */
-.cta-strip{
-  background:linear-gradient(135deg,var(--green-dark) 0%,#1f4a32 100%);
-  padding:96px 56px;text-align:center;position:relative;overflow:hidden;
-}
+.cta-strip{background:linear-gradient(135deg,var(--green-dark) 0%,#1f4a32 100%);padding:96px 56px;text-align:center;position:relative;overflow:hidden}
 .cta-strip::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(196,160,82,.1) 0%,transparent 65%)}
 .cta-strip h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:16px;position:relative}
 .cta-strip p{color:rgba(255,255,255,.65);font-size:.98rem;max-width:500px;margin:0 auto 32px;line-height:1.85;position:relative}
@@ -204,35 +227,108 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .btn-ghost{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.3);border-radius:6px;padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.03em;transition:all .2s}
 .btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.6)}
 
+/* ── FOOTER ── */
 footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
-.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#fff}
 .footer-copy{font-size:.76rem}
 
+/* ── ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* ── TABLET ── */
 @media(max-width:1000px){
-  nav{padding:0 24px}.nav-links{display:none}
-  .page-hero{grid-template-columns:1fr;min-height:auto;padding:64px 24px}
-  .diff-section,.philosophy,.comparison,.credentials,.testimonials,.founder-section,.cta-strip{padding-left:24px;padding-right:24px}
-  .diff-section{max-width:100%}
+  nav{padding:0 28px}
+  .nav-links,.btn-nav{display:none}
+  .nav-hamburger{display:flex}
+
+  .page-hero{grid-template-columns:1fr;min-height:auto;padding:72px 28px 60px;gap:44px}
+  .page-hero h1{font-size:clamp(2.2rem,5vw,3rem)}
+
+  .diff-section{padding:72px 28px;max-width:100%}
   .diff-grid{grid-template-columns:1fr}
   .diff-card{border-right:none}
   .diff-card:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
   .diff-card:last-child{border-bottom:none}
+
+  .philosophy{padding:72px 28px}
   .philosophy-inner{grid-template-columns:1fr;gap:48px}
   .phil-card-stack{height:340px}
   .pcard-1{width:88%}
   .pcard-2{width:80%}
-  .cred-grid{grid-template-columns:1fr 1fr}
-  .testi-grid{grid-template-columns:1fr}
-  .founder-inner{grid-template-columns:1fr;gap:48px}
+
+  .comparison{padding:72px 28px}
+  .comp-table{display:none}
+  .comp-cards{display:flex}
+
+  .credentials{padding:72px 28px}
+  .cred-grid{grid-template-columns:1fr 1fr;gap:16px}
+
+  .testimonials{padding:72px 28px}
+  .testi-grid{grid-template-columns:1fr 1fr}
+
+  .founder-section{padding:72px 28px}
+  .founder-inner{grid-template-columns:1fr;gap:60px}
   .founder-badge{right:0;bottom:-16px}
-  footer{padding:32px 24px;flex-direction:column;text-align:center}
+
+  .cta-strip{padding:72px 28px}
+  footer{padding:36px 28px;flex-direction:column;text-align:center}
+}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  nav{padding:0 20px;height:60px}
+  .mobile-menu{top:60px}
+
+  .page-hero{padding:56px 20px 48px;gap:36px}
+  .page-hero h1{font-size:clamp(1.85rem,7.5vw,2.5rem)}
+  .page-hero .sub{font-size:.92rem}
+  .pillar-chip{padding:14px 16px;gap:12px}
+  .pillar-chip h3{font-size:.85rem}
+  .pillar-chip p{font-size:.75rem}
+
+  .diff-section{padding:52px 20px}
+  .diff-card{padding:28px 24px}
+  .diff-num{font-size:2.2rem}
+  .diff-card h3{font-size:1.1rem}
+  .diff-card p{font-size:.87rem}
+
+  .philosophy{padding:52px 20px}
+  .philosophy-inner{gap:36px}
+  .phil-text p{font-size:.9rem}
+  .phil-card-stack{height:300px}
+  .pcard-1{padding:24px;width:90%}
+  .pcard-2{padding:20px;width:82%}
+  .pcard-1 h3{font-size:1.1rem}
+  .pcard-2 h3{font-size:.95rem}
+
+  .comparison{padding:52px 20px}
+  .comparison-inner h2{font-size:1.65rem}
+
+  .credentials{padding:52px 20px}
+  .cred-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .cred-card{padding:20px 14px}
+  .cred-num{font-size:1.8rem}
+  .cred-label{font-size:.78rem}
+
+  .testimonials{padding:52px 20px}
+  .testi-grid{grid-template-columns:1fr}
+
+  .founder-section{padding:52px 20px}
+  .founder-inner{gap:48px}
+  .founder-img{aspect-ratio:3/4}
+  .founder-badge{right:12px;bottom:-14px;padding:14px 18px}
+  .founder-badge .n{font-size:1.5rem}
+  .founder-text p{font-size:.9rem}
+
+  .cta-strip{padding:52px 20px}
+  .cta-strip h2{font-size:1.75rem}
+  .cta-strip p{font-size:.9rem}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:12px}
+  .btn-gold,.btn-ghost{width:100%;padding:14px 24px}
+
+  footer{padding:28px 20px;gap:12px}
 }
 </style>
 </head>
@@ -249,32 +345,46 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
+    <li><a href="why-us.html" class="active" onclick="closeMobileMenu()">Why Us</a></li>
+    <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
+    <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <button onclick="window.location.href='contact.html';closeMobileMenu()">Get in Touch</button>
+  </div>
+</div>
 
 <!-- ── HERO ── -->
 <div class="page-hero">
   <div class="hero-left">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Why Us</p>
-    <h1>The Case for Choosing Value Talent Advisory</h1>
-    <p class="sub">There's no shortage of HR consultants. What's rarer is someone who combines deep people expertise with genuine business understanding — and stays accountable to outcomes, not just deliverables.</p>
+    <h1>Built to Help Growing Organisations Strengthen Their Talent Systems</h1>
+    <p class="sub">As businesses scale, talent practices need to evolve in tandem. Without that, roles blur, leadership gaps appear, and culture becomes harder to sustain. Value Talent Advisory was founded to close that gap — practically, and in partnership with leadership.</p>
   </div>
   <div class="hero-right">
     <div class="hero-pillars">
       <div class="pillar-chip">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <div><h3>Research-Driven, Not Assumption-Led</h3><p>Every recommendation begins with a diagnostic — not a generic template.</p></div>
-      </div>
-      <div class="pillar-chip">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><h3>Accountable to Business Outcomes</h3><p>We design for measurable results, not just process completion.</p></div>
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+        <div><h3>Building Organisational Systems</h3><p>Structural clarity, defined roles, and aligned performance frameworks.</p></div>
       </div>
       <div class="pillar-chip">
         <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><h3>Built for Founders &amp; Long-Term Thinkers</h3><p>We work with leaders who care about getting it right, not just getting it done.</p></div>
+        <div><h3>Strengthening the Talent &amp; Leadership Pipeline</h3><p>Identifying, developing, and retaining the leadership depth required for growth.</p></div>
       </div>
       <div class="pillar-chip">
         <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><h3>Built to Last Beyond the Engagement</h3><p>We build internal capability. You shouldn't need us forever.</p></div>
+        <div><h3>Reinforcing Values &amp; Culture</h3><p>Ensuring culture is intentional, consistent, and aligned with long-term ambition.</p></div>
       </div>
     </div>
   </div>
@@ -284,53 +394,46 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 <div class="diff-section">
   <div class="reveal">
     <p class="section-label">What Sets Us Apart</p>
-    <h2>Six Reasons Organisations Choose Us</h2>
+    <h2>Why Organisations Choose Value Talent Advisory</h2>
     <div class="rule-green"></div>
   </div>
   <div class="diff-grid">
-
     <div class="diff-card reveal">
       <div class="diff-num">01</div>
-      <h3>We Start With a Diagnosis, Not a Product</h3>
-      <p>Most advisory firms arrive with a pre-packaged solution and a proposal. We arrive with questions. Every engagement begins with a genuine diagnostic of your organisation — before we recommend anything. This means our work addresses the actual problem, not the presenting symptom.</p>
-      <span class="tag">Discovery First</span>
+      <h3>We Partner With Leadership — Not Around Them</h3>
+      <p>We work directly with promoters and leadership teams to formalise and strengthen talent systems. This isn't a handoff — it's a genuine partnership built around your organisation's priorities, stage, and culture.</p>
+      <span class="tag">Leadership-Led</span>
     </div>
-
     <div class="diff-card reveal">
       <div class="diff-num">02</div>
-      <h3>Founder-Grade Perspective on People Problems</h3>
-      <p>We understand what it means to build an organisation from the ground up — the pressure of every hire, the cost of getting culture wrong, the difficulty of having hard conversations early. We bring that understanding into every engagement, not just textbook HR theory.</p>
+      <h3>Diagnostic-Led. Contextual. Never Templated.</h3>
+      <p>We adapt proven models to your organisation's unique stage, industry, and leadership realities. Every recommendation starts with understanding — not a pre-packaged proposal built for a different business.</p>
       <span class="tag">Context-Aware</span>
     </div>
-
     <div class="diff-card reveal">
       <div class="diff-num">03</div>
-      <h3>We Measure What Matters</h3>
-      <p>People strategy is often treated as intangible. We disagree. From the outset, we establish clear metrics — hiring speed, retention rates, manager effectiveness scores, engagement — and track them. You'll know whether the engagement is working.</p>
-      <span class="tag">Outcome-Oriented</span>
-    </div>
-
-    <div class="diff-card reveal">
-      <div class="diff-num">04</div>
-      <h3>We Build Your Capability, Not Your Dependency</h3>
-      <p>A good advisory engagement should make itself unnecessary. We document everything, train your internal teams, and hand over frameworks that your people can run independently. The goal is lasting organisational capability — not recurring consulting fees for the same work.</p>
-      <span class="tag">Transfer of Ownership</span>
-    </div>
-
-    <div class="diff-card reveal">
-      <div class="diff-num">05</div>
-      <h3>One Senior Person Throughout — Not a Junior Team</h3>
-      <p>With Value Talent Advisory, Vaishnavi Chella is your advisor at every stage — from the first discovery call through to implementation and review. There's no handoff to junior consultants after the pitch. The person who understands your context is the person doing the work.</p>
+      <h3>Senior Capability Where It's Often Missing</h3>
+      <p>Many growing organisations don't yet have a strong in-house Talent Management leader — or need additional senior capability to professionalise their talent systems as they scale. That's precisely the gap we fill.</p>
       <span class="tag">Senior-Led Always</span>
     </div>
-
+    <div class="diff-card reveal">
+      <div class="diff-num">04</div>
+      <h3>Practical by Design</h3>
+      <p>Everything we build is designed to be used — not filed away. We work at the intersection of rigour and practicality, ensuring frameworks fit how your organisation actually operates, not how a textbook says it should.</p>
+      <span class="tag">Implementation-Ready</span>
+    </div>
+    <div class="diff-card reveal">
+      <div class="diff-num">05</div>
+      <h3>We Build Capability, Not Dependency</h3>
+      <p>A good advisory engagement should make itself unnecessary. We document, train, and hand over — so your team owns and runs the systems we build together, long after the engagement concludes.</p>
+      <span class="tag">Transfer of Ownership</span>
+    </div>
     <div class="diff-card reveal">
       <div class="diff-num">06</div>
-      <h3>We're Honest, Even When It's Uncomfortable</h3>
-      <p>We will tell you what we see — including the things that are difficult to hear. If the data shows that a people challenge is rooted in leadership behaviour, or that a plan you're excited about is likely to fail, we'll say so clearly and constructively. Our role is trusted advisor, not comfortable one.</p>
-      <span class="tag">Radical Candour</span>
+      <h3>One Objective: Talent Systems That Scale With the Business</h3>
+      <p>Every engagement — whether it's org design, leadership pipeline, or culture — is anchored to a single question: does this help the organisation perform better as it grows? That focus shapes every recommendation we make.</p>
+      <span class="tag">Business-Aligned</span>
     </div>
-
   </div>
 </div>
 
@@ -338,41 +441,41 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 <div class="philosophy">
   <div class="philosophy-inner">
     <div class="phil-text reveal">
-      <p class="section-label">Our Philosophy</p>
-      <h2>People Strategy Is Business Strategy</h2>
+      <p class="section-label">Our Approach</p>
+      <h2>Talent Systems That Scale With the Business</h2>
       <div class="rule-green"></div>
-      <p>The most common mistake growing organisations make is treating their people challenges as separate from their business challenges. They're not. Your hiring decisions, your performance culture, your leadership pipeline — these are the operating system your business runs on.</p>
-      <p>When they're misaligned with where the business is going, growth stalls, talent leaves, and leaders spend more time managing dysfunction than creating value. When they're aligned, growth compounds.</p>
-      <p>Every piece of work we do is designed with one question in mind: how does this help the organisation perform better over the long term?</p>
+      <p>As organisations grow and revenue increases, the talent practices that worked in earlier stages start to show their limits. Roles evolve without clarity. Leadership gaps begin to surface. Culture becomes harder to sustain as the team grows.</p>
+      <p>Many growing organisations don't yet have a dedicated Talent Management leader — or need additional senior capability to professionalise their people systems at pace. Value Talent Advisory steps into that space, working directly with promoters and leadership teams to formalise and institutionalise what's needed.</p>
+      <p>Our approach is diagnostic-led and contextual. We adapt proven models to the organisation's unique stage, industry, and leadership realities — always anchored to business priorities, never to a generic playbook.</p>
       <div class="phil-principles">
-        <div class="principle"><div class="principle-dot"></div><p><strong>Diagnosis before prescription.</strong> We never recommend before we understand.</p></div>
-        <div class="principle"><div class="principle-dot"></div><p><strong>Outcomes over activities.</strong> We care about what changed, not what was delivered.</p></div>
-        <div class="principle"><div class="principle-dot"></div><p><strong>Candour over comfort.</strong> Honest feedback is a form of respect.</p></div>
-        <div class="principle"><div class="principle-dot"></div><p><strong>Long-term over quick fixes.</strong> We build things that last.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Diagnosis before prescription.</strong> We understand before we recommend.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Practical above all.</strong> Everything we build is designed to be used, not filed away.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Aligned to business priorities.</strong> People strategy is business strategy.</p></div>
+        <div class="principle"><div class="principle-dot"></div><p><strong>Built to scale.</strong> Systems that grow with the organisation, not just solve today's problem.</p></div>
       </div>
     </div>
     <div class="phil-visual reveal">
       <div class="phil-card-stack">
         <div class="pcard pcard-1">
           <span class="pcard-label">Our Commitment</span>
-          <h3>Every engagement is designed to outlast our involvement</h3>
-          <p>We document, train, and transfer. The frameworks we build should work for your organisation long after we've stepped back — getting more valuable as your team grows into them.</p>
+          <h3>Formalise, strengthen, and institutionalise your talent systems</h3>
+          <p>We work in genuine partnership with leadership — bringing structure and rigour to the talent practices that will carry the organisation through its next phase of growth.</p>
           <div class="pcard-stat">
-            <span>94%</span>
-            <span>of clients report their frameworks are still in active use 12 months post-engagement</span>
+            <span>50+</span>
+            <span>organisations advised across startups, family businesses, and scaling companies</span>
           </div>
         </div>
         <div class="pcard pcard-2">
-          <span class="pcard-label">What This Means for You</span>
-          <h3>A trusted advisor — not a dependency</h3>
-          <p>We'll be direct with you, challenge your assumptions, and hold the long-term view even when short-term pressures are loud.</p>
+          <span class="pcard-label">The Objective</span>
+          <h3>Build talent systems that scale with the business</h3>
+          <p>Not a one-time fix — a foundation that grows stronger as your organisation does.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── COMPARISON ── -->
+<!-- ── COMPARISON TABLE ── -->
 <div class="comparison">
   <div class="comparison-inner">
     <div class="reveal">
@@ -380,46 +483,73 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <h2>Value Talent Advisory vs. the Alternatives</h2>
       <div class="rule-green"></div>
     </div>
+
+    <!-- Desktop table -->
     <div class="comp-table reveal">
       <div class="comp-head">
         <div class="comp-head-cell">Capability</div>
         <div class="comp-head-cell">Value Talent Advisory</div>
         <div class="comp-head-cell">Typical Consultancy</div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Senior advisor throughout the engagement</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="partial">Sometimes</span></div>
+      <div class="comp-row"><div class="comp-cell">Works directly with promoters &amp; leadership teams</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Sometimes</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Starts with a diagnostic before recommending</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Custom-scoped to your stage, industry &amp; context</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Rarely</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Senior advisor throughout — no junior handoffs</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Sometimes</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Builds internal capability, not dependency</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Experience across startups, family businesses &amp; scale-ups</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Varies</span></div></div>
+      <div class="comp-row"><div class="comp-cell">Aligned to business outcomes, not just HR deliverables</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
+    </div>
+
+    <!-- Mobile card layout (replaces table) -->
+    <div class="comp-cards">
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Works directly with promoters &amp; leadership teams</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Sometimes</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Starts with a diagnostic before recommending</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="cross">✗</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Starts with a diagnostic before recommending</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Custom-scoped, not templated</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="partial">Rarely</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Custom-scoped to your stage, industry &amp; context</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Rarely</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Accountable to measurable business outcomes</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="cross">✗</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Senior advisor throughout — no junior handoffs</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Sometimes</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Builds internal capability, not dependency</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="cross">✗</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Builds internal capability, not dependency</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Experience across startups, family businesses &amp; scale-ups</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="partial">Varies</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Experience across startups, family businesses &amp; scale-ups</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Varies</span></div>
+        </div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell">Honest feedback, even when uncomfortable</div>
-        <div class="comp-cell"><span class="check">✓</span></div>
-        <div class="comp-cell"><span class="partial">Rarely</span></div>
+      <div class="comp-card reveal">
+        <div class="comp-card-label">Aligned to business outcomes, not just HR deliverables</div>
+        <div class="comp-card-row">
+          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
+          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -503,8 +633,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   <div class="founder-inner">
     <div class="founder-img-wrap reveal">
       <div class="founder-img">
-        <img src="Vaish2.jpg" alt="Vaishnavi Chella" 
-       style="width:100%;height:100%;object-fit:cover;border-radius:14px;"/></div>
+        <img src="Vaish2.jpg" alt="Vaishnavi Chella" style="width:100%;height:100%;object-fit:cover;border-radius:14px;"/>
+      </div>
       <div class="founder-badge">
         <div class="n">10+</div>
         <div class="l">Years in Talent Management</div>
@@ -514,15 +644,15 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <p class="section-label">The Person Behind the Work</p>
       <h2>Why Vaishnavi</h2>
       <div class="rule-green"></div>
-      <p>Value Talent Advisory exists because Vaishnavi Chella saw a consistent gap in the market: organisations that genuinely wanted to build strong people functions but couldn't find advisors who understood both the human complexity and the business context simultaneously.</p>
-      <p>With over a decade of experience across strategic hiring, workforce alignment, and organisational advisory — spanning startups, family businesses, and established companies — Vaishnavi brings a rare combination of rigour, empathy, and commercial acuity.</p>
-      <p>She is not a generalist consultant who dabbles in HR. People strategy is all she does — and she does it with a depth of focus that shows in the quality of the work.</p>
+      <p>Value Talent Advisory was founded by Vaishnavi Chella to help growing organisations build the talent management systems they need to achieve sustainable business results — and to fill a gap she saw consistently: organisations that wanted to professionalise their people practices but couldn't find an advisor who understood both the human complexity and the business context.</p>
+      <p>With over a decade of experience in talent management — spanning org design, leadership development, succession planning, and culture — Vaishnavi works directly with promoters and senior leadership teams. She is not a generalist who dabbles in HR. This is the work she does, and she does it with a depth of focus that shows.</p>
+      <p>Her approach is diagnostic-led, contextual, and always tied to what the business actually needs — not what a framework says it should need.</p>
       <div class="expertise-tags">
-        <span class="etag">Strategic Hiring</span>
-        <span class="etag">Succession Planning</span>
-        <span class="etag">Culture Design</span>
         <span class="etag">Org Design</span>
+        <span class="etag">Succession Planning</span>
+        <span class="etag">Culture &amp; Values</span>
         <span class="etag">Leadership Development</span>
+        <span class="etag">Performance Architecture</span>
         <span class="etag">Family Business Advisory</span>
       </div>
       <a href="#" class="linkedin-link">
@@ -545,13 +675,40 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 
 <footer>
   <span class="footer-logo">Value Talent Advisory</span>
-
   <span class="footer-copy">© 2025 Value Talent Advisory. All rights reserved.</span>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.1});
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})
+},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Hamburger menu
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click',()=>{
+  mobileMenu.classList.contains('open')?closeMobileMenu():openMobileMenu();
+});
+function openMobileMenu(){
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMobileMenu(){
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+document.addEventListener('click',(e)=>{
+  if(mobileMenu.classList.contains('open')&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))
+    closeMobileMenu();
+});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()});
 </script>
 </body>
 </html>

@@ -53,6 +53,62 @@ nav{
 }
 .btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
 
+/* ── HAMBURGER ── */
+.nav-hamburger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;cursor:pointer;
+  background:none;border:none;padding:6px;border-radius:8px;
+  transition:background .2s;
+}
+.nav-hamburger:hover{background:var(--cream)}
+.nav-hamburger span{
+  display:block;width:22px;height:2px;
+  background:var(--green-dark);border-radius:2px;
+  transition:transform .3s ease, opacity .3s ease;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE MENU OVERLAY ── */
+.mobile-menu{
+  display:none;
+  position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);
+  z-index:199;
+  flex-direction:column;
+  padding:32px 28px 40px;
+  overflow-y:auto;
+  transform:translateY(-12px);opacity:0;
+  transition:transform .3s ease, opacity .3s ease;
+}
+.mobile-menu.open{
+  display:flex;transform:translateY(0);opacity:1;
+}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.mobile-menu ul li a{
+  display:block;padding:14px 12px;
+  font-size:1.05rem;font-weight:600;color:var(--text-dark);
+  text-decoration:none;border-radius:8px;
+  letter-spacing:0.01em;transition:background .2s,color .2s;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{
+  background:var(--cream);color:var(--green-dark);
+}
+.mobile-menu-cta{
+  margin-top:8px;
+}
+.mobile-menu-cta button{
+  width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;
+  padding:15px 24px;font-size:1rem;font-weight:700;
+  font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:0.02em;
+  transition:background .2s;
+}
+.mobile-menu-cta button:hover{background:var(--green-dark)}
+
 /* ── HERO + FOUNDER MERGED BLOCK ── */
 .hero-founder-wrap{
   background:linear-gradient(
@@ -268,15 +324,73 @@ footer{
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
+
+/* Tablet */
 @media(max-width:960px){
-  nav{padding:0 24px}.nav-links{display:none}
-  .founder{grid-template-columns:1fr;padding:0 24px 80px;gap:40px}
-  .cases-grid,.testi-grid{grid-template-columns:1fr}
-  .book-wrapper{grid-template-columns:1fr;gap:40px}
-  .book-cover{max-width:200px}
-  #case-studies,#book,#testimonials{padding:64px 24px}
-  .cta-strip{padding:64px 24px}
-  footer{padding:32px 24px;flex-direction:column;text-align:center}
+  nav{padding:0 28px}
+  .nav-links,.btn-nav{display:none}
+  .nav-hamburger{display:flex}
+
+  .hero{min-height:75vh;padding:80px 24px 60px}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.2rem)}
+  .hero p{font-size:1rem}
+
+  .founder{grid-template-columns:1fr;padding:0 28px 80px;gap:40px}
+  .founder-img{aspect-ratio:4/3;max-height:380px}
+  .founder-text h2{font-size:2rem}
+
+  .cases-grid,.testi-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  #case-studies,#testimonials{padding:72px 28px}
+
+  .book-wrapper{grid-template-columns:1fr;gap:48px;text-align:center}
+  .book-cover{max-width:200px;margin:0 auto}
+  #book{padding:72px 28px}
+  .book-info .rule-gold{margin-left:auto;margin-right:auto}
+
+  #articles{padding:72px 28px !important}
+  #articles>div>div:last-child{grid-template-columns:repeat(2,1fr) !important;gap:16px}
+
+  .cta-strip{padding:72px 28px}
+  footer{padding:36px 28px;flex-direction:column;text-align:center}
+}
+
+/* Mobile */
+@media(max-width:600px){
+  nav{padding:0 20px;height:60px}
+  .mobile-menu{top:60px}
+
+  .hero{min-height:auto;padding:64px 20px 48px}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.12}
+  .hero p{font-size:0.95rem;margin-bottom:32px}
+  .hero-btns{flex-direction:column;align-items:stretch;gap:12px;padding:0 8px}
+  .btn-primary,.btn-outline{padding:14px 24px;font-size:0.9rem;width:100%}
+
+  .founder{padding:0 20px 64px;gap:32px}
+  .founder-img{aspect-ratio:3/4;max-height:none}
+  .founder-text h2{font-size:1.75rem}
+  .founder-text p{font-size:0.9rem}
+
+  #case-studies,#testimonials{padding:56px 20px}
+  .cases-grid,.testi-grid{grid-template-columns:1fr;gap:16px}
+  .cases-header{flex-direction:column;align-items:flex-start;gap:12px}
+  .cases-header a{align-self:flex-start}
+
+  #book{padding:56px 20px}
+  .book-wrapper{gap:36px}
+  .book-cover{max-width:180px}
+  .book-cover h3{font-size:1.1rem}
+  .btn-book{width:100%;justify-content:center}
+
+  #articles{padding:56px 20px !important}
+  #articles>div>div:last-child{grid-template-columns:1fr !important}
+
+  .cta-strip{padding:56px 20px}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:12px}
+  .btn-gold,.btn-ghost{padding:14px 24px;font-size:.9rem;width:100%}
+
+  footer{padding:28px 20px;gap:12px}
+  .footer-logo{font-size:.95rem}
+  .footer-copy{font-size:.72rem}
 }
 </style>
 </head>
@@ -293,14 +407,36 @@ footer{
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
+
+  <!-- Hamburger button -->
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile slide-down menu -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html#about" class="active" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
+    <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
+    <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
+    <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <button onclick="window.location.href='contact.html';closeMobileMenu()">Get in Touch</button>
+  </div>
+</div>
 
 <!-- ═══ HERO + FOUNDER — SEAMLESS GRADIENT BLOCK ═══ -->
 <div class="hero-founder-wrap">
 
   <div class="hero">
     <div class="hero-inner">
-      <h1>Strategic Talent Advisory for Growth-Focused Organizations</h1>
+      <h1> Strategic talent advisory for growing organizations</h1>
       <p>Helping businesses align people strategy with performance and sustainable growth.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="window.location.href='contact.html'">Book a Consultation</button>
@@ -490,6 +626,7 @@ footer{
     </div>
   </div>
 </section>
+
 <!-- CTA STRIP -->
 <div class="cta-strip">
   <h2>Ready to Build Something That Lasts?</h2>
@@ -506,10 +643,46 @@ footer{
 </footer>
 
 <script>
+// Scroll reveal
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+// Close on outside click / scroll
+document.addEventListener('click', (e) => {
+  if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+// Close on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
 </script>
 </body>
 </html>
