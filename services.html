@@ -3,24 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Value Talent Advisory</title>
+<title>What We Offer - Value Talent Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green-dark:#1a3a2a;
-  --green-mid:#2d5a3d;
-  --green-btn:#2b4f38;
-  --cream:#f5f0e0;
-  --cream-mid:#f0ead6;
-  --cream-light:#faf7ef;
-  --gold:#a07c3a;
-  --gold-light:#c4a052;
-  --text-dark:#1a1a1a;
-  --text-mid:#4a4a4a;
-  --text-light:#777;
-  --border:#e2ddd0;
+  --green-dark:#1a3a2a;--green-mid:#2d5a3d;--green-btn:#2b4f38;
+  --cream:#f5f0e0;--cream-light:#faf7ef;
+  --gold:#a07c3a;--gold-light:#c4a052;
+  --text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#777;--border:#e2ddd0;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
@@ -28,29 +20,16 @@ body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-h
 /* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 56px;height:68px;
 }
-.nav-logo{
-  font-family:'Playfair Display',serif;
-  font-weight:700;font-size:1.1rem;color:var(--green-dark);
-  text-decoration:none;letter-spacing:0.01em;
-}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
 .nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{
-  font-size:0.875rem;font-weight:400;color:var(--text-mid);
-  text-decoration:none;letter-spacing:0.02em;transition:color .2s;
-}
+.nav-links a{font-size:.875rem;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--green-dark);font-weight:600}
-.btn-nav{
-  background:var(--green-btn);color:#fff;border:none;border-radius:6px;
-  padding:11px 24px;font-size:0.875rem;font-weight:700;
-  font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:0.02em;
-  transition:background .2s,transform .15s;
-}
+.btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:background .2s,transform .15s}
 .btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
 
 /* ── HAMBURGER ── */
@@ -71,7 +50,7 @@ nav{
 .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* ── MOBILE MENU OVERLAY ── */
+/* ── MOBILE MENU ── */
 .mobile-menu{
   display:none;
   position:fixed;top:68px;left:0;right:0;bottom:0;
@@ -83,9 +62,7 @@ nav{
   transform:translateY(-12px);opacity:0;
   transition:transform .3s ease, opacity .3s ease;
 }
-.mobile-menu.open{
-  display:flex;transform:translateY(0);opacity:1;
-}
+.mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
 .mobile-menu ul li a{
   display:block;padding:14px 12px;
@@ -95,12 +72,7 @@ nav{
   border-bottom:1px solid var(--border);
 }
 .mobile-menu ul li:last-child a{border-bottom:none}
-.mobile-menu ul li a:hover,.mobile-menu ul li a.active{
-  background:var(--cream);color:var(--green-dark);
-}
-.mobile-menu-cta{
-  margin-top:8px;
-}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{background:var(--cream);color:var(--green-dark)}
 .mobile-menu-cta button{
   width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;
   padding:15px 24px;font-size:1rem;font-weight:700;
@@ -109,289 +81,187 @@ nav{
 }
 .mobile-menu-cta button:hover{background:var(--green-dark)}
 
-/* ── HERO + FOUNDER MERGED BLOCK ── */
-.hero-founder-wrap{
-  background:linear-gradient(
-    to bottom,
-    #faf7ef 0%,
-    #f5f0e0 18%,
-    #f0ead6 38%,
-    #ede6ce 52%,
-    #f0ead6 66%,
-    #f5f2e8 80%,
-    #ffffff 100%
-  );
-  position:relative;overflow:hidden;
+/* ── PAGE HERO ── */
+.page-hero{
+  background:linear-gradient(to bottom,var(--cream-light),var(--cream),#fff);
+  padding:100px 56px 80px;text-align:center;position:relative;overflow:hidden;
 }
-.hero-founder-wrap::before{
-  content:'';position:absolute;top:0;left:50%;
-  transform:translateX(-50%);
-  width:900px;height:900px;
-  background:radial-gradient(ellipse at 50% 30%,rgba(240,230,190,0.7) 0%,rgba(240,230,190,0) 65%);
+.page-hero::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:700px;height:500px;
+  background:radial-gradient(ellipse at 50% 20%,rgba(240,230,180,.55) 0%,transparent 65%);
   pointer-events:none;
 }
-
-/* HERO */
-.hero{
-  min-height:88vh;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:100px 24px 80px;position:relative;z-index:1;
+.page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:.78rem;color:var(--text-light);letter-spacing:.05em;margin-bottom:20px}
+.breadcrumb a{color:var(--green-dark);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.page-hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;
+  line-height:1.1;margin-bottom:20px;
+  animation:fadeUp .8s ease both;
 }
-.hero-inner{max-width:800px}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:900;line-height:1.08;
-  color:var(--text-dark);margin-bottom:24px;
-  animation:fadeUp .85s ease both;
+.page-hero p{
+  font-size:1.05rem;color:var(--text-mid);line-height:1.8;max-width:560px;margin:0 auto;
+  animation:fadeUp .8s .15s ease both;
 }
-.hero p{
-  font-size:1.1rem;color:var(--text-mid);max-width:520px;
-  margin:0 auto 44px;line-height:1.8;
-  animation:fadeUp .85s .15s ease both;
-}
-.hero-btns{
-  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
-  animation:fadeUp .85s .3s ease both;
-}
-.btn-primary{
-  background:var(--green-btn);color:#fff;border:2px solid var(--green-btn);
-  border-radius:6px;padding:15px 36px;font-size:0.95rem;font-weight:700;
-  font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:0.03em;transition:all .2s;
-}
-.btn-primary:hover{background:var(--green-dark);border-color:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,58,42,.2)}
-.btn-outline{
-  background:transparent;color:var(--text-dark);border:2px solid rgba(26,26,26,.35);
-  border-radius:6px;padding:15px 36px;font-size:0.95rem;font-weight:700;
-  font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:0.03em;transition:all .2s;
-}
-.btn-outline:hover{background:var(--text-dark);color:#fff;border-color:var(--text-dark);transform:translateY(-2px)}
-
-/* FOUNDER */
-.founder{
-  max-width:1160px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
-  padding:0 56px 120px;position:relative;z-index:1;
-}
-.founder-img{
-  background:rgba(210,195,155,.35);border-radius:14px;
-  aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;
-  color:var(--text-light);font-size:0.9rem;letter-spacing:.05em;
-  border:1px solid rgba(160,140,80,.2);
-}
-.founder-text h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;margin-bottom:14px}
-.rule{width:48px;height:3px;border-radius:2px;margin-bottom:24px}
+.section-label{text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:700;color:var(--gold);margin-bottom:10px}
+.rule{width:48px;height:3px;border-radius:2px}
 .rule-green{background:var(--green-dark)}
 .rule-gold{background:var(--gold)}
-.founder-text h3{font-weight:700;font-size:1rem;margin-bottom:16px}
-.founder-text p{color:var(--text-mid);margin-bottom:14px;font-size:0.95rem;line-height:1.8}
-.linkedin-link{
-  display:inline-flex;align-items:center;gap:9px;
-  color:var(--green-dark);font-weight:600;font-size:0.88rem;
-  text-decoration:none;margin-top:8px;transition:color .2s;
-}
-.linkedin-link svg{width:20px;height:20px;fill:currentColor}
-.linkedin-link:hover{color:var(--gold)}
 
-/* ── SHARED ── */
-.section-wrap{max-width:1160px;margin:0 auto}
-.section-label{text-transform:uppercase;letter-spacing:.14em;font-size:0.73rem;font-weight:700;color:var(--gold);margin-bottom:10px}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:700;color:var(--text-dark);margin-bottom:12px}
+/* ── SERVICES INTRO ── */
+.services-intro{padding:80px 56px 0;max-width:1160px;margin:0 auto}
+.services-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-bottom:80px;border-bottom:1px solid var(--border)}
+.intro-text h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;margin-bottom:16px;line-height:1.2}
+.intro-text p{color:var(--text-mid);font-size:.95rem;line-height:1.85;margin-bottom:14px}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.stat-box{background:var(--cream-light);border-radius:10px;padding:24px;border:1px solid var(--border)}
+.stat-box .num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--green-dark);line-height:1}
+.stat-box .lbl{font-size:.82rem;color:var(--text-mid);margin-top:6px;line-height:1.4}
 
-/* ── CASE STUDIES ── */
-#case-studies{background:#fff;padding:96px 56px}
-.cases-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:20px}
-.cases-header a{
-  font-size:0.875rem;font-weight:700;color:var(--green-dark);
-  text-decoration:none;letter-spacing:.03em;
-  border-bottom:2px solid var(--green-dark);padding-bottom:2px;
-  transition:color .2s,border-color .2s;white-space:nowrap;
+/* ── SERVICE BLOCKS ── */
+.services-blocks{max-width:1160px;margin:0 auto;padding:0 56px 96px}
+.service-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;
+  padding:72px 0;border-bottom:1px solid var(--border);
 }
-.cases-header a:hover{color:var(--gold);border-color:var(--gold)}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.case-card{
-  border:1px solid var(--border);border-radius:12px;overflow:hidden;
-  transition:box-shadow .25s,transform .25s;cursor:pointer;
+.service-block:last-child{border-bottom:none}
+.service-block.flip .block-text{order:2}.service-block.flip .block-visual{order:1}
+.block-num{
+  font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;
+  color:rgba(26,58,42,.08);line-height:1;margin-bottom:4px;letter-spacing:-.02em;
 }
-.case-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-.case-thumb{
-  height:180px;display:flex;align-items:center;justify-content:center;
-  font-size:0.8rem;letter-spacing:.06em;color:rgba(255,255,255,.6);font-weight:600;text-transform:uppercase;
+.block-tag{
+  display:inline-block;background:var(--cream);border:1px solid var(--border);
+  border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark);margin-bottom:16px;
 }
-.case-thumb.c1{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
-.case-thumb.c2{background:linear-gradient(135deg,#3a2a1a,#6b4a2a)}
-.case-thumb.c3{background:linear-gradient(135deg,#1a2a3a,#2a4a6b)}
-.case-body{padding:24px}
-.case-tag{font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.case-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:10px;line-height:1.35}
-.case-body p{font-size:0.87rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px}
-.case-stat{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid var(--border)}
-.stat-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--green-dark)}
-.stat-label{font-size:0.8rem;color:var(--text-light);line-height:1.4}
-
-/* ── BOOK ── */
-#book{background:var(--green-dark);padding:96px 56px;position:relative;overflow:hidden}
-#book::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(160,124,58,.15) 0%,transparent 70%)}
-.book-wrapper{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:center}
-.book-cover{
-  aspect-ratio:2/3;max-width:280px;
-  background:linear-gradient(160deg,#2d5a3d,#1a3a2a);
-  border-radius:8px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:16px;
-  padding:32px;text-align:center;
-  box-shadow:8px 12px 40px rgba(0,0,0,.4);
-  border:1px solid rgba(196,160,82,.2);position:relative;
+.block-text h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:16px;line-height:1.25}
+.block-text p{color:var(--text-mid);font-size:.93rem;line-height:1.85;margin-bottom:12px}
+.block-details{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.block-details-col h4{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dark);margin-bottom:12px}
+.block-details-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.block-details-col li{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--text-mid);line-height:1.5}
+.block-details-col li::before{content:'';width:6px;height:6px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.col-questions li::before{background:var(--gold)}
+.col-solutions li::before{background:var(--green-dark)}
+.block-visual{border-radius:14px;overflow:hidden;position:sticky;top:90px}
+.block-visual-inner{
+  background:linear-gradient(135deg,var(--green-dark) 0%,var(--green-mid) 100%);
+  border-radius:14px;aspect-ratio:4/3;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
+  padding:32px;position:relative;overflow:hidden;
 }
-.book-cover::after{content:'';position:absolute;left:0;top:8px;bottom:8px;width:6px;background:linear-gradient(to bottom,var(--gold),rgba(196,160,82,.4));border-radius:2px 0 0 2px}
-.book-cover-label{font-size:0.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,160,82,.7);font-weight:700}
-.book-cover h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;line-height:1.3}
-.book-cover .author{font-size:0.8rem;color:rgba(255,255,255,.5);margin-top:8px}
-.book-cover .coming{font-size:0.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);font-weight:700;border:1px solid rgba(196,160,82,.4);padding:4px 12px;border-radius:20px}
-.book-info .section-label{color:var(--gold-light)}
-.book-info .section-title{color:#fff}
-.book-info p{color:rgba(255,255,255,.7);font-size:0.95rem;line-height:1.8;margin-bottom:20px}
-.btn-book{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--gold);color:#fff;border:none;border-radius:6px;
-  padding:13px 28px;font-size:0.9rem;font-weight:700;
-  font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:all .2s;margin-top:8px;
+.block-visual-inner::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:200px;height:200px;border-radius:50%;background:rgba(196,160,82,.12);
 }
-.btn-book:hover{background:var(--gold-light);transform:translateY(-2px)}
-.btn-book svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
-
-.article-card{
-  display:flex;flex-direction:column;gap:10px;
-  border:1px solid var(--border);border-radius:12px;padding:26px 22px;
-  text-decoration:none;background:#fff;
-  transition:box-shadow .25s,transform .25s,border-color .25s;
-}
-.article-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.09);transform:translateY(-3px);border-color:var(--green-mid)}
-.article-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-.article-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);line-height:1.4;flex:1}
-.article-link{font-size:.8rem;font-weight:700;color:var(--green-dark);margin-top:auto}
-.article-card:hover .article-link{color:var(--gold)}
-
-/* ── TESTIMONIALS ── */
-#testimonials{background:var(--cream-light);padding:96px 56px}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.testi-card{
-  background:#fff;border:1px solid var(--border);border-radius:12px;
-  padding:28px 24px;display:flex;flex-direction:column;gap:16px;
-  transition:box-shadow .25s,transform .25s;
-}
-.testi-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.07);transform:translateY(-3px)}
-.testi-meta{display:flex;align-items:center;gap:12px}
-.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--cream);color:var(--text-mid);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0;border:1px solid var(--border)}
-.testi-info{flex:1}
-.testi-info strong{display:block;font-size:.88rem;font-weight:700}
-.testi-info span{font-size:.78rem;color:var(--text-light)}
-.testi-li svg{width:17px;height:17px;fill:var(--gold)}
-.testi-quote{font-size:.88rem;color:var(--text-mid);line-height:1.78}
-.testi-tag{text-transform:uppercase;font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--gold);margin-top:auto}
+.visual-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px}
+.visual-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.3}
 
 /* ── CTA STRIP ── */
 .cta-strip{
-  background:linear-gradient(135deg,var(--green-dark) 0%,#1f4a32 100%);
-  padding:96px 56px;text-align:center;position:relative;overflow:hidden;
+  background:var(--green-dark);padding:72px 56px;text-align:center;position:relative;overflow:hidden;
 }
 .cta-strip::before{
   content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:700px;height:400px;
-  background:radial-gradient(ellipse,rgba(196,160,82,.1) 0%,transparent 65%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%);
 }
-.cta-strip h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:#fff;margin-bottom:16px;position:relative}
-.cta-strip p{color:rgba(255,255,255,.65);font-size:.98rem;max-width:500px;margin:0 auto 32px;line-height:1.85;position:relative}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
-.btn-gold{background:var(--gold);color:#fff;border:none;border-radius:6px;padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.03em;transition:all .2s}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
-.btn-ghost{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.3);border-radius:6px;padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.03em;transition:all .2s}
-.btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.6)}
+.cta-strip h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:14px;position:relative}
+.cta-strip p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:480px;margin:0 auto 28px;line-height:1.8;position:relative}
+.btn-gold{
+  background:var(--gold);color:#fff;border:none;border-radius:6px;
+  padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:.03em;transition:all .2s;position:relative;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 
 /* ── FOOTER ── */
-footer{
-  background:var(--green-dark);color:rgba(255,255,255,.55);
-  padding:44px 56px;display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:16px;
-  border-top:1px solid rgba(255,255,255,.08);
-}
+footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
-.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#fff}
 .footer-copy{font-size:.76rem}
 
 /* ── ANIMATION ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ── RESPONSIVE ── */
-
-/* Tablet */
+/* ── TABLET ── */
 @media(max-width:960px){
   nav{padding:0 28px}
   .nav-links,.btn-nav{display:none}
   .nav-hamburger{display:flex}
 
-  .hero{min-height:75vh;padding:80px 24px 60px}
-  .hero h1{font-size:clamp(2.2rem,6vw,3.2rem)}
-  .hero p{font-size:1rem}
+  .page-hero{padding:80px 28px 60px}
+  .page-hero h1{font-size:clamp(2rem,6vw,3rem)}
 
-  .founder{grid-template-columns:1fr;padding:0 28px 80px;gap:40px}
-  .founder-img{aspect-ratio:4/3;max-height:380px}
-  .founder-text h2{font-size:2rem}
+  .services-intro{padding:56px 28px 0}
+  .services-intro-grid{grid-template-columns:1fr;gap:40px;padding-bottom:56px}
+  .intro-text h2{font-size:1.75rem}
 
-  .cases-grid,.testi-grid{grid-template-columns:repeat(2,1fr);gap:16px}
-  #case-studies,#testimonials{padding:72px 28px}
+  .services-blocks{padding:0 28px 72px}
+  .service-block{grid-template-columns:1fr;gap:36px;padding:56px 0}
+  .service-block.flip .block-text,.service-block.flip .block-visual{order:unset}
+  .block-visual{position:static}
+  .block-details{grid-template-columns:1fr}
 
-  .book-wrapper{grid-template-columns:1fr;gap:48px;text-align:center}
-  .book-cover{max-width:200px;margin:0 auto}
-  #book{padding:72px 28px}
-  .book-info .rule-gold{margin-left:auto;margin-right:auto}
-
-  #articles{padding:72px 28px !important}
-  #articles>div>div:last-child{grid-template-columns:repeat(2,1fr) !important;gap:16px}
-
-  .cta-strip{padding:72px 28px}
+  .cta-strip{padding:64px 28px}
   footer{padding:36px 28px;flex-direction:column;text-align:center}
 }
 
-/* Mobile */
+/* ── MOBILE ── */
 @media(max-width:600px){
   nav{padding:0 20px;height:60px}
   .mobile-menu{top:60px}
 
-  .hero{min-height:auto;padding:64px 20px 48px}
-  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.12}
-  .hero p{font-size:0.95rem;margin-bottom:32px}
-  .hero-btns{flex-direction:column;align-items:stretch;gap:12px;padding:0 8px}
-  .btn-primary,.btn-outline{padding:14px 24px;font-size:0.9rem;width:100%}
+  .page-hero{padding:60px 20px 48px}
+  .page-hero h1{font-size:clamp(1.9rem,8vw,2.5rem)}
+  .page-hero p{font-size:.95rem}
 
-  .founder{padding:0 20px 64px;gap:32px}
-  .founder-img{aspect-ratio:3/4;max-height:none}
-  .founder-text h2{font-size:1.75rem}
-  .founder-text p{font-size:0.9rem}
+  .services-intro{padding:44px 20px 0}
+  .services-intro-grid{gap:32px;padding-bottom:44px}
+  .intro-text h2{font-size:1.6rem}
+  .intro-stats{grid-template-columns:1fr 1fr;gap:14px}
+  .stat-box{padding:18px 16px}
+  .stat-box .num{font-size:1.8rem}
+  .stat-box .lbl{font-size:.78rem}
 
-  #case-studies,#testimonials{padding:56px 20px}
-  .cases-grid,.testi-grid{grid-template-columns:1fr;gap:16px}
-  .cases-header{flex-direction:column;align-items:flex-start;gap:12px}
-  .cases-header a{align-self:flex-start}
+  .services-blocks{padding:0 20px 56px}
+  .service-block{gap:28px;padding:44px 0}
+  .block-num{font-size:3rem}
+  .block-text h2{font-size:1.45rem}
+  .block-text p{font-size:.9rem}
+  .block-details{gap:20px;margin-top:20px}
+  .block-details-col li{font-size:.84rem}
+  .block-visual-inner{aspect-ratio:16/9;padding:24px}
+  .visual-title{font-size:1.1rem}
 
-  #book{padding:56px 20px}
-  .book-wrapper{gap:36px}
-  .book-cover{max-width:180px}
-  .book-cover h3{font-size:1.1rem}
-  .btn-book{width:100%;justify-content:center}
-
-  #articles{padding:56px 20px !important}
-  #articles>div>div:last-child{grid-template-columns:1fr !important}
-
-  .cta-strip{padding:56px 20px}
-  .cta-btns{flex-direction:column;align-items:stretch;gap:12px}
-  .btn-gold,.btn-ghost{padding:14px 24px;font-size:.9rem;width:100%}
+  .cta-strip{padding:52px 20px}
+  .cta-strip h2{font-size:1.6rem}
+  .btn-gold{width:100%;padding:14px 24px}
 
   footer{padding:28px 20px;gap:12px}
-  .footer-logo{font-size:.95rem}
-  .footer-copy{font-size:.72rem}
 }
+
+/* ── NAV SHRINK ── */
+nav{transition:height .3s ease,box-shadow .3s ease,padding .3s ease}
+nav.scrolled{height:56px !important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+nav.scrolled .nav-logo{font-size:1rem}
+
+/* ── RIPPLE ── */
+.ripple-host{position:relative;overflow:hidden}
+.ripple-host .ripple-circle{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);pointer-events:none;
+  animation:ripple-anim .55s linear forwards;
+}
+@keyframes ripple-anim{to{transform:scale(4);opacity:0}}
+/* Dark ripple for light-bg buttons */
+.ripple-host.ripple-dark .ripple-circle{background:rgba(26,58,42,.12)}
+
 </style>
 </head>
 <body>
@@ -399,8 +269,8 @@ footer{
 <nav>
   <a href="index.html" class="nav-logo">Value Talent Advisory</a>
   <ul class="nav-links">
-    <li><a href="index.html#about" class="active">About</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
     <li><a href="process.html">Process</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="case-studies.html">Case Studies</a></li>
@@ -408,7 +278,6 @@ footer{
   </ul>
   <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
 
-  <!-- Hamburger button -->
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span>
     <span></span>
@@ -416,11 +285,10 @@ footer{
   </button>
 </nav>
 
-<!-- Mobile slide-down menu -->
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <ul>
-    <li><a href="index.html#about" class="active" onclick="closeMobileMenu()">About</a></li>
-    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="services.html" class="active" onclick="closeMobileMenu()">Services</a></li>
     <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
@@ -431,210 +299,155 @@ footer{
   </div>
 </div>
 
-<!-- ═══ HERO + FOUNDER — SEAMLESS GRADIENT BLOCK ═══ -->
-<div class="hero-founder-wrap">
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+    <h1>What We Offer</h1>
+    <p>Three focused areas of work, each designed to translate people strategy into concrete business outcomes for organisations at every stage of growth.</p>
+  </div>
+</div>
 
-  <div class="hero">
-    <div class="hero-inner">
-      <h1>Strategic Talent Advisory for Growth-Focused Organizations</h1>
-      <p>Helping businesses align people strategy with performance and sustainable growth.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="window.location.href='contact.html'">Book a Consultation</button>
-        <button class="btn-outline" onclick="window.location.href='services.html'">Explore Services</button>
+<div class="services-intro">
+  <div class="services-intro-grid reveal">
+    <div class="intro-text">
+      <p class="section-label">Our Focus Areas</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:16px">Built for organisations that take talent seriously</h2>
+      <div class="rule rule-green" style="margin-bottom:24px"></div>
+      <p>Each engagement is scoped to your specific context, whether you're a founder building your first leadership team, a family business navigating succession, or a scaling company trying to keep culture intact through rapid growth.</p>
+      <p>We combine research-driven frameworks with practical, hands-on collaboration to deliver outcomes that last.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="stat-box reveal"><div class="num">3</div><div class="lbl">Core focus areas</div></div>
+      <div class="stat-box reveal"><div class="num">50+</div><div class="lbl">Organisations advised across industries</div></div>
+      <div class="stat-box reveal"><div class="num">100%</div><div class="lbl">Custom-scoped, never templated</div></div>
+      <div class="stat-box reveal"><div class="num">3×</div><div class="lbl">Average improvement in hiring speed post-engagement</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="services-blocks">
+
+  <div class="service-block reveal">
+    <div class="block-text">
+      <div class="block-num">01</div>
+      <span class="block-tag">Organisational Systems</span>
+      <h2>Design the structural foundations that enable clarity, accountability, and performance at scale</h2>
+      <p>We help leadership teams build the operating backbone their organisation needs to grow with intention.</p>
+      <div class="block-details">
+        <div class="block-details-col col-questions">
+          <h4>Questions we help answer</h4>
+          <ul>
+            <li>How should our organisation be structured for the next phase of growth?</li>
+            <li>What job architecture and levels will enable scale without bureaucracy?</li>
+            <li>What critical capabilities must we build?</li>
+            <li>How should performance and rewards be aligned to business outcomes?</li>
+            <li>How do we design roles that drive ownership and accountability?</li>
+          </ul>
+        </div>
+        <div class="block-details-col col-solutions">
+          <h4>Solutions</h4>
+          <ul>
+            <li>Job Banding &amp; Role Evaluation</li>
+            <li>Organisation Structure Design</li>
+            <li>Workforce Capability Mapping</li>
+            <li>Performance Management Architecture</li>
+            <li>Competency Framework Design</li>
+            <li>Talent Acquisition Strategy Effectiveness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#1a3a2a,#2d5a3d)">
+        <span class="visual-label">Focus Area 01</span>
+        <p class="visual-title">Building Organisational Systems</p>
       </div>
     </div>
   </div>
 
-  <div id="about" class="founder">
-    <div class="founder-img reveal">
-      <img src="Vaish.jpg" alt="Vaishnavi Chella" 
-       style="width:100%;height:100%;object-fit:cover;border-radius:14px;"/></div>
-    <div class="founder-text reveal">
-      <h2>Meet the Founder</h2>
-      <div class="rule rule-green"></div>
-      <h3>Vaishnavi Chella</h3>
-      <p>Vaishnavi Chella is a Talent Management professional with experience in strategic hiring, workforce alignment, and organizational advisory.</p>
-      <p>She works closely with leadership teams to design talent frameworks that drive measurable business outcomes.</p>
-      <p>With a research-driven approach and deep understanding of people strategy, Vaishnavi helps organizations build hiring systems and leadership pipelines that scale with long-term goals.</p>
-      <a href="#" class="linkedin-link">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        Connect on LinkedIn
-      </a>
+  <div class="service-block flip reveal">
+    <div class="block-text">
+      <div class="block-num">02</div>
+      <span class="block-tag">Talent &amp; Leadership Pipeline</span>
+      <h2>Build structured processes to identify, develop, and retain high-impact talent</h2>
+      <p>Ensuring leadership continuity and bench strength before the moment of need not after.</p>
+      <div class="block-details">
+        <div class="block-details-col col-questions">
+          <h4>Questions we help answer</h4>
+          <ul>
+            <li>How do we identify and differentiate high-potential talent?</li>
+            <li>How do we retain and accelerate our top performers?</li>
+            <li>How do we strengthen manager effectiveness?</li>
+            <li>How do we build a credible succession pipeline?</li>
+            <li>How do we institutionalise talent reviews and calibration?</li>
+          </ul>
+        </div>
+        <div class="block-details-col col-solutions">
+          <h4>Solutions</h4>
+          <ul>
+            <li>High Potential Identification Frameworks</li>
+            <li>Succession Planning Architecture</li>
+            <li>Assessment &amp; Development Centres</li>
+            <li>Leadership Development Journeys</li>
+            <li>Manager Effectiveness Programs</li>
+            <li>Talent Reviews &amp; Calibration Facilitation</li>
+            <li>Individual Development Planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#0f1f2a,#1a3a50)">
+        <span class="visual-label">Focus Area 02</span>
+        <p class="visual-title">Strengthening the Talent &amp; Leadership Pipeline</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="block-text">
+      <div class="block-num">03</div>
+      <span class="block-tag">Values &amp; Culture</span>
+      <h2>Articulate and activate the cultural foundations required for sustainable growth</h2>
+      <p>Culture either works for your organisation or against it. We help you make it intentional, visible, and durable.</p>
+      <div class="block-details">
+        <div class="block-details-col col-questions">
+          <h4>This includes</h4>
+          <ul>
+            <li>Defining non-negotiable values and behaviours</li>
+            <li>Anchoring culture through leadership modelling</li>
+            <li>Designing EVP and employer positioning</li>
+            <li>Strengthening employee engagement</li>
+            <li>Building inclusive, psychologically safe workplaces</li>
+          </ul>
+        </div>
+        <div class="block-details-col col-solutions">
+          <h4>Solutions</h4>
+          <ul>
+            <li>Employee Engagement Diagnostics</li>
+            <li>EVP Articulation &amp; Activation</li>
+            <li>Culture &amp; Values Workshops</li>
+            <li>Behavioural Anchoring of Values</li>
+            <li>Change &amp; Culture Alignment Interventions</li>
+            <li>DEI Strategy &amp; Inclusion Frameworks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="block-visual">
+      <div class="block-visual-inner" style="background:linear-gradient(135deg,#2a1a2a,#5a2d5a)">
+        <span class="visual-label">Focus Area 03</span>
+        <p class="visual-title">Reinforcing Values &amp; Culture</p>
+      </div>
     </div>
   </div>
 
 </div>
 
-<!-- CASE STUDIES TEASER -->
-<section id="case-studies">
-  <div class="section-wrap">
-    <div class="cases-header reveal">
-      <div class="left">
-        <p class="section-label">Real Outcomes</p>
-        <h2 class="section-title">Work in Practice</h2>
-        <div class="rule rule-green" style="margin-top:12px"></div>
-      </div>
-      <a href="case-studies.html">View all case studies →</a>
-    </div>
-    <div class="cases-grid">
-      <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
-        <div class="case-thumb c1">Series B · Technology</div>
-        <div class="case-body">
-          <p class="case-tag">Organisational Systems</p>
-          <h3>Building Role Clarity in a Fast-Scaling Tech Team</h3>
-          <p>A 60-person SaaS company lacked the internal structure to sustain growth. We redesigned their role architecture and performance framework from the ground up.</p>
-          <div class="case-stat">
-            <span class="stat-num">3×</span>
-            <span class="stat-label">Faster hiring decisions after role architecture redesign</span>
-          </div>
-        </div>
-      </div>
-      <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
-        <div class="case-thumb c2">Family Business · Retail</div>
-        <div class="case-body">
-          <p class="case-tag">Leadership Pipeline</p>
-          <h3>Succession Planning for a Multi-Generation Family Business</h3>
-          <p>The founders needed a structured plan for leadership transition. We facilitated a 6-month succession planning process across two family branches.</p>
-          <div class="case-stat">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Future leaders identified &amp; development plans activated</span>
-          </div>
-        </div>
-      </div>
-      <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
-        <div class="case-thumb c3">Founder-Led · Consumer Brand</div>
-        <div class="case-body">
-          <p class="case-tag">Culture &amp; Values</p>
-          <h3>Anchoring Culture Before a Series A Fundraise</h3>
-          <p>With rapid hiring ahead, the founder needed culture codified before dilution. We translated informal norms into a living values framework tied to hiring and performance.</p>
-          <div class="case-stat">
-            <span class="stat-num">↑40%</span>
-            <span class="stat-label">Employee engagement scores within 6 months</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOK TEASER -->
-<section id="book">
-  <div class="book-wrapper">
-    <div class="reveal" style="display:flex;justify-content:center">
-      <div class="book-cover">
-        <span class="book-cover-label">Forthcoming</span>
-        <h3>The People-First Growth Playbook</h3>
-        <p class="author">Vaishnavi Chella</p>
-        <span class="coming">Coming Soon</span>
-      </div>
-    </div>
-    <div class="book-info reveal">
-      <p class="section-label">The Book</p>
-      <h2 class="section-title">A Practical Guide to Talent Strategy for Ambitious Organisations</h2>
-      <div class="rule rule-gold" style="margin:14px 0 24px"></div>
-      <p>Vaishnavi is currently writing a book drawing on years of hands-on advisory work with founders, family businesses, and leadership teams across industries.</p>
-      <p>It will offer a practical, research-backed framework for building organisations where talent strategy and business strategy are genuinely aligned — from first hire to leadership scale.</p>
-      <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:8px">Details and publication date coming soon. Register your interest to be notified on launch.</p>
-      <button class="btn-book">
-        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
-        Notify Me on Launch
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-wrap">
-    <div class="reveal">
-      <p class="section-label">What People Are Saying</p>
-      <h2 class="section-title">Client Voices</h2>
-      <div class="rule rule-gold" style="margin-top:12px"></div>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">R</div>
-          <div class="testi-info"><strong>Rohit Mehta</strong><span>CEO, Series B Technology Company</span></div>
-          <div class="testi-li"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
-        </div>
-        <p class="testi-quote">"Vaishnavi helped us move from chaos to clarity. We now have a role architecture and performance framework that actually matches how we want to grow. The diagnostic approach surfaced issues we didn't even know were holding us back."</p>
-        <div class="testi-tag">Organisational Systems</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">P</div>
-          <div class="testi-info"><strong>Priya Nair</strong><span>Managing Director, Family Business Group</span></div>
-          <div class="testi-li"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
-        </div>
-        <p class="testi-quote">"The succession planning work Vaishnavi facilitated was genuinely transformative. For the first time, our family business has a structured conversation around leadership continuity. She brought rigour without losing the human element."</p>
-        <div class="testi-tag">Leadership Pipeline</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">A</div>
-          <div class="testi-info"><strong>Arjun Kapoor</strong><span>Founder &amp; Promoter, Consumer Brand</span></div>
-          <div class="testi-li"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
-        </div>
-        <p class="testi-quote">"As a founder, I was always the one driving culture informally. Vaishnavi helped us codify what we stood for and anchor it in actual behaviours. Our engagement scores improved — but more importantly, the team just 'feels' different now."</p>
-        <div class="testi-tag">Culture &amp; Values</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THOUGHT LEADERSHIP -->
-<section id="articles" style="background:#fff;padding:96px 56px;border-top:1px solid var(--border)">
-  <div class="section-wrap">
-    <div class="reveal">
-      <p class="section-label">Thought Leadership</p>
-      <h2 class="section-title">Articles &amp; Insights</h2>
-      <div class="rule rule-green" style="margin-top:12px"></div>
-      <p style="color:var(--text-mid);font-size:.95rem;max-width:580px;margin-bottom:48px;line-height:1.8">Vaishnavi publishes regularly on workforce themes, leadership maturity, and the evolving realities of working life in India.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-      <a href="https://www.linkedin.com/pulse/sorting-hat-life-how-affinity-bias-shapes-we-think-vaishnavi-chella-4l0sf/" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Bias &amp; Inclusion</span>
-        <h3>The Sorting Hat of Life: How Affinity Bias Shapes How We Think</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-      <a href="https://www.linkedin.com/posts/vaishnavichella_workingmomwednesdays-workingparents-familyfriendlyworkplaces-activity-7427202592310652928-f7wf" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Culture &amp; Workplaces</span>
-        <h3>From Women-Friendly to Family-Friendly Organisations</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-      <a href="https://www.linkedin.com/posts/vaishnavichella_jobevaluation-hradvisory-careerpathing-activity-7340723413595873281-pfWi" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Org Design</span>
-        <h3>Musings on Organisation Design</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-      <a href="https://www.linkedin.com/posts/vaishnavichella_hrfirstprinciples-employeeengagement-leadership-activity-7396438009639841792-cRwQ" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Employee Engagement</span>
-        <h3>The Truth Behind Employee Engagement: A First Principles Lens</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-      <a href="https://www.linkedin.com/posts/vaishnavichella_leadership-ceo-businesstoday-activity-7314896453041033217-NsAx" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Leadership</span>
-        <h3>The Leaders We Celebrate</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-      <a href="https://www.linkedin.com/pulse/5-key-insights-from-running-multiple-engagement-surveys-chella-1tcaf/" target="_blank" rel="noopener" class="article-card reveal">
-        <span class="article-tag">Engagement Surveys</span>
-        <h3>5 Insights from Running Multiple Engagement Surveys</h3>
-        <span class="article-link">Read on LinkedIn →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA STRIP -->
 <div class="cta-strip">
-  <h2>Ready to Build Something That Lasts?</h2>
-  <p>A 30-minute discovery call is often all it takes to identify the highest-leverage opportunity in your organisation. No pitch, no pressure.</p>
-  <div class="cta-btns">
-    <button class="btn-gold" onclick="window.location.href='contact.html'">Book a Discovery Call</button>
-    <button class="btn-ghost" onclick="window.location.href='why-us.html'">Why Value Talent Advisory</button>
-  </div>
+  <h2>Not sure where to start?</h2>
+  <p>A short discovery call is often all it takes to identify the highest-leverage area for your organisation.</p>
+  <button class="btn-gold" onclick="window.location.href='contact.html'">Book a Free Discovery Call</button>
 </div>
 
 <footer>
@@ -644,8 +457,8 @@ footer{
 
 <script>
 // Scroll reveal
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
@@ -655,15 +468,15 @@ const mobileMenu = document.getElementById('mobileMenu');
 
 hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.contains('open');
-  if (isOpen) {
-    closeMobileMenu();
-  } else {
-    mobileMenu.classList.add('open');
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
+  isOpen ? closeMobileMenu() : openMobileMenu();
 });
+
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
 
 function closeMobileMenu() {
   mobileMenu.classList.remove('open');
@@ -672,17 +485,91 @@ function closeMobileMenu() {
   document.body.style.overflow = '';
 }
 
-// Close on outside click / scroll
 document.addEventListener('click', (e) => {
   if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
     closeMobileMenu();
   }
 });
 
-// Close on escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMobileMenu();
 });
+
+/* ── NAV SHRINK ON SCROLL ── */
+(function(){
+  var nav = document.querySelector('nav');
+  if(!nav) return;
+  function onScroll(){
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  // avoid duplicate listener if page already has one
+  if(!nav.dataset.shrinkBound){
+    window.addEventListener('scroll', onScroll, {passive:true});
+    nav.dataset.shrinkBound = '1';
+    onScroll();
+  }
+})();
+
+/* ── SMOOTH SCROLL for anchor links ── */
+(function(){
+  document.querySelectorAll('a[href*="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href') || '';
+      var hashIdx = href.indexOf('#');
+      if(hashIdx === -1) return;
+      var hash = href.slice(hashIdx);
+      var path = href.slice(0, hashIdx);
+      // only intercept same-page or empty-path anchors
+      if(path && path !== window.location.pathname.split('/').pop() && path !== window.location.pathname) return;
+      var target = document.querySelector(hash);
+      if(target){
+        e.preventDefault();
+        var navH = (document.querySelector('nav') || {offsetHeight:68}).offsetHeight;
+        var top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({top: top, behavior:'smooth'});
+      }
+    });
+  });
+})();
+
+/* ── MOBILE TAP RIPPLE ── */
+(function(){
+  var selectors = 'button, .btn-nav, .btn-gold, .btn-ghost, .btn-submit, .case-card, .way-card, .diff-card, .pillar-chip, .filter-btn, .mobile-menu-cta button, .nav-hamburger';
+  function addRipple(el){
+    if(el.dataset.rippleBound) return;
+    el.dataset.rippleBound = '1';
+    // choose ripple colour based on bg
+    var bg = window.getComputedStyle(el).backgroundColor;
+    var isDark = bg && (bg.includes('26, 58') || bg.includes('43, 79') || bg.includes('45, 90') || bg.includes('27, 74') || el.classList.contains('btn-gold'));
+    el.classList.add('ripple-host');
+    if(!isDark) el.classList.add('ripple-dark');
+    el.addEventListener('pointerdown', function(e){
+      var circle = document.createElement('span');
+      circle.className = 'ripple-circle';
+      var rect = el.getBoundingClientRect();
+      var d = Math.max(rect.width, rect.height);
+      circle.style.width = circle.style.height = d + 'px';
+      circle.style.left = (e.clientX - rect.left - d/2) + 'px';
+      circle.style.top  = (e.clientY - rect.top  - d/2) + 'px';
+      el.appendChild(circle);
+      setTimeout(function(){ circle.remove(); }, 600);
+    });
+  }
+  document.querySelectorAll(selectors).forEach(addRipple);
+  // also catch dynamically added buttons
+  var mo = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType===1){
+          if(n.matches && n.matches(selectors)) addRipple(n);
+          n.querySelectorAll && n.querySelectorAll(selectors).forEach(addRipple);
+        }
+      });
+    });
+  });
+  mo.observe(document.body, {childList:true, subtree:true});
+})();
+
 </script>
 </body>
 </html>

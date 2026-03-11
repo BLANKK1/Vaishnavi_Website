@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact — Value Talent Advisory</title>
+<title>Contact - Value Talent Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -257,6 +257,24 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 
   footer{padding:28px 20px;gap:12px}
 }
+
+/* ── NAV SHRINK ── */
+nav{transition:height .3s ease,box-shadow .3s ease,padding .3s ease}
+nav.scrolled{height:56px !important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+nav.scrolled .nav-logo{font-size:1rem}
+
+/* ── RIPPLE ── */
+.ripple-host{position:relative;overflow:hidden}
+.ripple-host .ripple-circle{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);pointer-events:none;
+  animation:ripple-anim .55s linear forwards;
+}
+@keyframes ripple-anim{to{transform:scale(4);opacity:0}}
+/* Dark ripple for light-bg buttons */
+.ripple-host.ripple-dark .ripple-circle{background:rgba(26,58,42,.12)}
+
 </style>
 </head>
 <body>
@@ -300,7 +318,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
     <div class="hl-top">
       <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
       <h1>Let's Build Something That Lasts</h1>
-      <p class="sub">Whether you're navigating rapid growth, a leadership transition, a succession challenge, or simply want to build a stronger people foundation — we'd love to hear about your organisation.</p>
+      <p class="sub">Whether you're navigating rapid growth, a leadership transition, a succession challenge, or simply want to build a stronger people foundation. We'd love to hear about your organisation.</p>
     </div>
 
     <div class="hl-details">
@@ -309,7 +327,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         <div>
           <p class="ci-label">Email</p>
           <p class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f9919c959596b98f98958c9c8d98959c978d989d8f908a968b80d79a9694">[email&#160;protected]</a></p>
-          <p class="ci-note">We respond within 1–2 business days</p>
+          <p class="ci-note">We respond within 1-2 business days</p>
         </div>
       </div>
       <div class="contact-item">
@@ -329,14 +347,14 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         </div>
       </div>
       <div class="social-row">
-        <a href="#" class="social-btn" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/vaishnavichella/" class="social-btn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
       </div>
     </div>
 
     <div class="hl-quote">
-      <p>"Vaishnavi helped us move from chaos to clarity — the diagnostic approach surfaced issues we didn't even know were holding us back."</p>
+      <p>"Vaishnavi helped us move from chaos to clarity, the diagnostic approach surfaced issues we didn't even know were holding us back."</p>
       <cite>— Rohit Mehta, CEO, Series B Technology Company</cite>
     </div>
   </div>
@@ -345,7 +363,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   <div class="hero-right">
     <div class="form-header">
       <h2>Send a Message</h2>
-      <p>Tell us a bit about your organisation and what you're working on. No commitment — just a conversation.</p>
+      <p>Tell us a bit about your organisation and what you're working on.</p>
     </div>
 
     <div id="formWrap">
@@ -388,12 +406,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
             <option>Workforce Alignment</option>
             <option>Culture &amp; Values</option>
             <option>Advisory Retainer</option>
-            <option>Not sure yet — I'd like to talk it through</option>
+            <option>Not sure yet - I'd like to talk it through</option>
           </select>
         </div>
         <div class="form-group">
           <label>Message</label>
-          <textarea placeholder="Tell us about your organisation and the challenge you're facing — even a rough outline is helpful…" id="msg"></textarea>
+          <textarea placeholder="Tell us about your organisation and the challenge you're facing, even a rough outline is helpful…" id="msg"></textarea>
         </div>
         <div class="checkbox-row">
           <input type="checkbox" id="consent"/>
@@ -428,19 +446,19 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="way-card reveal">
         <div class="way-num">01</div>
         <h3>Project Engagement</h3>
-        <p>A defined scope of work with clear deliverables and a timeline — ideal for organisations with a specific challenge to solve, like building a performance framework or running a leadership diagnostic.</p>
+        <p>A defined scope of work with clear deliverables and a timeline ideal for organisations with a specific challenge to solve, like building a performance framework or running a leadership diagnostic.</p>
         <span class="way-tag">Most Common Starting Point</span>
       </div>
       <div class="way-card gold-top reveal">
         <div class="way-num">02</div>
         <h3>Advisory Retainer</h3>
-        <p>Ongoing strategic counsel on a monthly basis — for founders and HR leaders who want a trusted thought partner available as needs arise, across any area of people strategy.</p>
+        <p>Ongoing strategic counsel on a monthly basis for founders and HR leaders who want a trusted thought partner available as needs arise, across any area of people strategy.</p>
         <span class="way-tag">For Ongoing Partnership</span>
       </div>
       <div class="way-card reveal">
         <div class="way-num">03</div>
         <h3>Discovery Call</h3>
-        <p>A 30-minute conversation to explore whether and how we can help. No pitch, no pressure — just a frank discussion about your organisation and where the most leverage might be.</p>
+        <p>A 30-minute conversation to explore whether and how we can be helpfull, just a discussion about your organisation and where the most leverage might be.</p>
         <span class="way-tag">No Commitment Required</span>
       </div>
     </div>
@@ -466,21 +484,21 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         <span>Is there a minimum engagement size?</span>
         <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a"><p>There's no formal minimum — engagements are scoped based on the challenge and context. We work with organisations from early-stage startups to established companies of 300+ people. If the work is right, we'll find a scope that fits.</p></div>
+      <div class="faq-a"><p>There's no formal minimum engagements are scoped based on the challenge and context. We work with organisations from early-stage startups to established companies. If the work is right, we'll find a scope that fits.</p></div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q" onclick="toggleFaq(this)">
         <span>Do you work with international organisations?</span>
         <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a"><p>Yes. While based in Mumbai, we work remotely with organisations globally and can travel for key workshops and engagements. Most of our work is hybrid — some in-person, some remote.</p></div>
+      <div class="faq-a"><p>Yes. While based in Mumbai, we work remotely with organisations globally and can travel for key workshops and engagements. Most of our work is hybrid some in-person, some remote.</p></div>
     </div>
     <div class="faq-item reveal">
       <div class="faq-q" onclick="toggleFaq(this)">
         <span>What if I'm not sure what I need?</span>
         <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a"><p>That's the most common situation. The discovery call is specifically designed for this — describing what's happening in your organisation (even vaguely) is usually enough to identify where to start. You don't need a brief to get in touch.</p></div>
+      <div class="faq-a"><p>That's the most common situation. The discovery call is specifically designed for this describing what's happening in your organisation (even vaguely) is usually enough to identify where to start. You don't need a brief to get in touch.</p></div>
     </div>
   </div>
 </div>
@@ -548,6 +566,82 @@ document.addEventListener('click',(e)=>{
     closeMobileMenu();
 });
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()});
+
+/* ── NAV SHRINK ON SCROLL ── */
+(function(){
+  var nav = document.querySelector('nav');
+  if(!nav) return;
+  function onScroll(){
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  // avoid duplicate listener if page already has one
+  if(!nav.dataset.shrinkBound){
+    window.addEventListener('scroll', onScroll, {passive:true});
+    nav.dataset.shrinkBound = '1';
+    onScroll();
+  }
+})();
+
+/* ── SMOOTH SCROLL for anchor links ── */
+(function(){
+  document.querySelectorAll('a[href*="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href') || '';
+      var hashIdx = href.indexOf('#');
+      if(hashIdx === -1) return;
+      var hash = href.slice(hashIdx);
+      var path = href.slice(0, hashIdx);
+      // only intercept same-page or empty-path anchors
+      if(path && path !== window.location.pathname.split('/').pop() && path !== window.location.pathname) return;
+      var target = document.querySelector(hash);
+      if(target){
+        e.preventDefault();
+        var navH = (document.querySelector('nav') || {offsetHeight:68}).offsetHeight;
+        var top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({top: top, behavior:'smooth'});
+      }
+    });
+  });
+})();
+
+/* ── MOBILE TAP RIPPLE ── */
+(function(){
+  var selectors = 'button, .btn-nav, .btn-gold, .btn-ghost, .btn-submit, .case-card, .way-card, .diff-card, .pillar-chip, .filter-btn, .mobile-menu-cta button, .nav-hamburger';
+  function addRipple(el){
+    if(el.dataset.rippleBound) return;
+    el.dataset.rippleBound = '1';
+    // choose ripple colour based on bg
+    var bg = window.getComputedStyle(el).backgroundColor;
+    var isDark = bg && (bg.includes('26, 58') || bg.includes('43, 79') || bg.includes('45, 90') || bg.includes('27, 74') || el.classList.contains('btn-gold'));
+    el.classList.add('ripple-host');
+    if(!isDark) el.classList.add('ripple-dark');
+    el.addEventListener('pointerdown', function(e){
+      var circle = document.createElement('span');
+      circle.className = 'ripple-circle';
+      var rect = el.getBoundingClientRect();
+      var d = Math.max(rect.width, rect.height);
+      circle.style.width = circle.style.height = d + 'px';
+      circle.style.left = (e.clientX - rect.left - d/2) + 'px';
+      circle.style.top  = (e.clientY - rect.top  - d/2) + 'px';
+      el.appendChild(circle);
+      setTimeout(function(){ circle.remove(); }, 600);
+    });
+  }
+  document.querySelectorAll(selectors).forEach(addRipple);
+  // also catch dynamically added buttons
+  var mo = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType===1){
+          if(n.matches && n.matches(selectors)) addRipple(n);
+          n.querySelectorAll && n.querySelectorAll(selectors).forEach(addRipple);
+        }
+      });
+    });
+  });
+  mo.observe(document.body, {childList:true, subtree:true});
+})();
+
 </script>
 </body>
 </html>

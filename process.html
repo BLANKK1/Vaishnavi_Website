@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>How We Work — Value Talent Advisory</title>
+<title>How We Work - Value Talent Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -104,7 +104,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .phase{padding:96px 0;border-bottom:1px solid var(--border)}
 .phase:last-child{border-bottom:none;padding-bottom:0}
 .phase-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px}
-.phase-intro .phase-num{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(26,58,42,.07);line-height:1;margin-bottom:4px;letter-spacing:-.03em}
+.phase-intro .phase-num{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(0, 0, 0, 0.188);line-height:1;margin-bottom:4px;letter-spacing:-.03em}
 .phase-intro .phase-tag{display:inline-block;background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:5px 16px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark);margin-bottom:14px}
 .phase-intro h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:16px;line-height:1.2}
 .phase-intro p{color:var(--text-mid);font-size:.93rem;line-height:1.85}
@@ -233,6 +233,24 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
 
   footer{padding:28px 20px;gap:12px}
 }
+
+/* ── NAV SHRINK ── */
+nav{transition:height .3s ease,box-shadow .3s ease,padding .3s ease}
+nav.scrolled{height:56px !important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+nav.scrolled .nav-logo{font-size:1rem}
+
+/* ── RIPPLE ── */
+.ripple-host{position:relative;overflow:hidden}
+.ripple-host .ripple-circle{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);pointer-events:none;
+  animation:ripple-anim .55s linear forwards;
+}
+@keyframes ripple-anim{to{transform:scale(4);opacity:0}}
+/* Dark ripple for light-bg buttons */
+.ripple-host.ripple-dark .ripple-circle{background:rgba(26,58,42,.12)}
+
 </style>
 </head>
 <body>
@@ -274,7 +292,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   <div class="page-hero-inner">
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Process</p>
     <h1>How We Work</h1>
-    <p>Every engagement — whether we're designing org structures, building leadership pipelines, or activating culture — follows the same disciplined approach: diagnose first, design together, implement with you, and measure what matters.</p>
+    <p>Every engagement whether we're designing org structures, building leadership pipelines, or activating culture follows the same disciplined approach: diagnose first, design together, implement with you, and measure what matters.</p>
   </div>
 </div>
 
@@ -307,7 +325,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         <div class="phase-num">01</div>
         <span class="phase-tag">Discovery &amp; Diagnostic</span>
         <h2>Understand the people challenges before prescribing solutions</h2>
-        <p>Whether we're looking at org structure, talent depth, or culture health — we start by listening. Through structured interviews and diagnostic frameworks, we build an honest picture of where your people strategy stands today and where it needs to go.</p>
+        <p>Whether we're looking at org structure, talent depth, or culture health we start by listening. Through structured interviews and diagnostic frameworks, we build an honest picture of where your people strategy stands today and where it needs to go.</p>
       </div>
       <div class="phase-meta">
         <div class="phase-meta-item">
@@ -333,12 +351,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="step-card reveal">
         <div class="step-card-num">2</div>
         <h3>People &amp; Org Review</h3>
-        <p>A review of your current org design, role structures, talent data, and any existing people frameworks — to identify what's working and what's creating friction.</p>
+        <p>A review of your current org design, role structures, talent data, and any existing people frameworks to identify what's working and what's creating friction.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">3</div>
         <h3>Diagnostic Report</h3>
-        <p>A clear picture of your highest-priority people challenges — whether that's structural clarity, pipeline gaps, or culture drift — and a recommended starting point.</p>
+        <p>A clear picture of your highest-priority people challenges whether that's structural clarity, pipeline gaps, or culture drift and a recommended starting point.</p>
       </div>
     </div>
   </div>
@@ -350,7 +368,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
         <div class="phase-num">02</div>
         <span class="phase-tag">Strategy Design</span>
         <h2>Design the right solution for your organisation's stage and context</h2>
-        <p>Based on diagnostic findings, we co-design the specific frameworks your organisation needs — whether that's a new org structure, a talent review process, or a values activation plan. No templates. Everything is built for where you actually are.</p>
+        <p>Based on diagnostic findings, we co-design the specific frameworks your organisation needs whether that's a new org structure, a talent review process, or a values activation plan. Everything is built for where you actually are.</p>
       </div>
       <div class="phase-meta">
         <div class="phase-meta-item">
@@ -371,17 +389,17 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="step-card reveal">
         <div class="step-card-num">1</div>
         <h3>Prioritisation Workshop</h3>
-        <p>A facilitated session to align leadership on the highest-impact people priorities — org clarity, pipeline strength, or culture coherence — and build commitment to acting on them.</p>
+        <p>A facilitated session to align leadership on the highest-impact people priorities organisation clarity, pipeline strength, or culture coherence and build commitment to acting on them.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">2</div>
         <h3>Framework Design</h3>
-        <p>Development of the specific tools needed — job architecture, competency frameworks, succession maps, values and behaviour anchors, or performance systems.</p>
+        <p>Development of the specific tools needed job architecture, competency frameworks, succession maps, values and behaviour anchors, or performance systems.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">3</div>
         <h3>Roadmap &amp; Milestones</h3>
-        <p>A phased plan with clear owners, timelines, and success metrics — so progress is visible and accountability is shared across leadership.</p>
+        <p>A phased plan with clear owners, timelines, and success metrics so progress is visible and accountability is shared across leadership.</p>
       </div>
     </div>
   </div>
@@ -392,8 +410,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="phase-intro">
         <div class="phase-num">03</div>
         <span class="phase-tag">Implementation Support</span>
-        <h2>Build it with you — not just hand it over</h2>
-        <p>Frameworks only create value when they're embedded. We work alongside your people team and managers to bring new structures, processes, and practices to life — ensuring they stick well beyond the engagement.</p>
+        <h2>Build it with you, not just hand it over</h2>
+        <p>Frameworks only create value when they're embedded. We work alongside your people team and managers to bring new structures, processes, and practices to life ensuring they stick well beyond the engagement.</p>
       </div>
       <div class="phase-meta">
         <div class="phase-meta-item">
@@ -414,12 +432,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="step-card reveal">
         <div class="step-card-num">1</div>
         <h3>Leader &amp; Manager Enablement</h3>
-        <p>Workshops and facilitated sessions to help leaders and managers understand, adopt, and apply new structures — from performance conversations to talent calibrations.</p>
+        <p>Workshops and facilitated sessions to help leaders and managers understand, adopt, and apply new structures from performance conversations to talent calibrations.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">2</div>
         <h3>Live Activation</h3>
-        <p>Hands-on support as frameworks go live — facilitating first talent reviews, running culture workshops, or supporting succession planning conversations in real time.</p>
+        <p>Hands-on support as frameworks go live facilitating first talent reviews, running culture workshops, or supporting succession planning conversations in real time.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">3</div>
@@ -435,8 +453,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="phase-intro">
         <div class="phase-num">04</div>
         <span class="phase-tag">Review &amp; Iteration</span>
-        <h2>People strategy evolves — so does our work together</h2>
-        <p>Organisations grow, teams change, and priorities shift. The review phase ensures your people foundations keep pace — assessing what's working, what needs adjusting, and what the next chapter of growth requires.</p>
+        <h2>People strategy evolves so does our work together</h2>
+        <p>Organisations grow, teams change, and priorities shift. The review phase ensures your people foundations keep pace assessing what's working, what needs adjusting, and what the next chapter of growth requires.</p>
       </div>
       <div class="phase-meta">
         <div class="phase-meta-item">
@@ -457,7 +475,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="step-card reveal">
         <div class="step-card-num">1</div>
         <h3>Outcome Review</h3>
-        <p>Track agreed people metrics — retention, leadership bench strength, engagement, role clarity scores — against the baseline set during the diagnostic phase.</p>
+        <p>Track agreed people metrics retention, leadership bench strength, engagement, role clarity scores against the baseline set during the diagnostic phase.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-card-num">2</div>
@@ -467,7 +485,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="step-card reveal">
         <div class="step-card-num">3</div>
         <h3>Next Phase Planning</h3>
-        <p>Recommendations on what to deepen, refine, or add — whether that's expanding into a new focus area or evolving existing systems as the organisation scales.</p>
+        <p>Recommendations on what to deepen, refine, or add whether it's expanding into a new focus area or evolving existing systems as the organisation scales.</p>
       </div>
     </div>
   </div>
@@ -485,7 +503,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="outcome-card reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <h3>Structural Clarity</h3>
-        <p>Roles, accountabilities, and org design that make sense — so people know what they own and leaders can make decisions with confidence.</p>
+        <p>Roles, accountabilities, and organisational design that make sense so people know what they own and leaders can make decisions with confidence.</p>
       </div>
       <div class="outcome-card reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
@@ -495,12 +513,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <div class="outcome-card reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h3>Culture That Holds</h3>
-        <p>Values that are lived, not laminated — embedded into how you hire, develop, and recognise people at every level of the organisation.</p>
+        <p>Values that are lived, embedded into how you hire, develop, and recognise people at every level of the organisation.</p>
       </div>
       <div class="outcome-card reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <h3>Internal Capability</h3>
-        <p>Your team owns what we build together. The frameworks, tools, and habits we put in place are designed to run without us — and improve as you grow.</p>
+        <p>Your team owns what we build together. The frameworks, tools, and habits we put in place are designed to run without us and improve as you grow.</p>
       </div>
     </div>
   </div>
@@ -517,7 +535,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <span>How long does a typical engagement take?</span>
       <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </div>
-    <div class="faq-a"><p>Most engagements run between 8–20 weeks. A focused piece of work — like designing a performance framework or running a talent review — typically sits at the shorter end. More complex org design or culture work takes longer. We scope clearly before anything starts.</p></div>
+    <div class="faq-a"><p>Most engagements run between 8–20 weeks. A focused piece of work like designing a performance framework or running a talent review typically sits at the shorter end. More complex organisational design or culture work takes longer. We scope clearly before anything starts.</p></div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q" onclick="toggleFaq(this)">
@@ -531,21 +549,21 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
       <span>What does working with you look like day-to-day?</span>
       <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </div>
-    <div class="faq-a"><p>A mix of working sessions, workshops with your leadership team, and asynchronous collaboration on frameworks and documents. We stay close during implementation — facilitating talent reviews, sitting in on key conversations, and being available when real decisions are being made.</p></div>
+    <div class="faq-a"><p>A mix of working sessions, workshops with your leadership team, and asynchronous collaboration on frameworks and documents. We stay close during implementation facilitating talent reviews, sitting in on key conversations, and being available when real decisions are being made.</p></div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q" onclick="toggleFaq(this)">
       <span>Can we start with just one focus area?</span>
       <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </div>
-    <div class="faq-a"><p>Absolutely. Most clients start with their most pressing challenge — whether that's org structure, succession, or culture — and expand from there. A short discovery call is usually enough to identify where to begin.</p></div>
+    <div class="faq-a"><p>Absolutely. Most clients start with their most pressing challenge whether that's organisational structure, succession, or culture and expand from there. A short discovery call is usually enough to identify where to begin.</p></div>
   </div>
   <div class="faq-item reveal">
     <div class="faq-q" onclick="toggleFaq(this)">
       <span>What if we already have an internal HR team?</span>
       <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </div>
-    <div class="faq-a"><p>We work alongside internal HR and People teams — bringing outside perspective, specialist frameworks, and additional capacity for the work that falls outside day-to-day operations. Some of our strongest partnerships have been with internal HR leads who needed a strategic thought partner.</p></div>
+    <div class="faq-a"><p>We work alongside internal HR and People teams bringing outside perspective, specialist frameworks, and additional capacity for the work that falls outside day-to-day operations. Some of our strongest partnerships have been with internal HR leads who needed a strategic thought partner.</p></div>
   </div>
 </div>
 
@@ -628,6 +646,82 @@ document.addEventListener('click',(e)=>{
     closeMobileMenu();
 });
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()});
+
+/* ── NAV SHRINK ON SCROLL ── */
+(function(){
+  var nav = document.querySelector('nav');
+  if(!nav) return;
+  function onScroll(){
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }
+  // avoid duplicate listener if page already has one
+  if(!nav.dataset.shrinkBound){
+    window.addEventListener('scroll', onScroll, {passive:true});
+    nav.dataset.shrinkBound = '1';
+    onScroll();
+  }
+})();
+
+/* ── SMOOTH SCROLL for anchor links ── */
+(function(){
+  document.querySelectorAll('a[href*="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href') || '';
+      var hashIdx = href.indexOf('#');
+      if(hashIdx === -1) return;
+      var hash = href.slice(hashIdx);
+      var path = href.slice(0, hashIdx);
+      // only intercept same-page or empty-path anchors
+      if(path && path !== window.location.pathname.split('/').pop() && path !== window.location.pathname) return;
+      var target = document.querySelector(hash);
+      if(target){
+        e.preventDefault();
+        var navH = (document.querySelector('nav') || {offsetHeight:68}).offsetHeight;
+        var top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({top: top, behavior:'smooth'});
+      }
+    });
+  });
+})();
+
+/* ── MOBILE TAP RIPPLE ── */
+(function(){
+  var selectors = 'button, .btn-nav, .btn-gold, .btn-ghost, .btn-submit, .case-card, .way-card, .diff-card, .pillar-chip, .filter-btn, .mobile-menu-cta button, .nav-hamburger';
+  function addRipple(el){
+    if(el.dataset.rippleBound) return;
+    el.dataset.rippleBound = '1';
+    // choose ripple colour based on bg
+    var bg = window.getComputedStyle(el).backgroundColor;
+    var isDark = bg && (bg.includes('26, 58') || bg.includes('43, 79') || bg.includes('45, 90') || bg.includes('27, 74') || el.classList.contains('btn-gold'));
+    el.classList.add('ripple-host');
+    if(!isDark) el.classList.add('ripple-dark');
+    el.addEventListener('pointerdown', function(e){
+      var circle = document.createElement('span');
+      circle.className = 'ripple-circle';
+      var rect = el.getBoundingClientRect();
+      var d = Math.max(rect.width, rect.height);
+      circle.style.width = circle.style.height = d + 'px';
+      circle.style.left = (e.clientX - rect.left - d/2) + 'px';
+      circle.style.top  = (e.clientY - rect.top  - d/2) + 'px';
+      el.appendChild(circle);
+      setTimeout(function(){ circle.remove(); }, 600);
+    });
+  }
+  document.querySelectorAll(selectors).forEach(addRipple);
+  // also catch dynamically added buttons
+  var mo = new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType===1){
+          if(n.matches && n.matches(selectors)) addRipple(n);
+          n.querySelectorAll && n.querySelectorAll(selectors).forEach(addRipple);
+        }
+      });
+    });
+  });
+  mo.observe(document.body, {childList:true, subtree:true});
+})();
+
 </script>
 </body>
 </html>
