@@ -385,14 +385,10 @@ footer{
   .hero-btns{flex-direction:column;align-items:stretch;gap:12px;padding:0 8px}
   .btn-primary,.btn-outline{padding:14px 24px;font-size:0.9rem;width:100%}
 
-  .founder{display:block;padding:0 20px 64px}
-  .founder-img{
-    float:left;width:40%;aspect-ratio:3/4;max-height:none;
-    margin:0 18px 8px 0;border-radius:10px;
-  }
+  .founder{display:flex;flex-direction:column;padding:0 20px 64px;gap:28px}
+  .founder-img{float:none;width:100%;aspect-ratio:unset;max-height:none;border-radius:12px}
   .founder-text h2{font-size:1.75rem}
   .founder-text p{font-size:0.9rem}
-  .founder-text .rule{display:none}
 
   #case-studies,#testimonials{padding:56px 20px}
   .cases-grid,.testi-grid{grid-template-columns:1fr;gap:16px}
@@ -406,7 +402,27 @@ footer{
   .btn-book{width:100%;justify-content:center}
 
   .collab-section{padding:56px 20px}
-  .collab-grid-home{grid-template-columns:1fr}
+  .collab-section{padding:56px 0}
+  .collab-section .section-wrap{padding:0 20px}
+  .collab-section .section-wrap>div:first-child{padding:0 0 8px}
+  .collab-grid-home{
+    display:flex;flex-direction:row;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:14px;margin-top:32px;
+    padding:4px 20px 16px;
+    scrollbar-width:none;
+  }
+  .collab-grid-home::-webkit-scrollbar{display:none}
+  .collab-card-home{
+    flex:0 0 78vw;max-width:300px;
+    scroll-snap-align:start;
+    padding:24px 20px;
+  }
+  .collab-avatar-home{width:44px;height:44px;font-size:1.1rem;margin-bottom:14px}
+  .collab-card-home h3{font-size:.95rem}
+  .collab-card-home p{font-size:.82rem}
+  .collab-card-home .ctag{font-size:.63rem}
 
   .cta-strip{padding:56px 20px}
   .cta-btns{flex-direction:column;align-items:stretch;gap:12px}
@@ -495,9 +511,9 @@ nav.scrolled .nav-logo{font-size:1rem}
       <h2>Meet the Founder</h2>
       <div class="rule rule-green"></div>
       <h3>Vaishnavi Chella</h3>
-      <p>Vaishnavi Chella is a Talent Management professional with experience in strategic hiring, workforce alignment, and organizational advisory.</p>
-      <p>She works closely with leadership teams to design talent frameworks that drive measurable business outcomes.</p>
-      <p>With a research-driven approach and deep understanding of people strategy, Vaishnavi helps organizations build hiring systems and leadership pipelines that scale with long-term goals.</p>
+      <p>Vaishnavi Chella is a seasoned consultant and trusted advisor to promoters and senior leadership teams of growth-stage organisations.</p>
+      <p>She partners directly with founders and leadership teams to help businesses navigate critical talent and leadership inflexion points — particularly during phases of rapid growth, professionalisation, succession transition, or cultural realignment.</p>
+      <p>Her advisory approach is diagnostic-led, outcome-oriented, and deeply contextual. She believes that talent is not a support function, but a strategic lever for competitive advantage and long-term sustainability.</p>
       <a href="#" class="linkedin-link">
         <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         Connect on LinkedIn
