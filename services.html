@@ -229,13 +229,28 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   .stat-box .lbl{font-size:.78rem}
 
   .services-blocks{padding:0 20px 56px}
-  .service-block{gap:28px;padding:44px 0}
+  .service-block{
+    display:flex;flex-direction:column;
+    gap:0;padding:44px 0;
+  }
+  .block-visual{
+    order:-1;
+    position:sticky;top:60px;z-index:5;
+    margin:0 -20px 28px;
+    width:calc(100% + 40px);
+    border-radius:0;overflow:hidden;
+  }
+  .block-visual-inner{
+    aspect-ratio:16/7;padding:24px;border-radius:0;
+  }
+  /* flip blocks — visual still goes first on mobile */
+  .service-block.flip .block-visual{order:-1}
+  .block-text{order:1}
   .block-num{font-size:3rem}
   .block-text h2{font-size:1.45rem}
   .block-text p{font-size:.9rem}
   .block-details{gap:20px;margin-top:20px}
   .block-details-col li{font-size:.84rem}
-  .block-visual-inner{aspect-ratio:16/9;padding:24px}
   .visual-title{font-size:1.1rem}
 
   .cta-strip{padding:52px 20px}
@@ -313,7 +328,7 @@ nav.scrolled .nav-logo{font-size:1rem}
       <p class="section-label">Our Focus Areas</p>
       <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:16px">Built for organisations that take talent seriously</h2>
       <div class="rule rule-green" style="margin-bottom:24px"></div>
-      <p>Each engagement is scoped to your specific context, whether you're a founder building your first leadership team, a family business navigating succession, or a scaling company trying to keep culture intact through rapid growth.</p>
+      <p>Each engagement is scoped to your specific context, whether you're a leadership team building your first people structure, navigating succession, or a scaling company trying to keep culture intact through rapid growth.</p>
       <p>We combine research-driven frameworks with practical, hands-on collaboration to deliver outcomes that last.</p>
     </div>
     <div class="intro-stats">
