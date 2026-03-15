@@ -110,7 +110,8 @@ nav.scrolled{height:58px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
 .feat-visual{
   background:linear-gradient(135deg,#1a3a2a,#2d5a3d);
   min-height:360px;display:flex;flex-direction:column;
-  align-items:flex-start;justify-content:flex-end;padding:40px;position:relative;overflow:hidden;
+  align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden;
+  text-align:center;
 }
 .feat-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(196,160,82,.1)}
 .feat-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
@@ -132,7 +133,7 @@ nav.scrolled{height:58px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .case-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
 .case-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-.case-thumb{height:190px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:22px;position:relative;overflow:hidden;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.case-thumb{height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center}
 .case-thumb::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
 .ct-1{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
 .ct-2{background:linear-gradient(135deg,#3a2a1a,#6b4a2a)}
@@ -286,7 +287,6 @@ nav.scrolled .nav-logo{font-size:1rem}
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="process.html">Process</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="case-studies.html" class="active">Case Studies</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -302,7 +302,6 @@ nav.scrolled .nav-logo{font-size:1rem}
   <ul>
     <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
     <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
-    <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="case-studies.html" class="active" onclick="closeMobileMenu()">Case Studies</a></li>
     <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
@@ -379,43 +378,6 @@ nav.scrolled .nav-logo{font-size:1rem}
       </div>
     </div>
 
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div class="testi-strip">
-  <div class="testi-strip-inner">
-    <div class="reveal">
-      <p class="section-label">In Their Own Words</p>
-      <h2>What Clients Say</h2>
-      <div class="rule-green"></div>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">R</div>
-          <div class="testi-info"><strong>Rohit Mehta</strong><span>CEO, Series B Technology Company</span></div>
-        </div>
-        <p class="testi-quote">"Vaishnavi helped us move from chaos to clarity. We now have a role architecture and performance framework that actually matches how we want to grow."</p>
-        <div class="testi-tag">Organisational Systems</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">P</div>
-          <div class="testi-info"><strong>Priya Nair</strong><span>Managing Director, Family Business Group</span></div>
-        </div>
-        <p class="testi-quote">"The succession planning work Vaishnavi facilitated was genuinely transformative. She brought rigour without losing the human element."</p>
-        <div class="testi-tag">Leadership Pipeline</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-meta">
-          <div class="testi-avatar">A</div>
-          <div class="testi-info"><strong>Arjun Kapoor</strong><span>Business Leader, Consumer Brand</span></div>
-        </div>
-        <p class="testi-quote">"Vaishnavi helped us codify what we stood for and anchor it in actual behaviours. The team just 'feels' different now."</p>
-        <div class="testi-tag">Culture &amp; Values</div>
-      </div>
-    </div>
   </div>
 </div>
 

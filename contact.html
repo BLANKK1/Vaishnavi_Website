@@ -111,13 +111,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
   background:var(--cream-light);padding:80px 64px;
   display:flex;flex-direction:column;justify-content:center;
   animation:fadeUp .8s .2s ease both;
+  min-width:0;overflow:hidden;
 }
 .form-header{margin-bottom:36px}
 .form-header h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:8px}
 .form-header p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
-.contact-form{display:flex;flex-direction:column;gap:16px}
+.contact-form{display:flex;flex-direction:column;gap:16px;width:100%}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group{display:flex;flex-direction:column;gap:6px;min-width:0}
 .form-group label{font-size:.72rem;font-weight:700;color:var(--text-dark);letter-spacing:.06em;text-transform:uppercase}
 .form-group input,.form-group textarea,.form-group select{
   background:#fff;border:1.5px solid var(--border);border-radius:7px;
@@ -125,6 +126,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
   color:var(--text-dark);outline:none;transition:border-color .2s,box-shadow .2s;
   /* Prevent iOS zoom on focus */
   font-size:16px;
+  width:100%;max-width:100%;box-sizing:border-box;
 }
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{
   border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(45,90,61,.08);
@@ -283,10 +285,9 @@ nav.scrolled .nav-logo{font-size:1rem}
 <nav>
   <a href="index.html" class="nav-logo">Value Talent Advisory</a>
   <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#about">Home</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="process.html">Process</a></li>
     <li><a href="case-studies.html">Case Studies</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
@@ -299,10 +300,9 @@ nav.scrolled .nav-logo{font-size:1rem}
 
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
   <ul>
-    <li><a href="index.html#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
-    <li><a href="process.html" onclick="closeMobileMenu()">Process</a></li>
     <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
     <li><a href="contact.html" class="active" onclick="closeMobileMenu()">Contact</a></li>
   </ul>
