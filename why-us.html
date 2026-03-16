@@ -138,37 +138,22 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-
 .pcard-1 .pcard-stat span:first-child{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff}
 .pcard-1 .pcard-stat span:last-child{display:block;font-size:.75rem;color:rgba(255,255,255,.45);margin-top:2px}
 
-/* ── COMPARISON TABLE ── */
-.comparison{padding:100px 56px}
-.comparison-inner{max-width:1000px;margin:0 auto}
-.comparison-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:12px}
-.comp-table{margin-top:48px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.comp-head{display:grid;grid-template-columns:1.6fr 1fr 1fr;background:var(--green-dark)}
-.comp-head-cell{padding:18px 24px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.comp-head-cell:first-child{color:rgba(255,255,255,.5)}
-.comp-head-cell:nth-child(2){color:var(--gold-light);text-align:center}
-.comp-head-cell:nth-child(3){color:rgba(255,255,255,.4);text-align:center}
-.comp-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;border-bottom:1px solid var(--border)}
-.comp-row:last-child{border-bottom:none}
-.comp-row:nth-child(even){background:var(--cream-light)}
-.comp-cell{padding:18px 24px;font-size:.88rem;color:var(--text-mid)}
-.comp-cell:first-child{font-weight:600;color:var(--text-dark)}
-.comp-cell:nth-child(2),.comp-cell:nth-child(3){text-align:center}
-.check{color:var(--green-dark);font-size:1.1rem;font-weight:700}
-.cross{color:#ccc;font-size:1.1rem}
-.partial{color:var(--gold);font-size:.82rem;font-weight:600}
-
-/* Mobile comparison — card layout */
-.comp-cards{display:none;flex-direction:column;gap:12px;margin-top:40px}
-.comp-card{border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.comp-card-label{padding:14px 18px;font-size:.88rem;font-weight:600;color:var(--text-dark);background:var(--cream-light);border-bottom:1px solid var(--border)}
-.comp-card-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
-.comp-card-row:last-child{border-bottom:none}
-.comp-card-col{padding:12px 18px;display:flex;flex-direction:column;gap:4px}
-.comp-card-col:first-child{border-right:1px solid var(--border)}
-.comp-col-head{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
-.comp-col-head.us{color:var(--gold)}
-.comp-col-head.them{color:var(--text-light)}
+/* ── THE DIFFERENCE ── */
+.difference-section{padding:100px 56px;border-top:1px solid var(--border)}
+.difference-inner{max-width:1160px;margin:0 auto}
+.difference-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:12px}
+.diff-proposition{margin:40px 0 56px;max-width:800px}
+.diff-lead{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text-dark);line-height:1.75;margin-bottom:18px;font-style:italic}
+.diff-sub{font-size:.95rem;color:var(--text-mid);line-height:1.9}
+.diff-three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.diff-three-card{background:var(--cream-light);border:1px solid var(--border);border-radius:14px;padding:36px 28px;position:relative;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.diff-three-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green-dark),var(--green-mid));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.diff-three-card:hover::before{transform:scaleX(1)}
+.diff-three-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.09);transform:translateY(-4px)}
+.dtc-icon{width:48px;height:48px;border-radius:12px;background:var(--green-dark);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.dtc-icon svg{width:22px;height:22px;stroke:#fff;stroke-width:2}
+.diff-three-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:12px}
+.diff-three-card p{font-size:.9rem;color:var(--text-mid);line-height:1.8}
 
 
 
@@ -246,9 +231,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   .pcard-1{width:88%}
   .pcard-2{width:80%}
 
-  .comparison{padding:72px 28px}
-  .comp-table{display:none}
-  .comp-cards{display:flex}
+  .difference-section{padding:72px 28px}
+  .diff-three-grid{grid-template-columns:1fr}
 
 
 
@@ -289,8 +273,9 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   .pcard-1 h3{font-size:1.1rem}
   .pcard-2 h3{font-size:.95rem}
 
-  .comparison{padding:52px 20px}
-  .comparison-inner h2{font-size:1.65rem}
+  .difference-section{padding:52px 20px}
+  .diff-lead{font-size:1rem}
+  .diff-three-card{padding:26px 22px}
 
 
 
@@ -336,18 +321,20 @@ nav.scrolled .nav-logo{font-size:1rem}
 }
 .collab-card:hover::before{transform:scaleX(1)}
 .collab-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.09);transform:translateY(-4px)}
-.collab-avatar{
-  width:52px;height:52px;border-radius:12px;
-  background:var(--green-dark);color:#fff;
+.collab-avatar-home{
+  width:100%;height:280px;
+  overflow:hidden;margin-bottom:18px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
-  margin-bottom:18px;
+  background:none;border-radius:0;
 }
-.collab-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:5px}
-.collab-specialty{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.collab-bio{font-size:.875rem;color:var(--text-mid);line-height:1.8;flex:1}
-.collab-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
-.collab-tag{background:#fff;border:1px solid var(--border);color:var(--green-dark);font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.collab-avatar-home img{
+  width:100%;height:100%;object-fit:contain;display:block;
+}
+.collab-card-home h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:5px}
+.collab-card-home .specialty{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;min-height:1.1em;display:block}
+.collab-card-home p{font-size:.875rem;color:var(--text-mid);line-height:1.8;flex:1}
+.collab-card-home .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.collab-card-home .ctag{background:#fff;border:1px solid var(--border);color:var(--green-dark);font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
 .collab-li-btn{display:inline-flex;align-items:center;gap:7px;margin-top:16px;color:var(--green-dark);font-size:.82rem;font-weight:700;text-decoration:none;transition:color .2s}
 .collab-li-btn svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
 .collab-li-btn:hover{color:var(--gold)}
@@ -532,73 +519,42 @@ nav.scrolled .nav-logo{font-size:1rem}
   </div>
 </div>
 
-<!-- ── COMPARISON TABLE ── -->
-<div class="comparison">
-  <div class="comparison-inner">
+<!-- ── THE DIFFERENCE ── -->
+<div class="difference-section">
+  <div class="difference-inner">
     <div class="reveal">
-      <p class="section-label">How We Compare</p>
-      <h2>Value Talent Advisory vs. the Alternatives</h2>
+      <p class="section-label">What We Bring</p>
+      <h2>The Best of Large and Small</h2>
       <div class="rule-green"></div>
     </div>
-
-    <!-- Desktop table -->
-    <div class="comp-table reveal">
-      <div class="comp-head">
-        <div class="comp-head-cell">Capability</div>
-        <div class="comp-head-cell">Value Talent Advisory</div>
-        <div class="comp-head-cell">Typical Consultancy</div>
-      </div>
-      <div class="comp-row"><div class="comp-cell">Works directly with leadership teams</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Sometimes</span></div></div>
-      <div class="comp-row"><div class="comp-cell">Starts with a diagnostic before recommending</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
-      <div class="comp-row"><div class="comp-cell">Custom-scoped to your stage, industry &amp; context</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Rarely</span></div></div>
-      <div class="comp-row"><div class="comp-cell">Builds internal capability, not dependency</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
-      <div class="comp-row"><div class="comp-cell">Experience across startups, family businesses &amp; scale-ups</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="partial">Varies</span></div></div>
-      <div class="comp-row"><div class="comp-cell">Aligned to business outcomes</div><div class="comp-cell"><span class="check">✓</span></div><div class="comp-cell"><span class="cross">✗</span></div></div>
+    <div class="diff-proposition reveal">
+      <p class="diff-lead"><strong>Design. Execute. Deliver.</strong></p>
+      <p class="diff-lead">Value Talent Advisory was built around a rare combination: the ability to design bespoke talent solutions and execute them end-to-end.</p>
+      <p class="diff-sub">Most engagements stop at the framework. We don't. We blend personalised design with hands-on execution ensuring that what gets built actually gets used, embedded, and owned by the organisation.</p>
+      <p class="diff-sub">Our work carries the rigour and methodological standards of a large consulting firm, with the personal investment, speed, and contextual sensitivity of a specialist boutique.</p>
+      <p class="diff-sub">The result is talent systems that are practical, durable, and aligned to how your business actually operates.</p>
     </div>
-
-    <!-- Mobile card layout (replaces table) -->
-    <div class="comp-cards">
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Works directly with leadership teams</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Sometimes</span></div>
+    <div class="diff-three-grid">
+      <div class="diff-three-card reveal">
+        <div class="dtc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
+        <h3>Personalisation</h3>
+        <p>Every engagement is designed around your organisation your stage, your culture, your leadership realities.</p>
       </div>
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Starts with a diagnostic before recommending</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
+      <div class="diff-three-card reveal">
+        <div class="dtc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         </div>
+        <h3>End-to-End Execution</h3>
+        <p>We design and we deliver. From diagnosis through to implementation, we stay in the work ensuring frameworks are embedded.</p>
       </div>
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Custom-scoped to your stage, industry &amp; context</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Rarely</span></div>
+      <div class="diff-three-card reveal">
+        <div class="dtc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-      </div>
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Builds internal capability, not dependency</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
-        </div>
-      </div>
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Experience across startups, family businesses &amp; scale-ups</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="partial">Varies</span></div>
-        </div>
-      </div>
-      <div class="comp-card reveal">
-        <div class="comp-card-label">Aligned to business outcomes, not just HR deliverables</div>
-        <div class="comp-card-row">
-          <div class="comp-card-col"><span class="comp-col-head us">Value Talent Advisory</span><span class="check">✓</span></div>
-          <div class="comp-card-col"><span class="comp-col-head them">Typical Consultancy</span><span class="cross">✗</span></div>
-        </div>
+        <h3>Rigour at Every Step</h3>
+        <p>The depth of thinking, quality of design, and standards of delivery you would expect from a large consulting firm brought to every engagement, regardless of size.</p>
       </div>
     </div>
   </div>
@@ -653,7 +609,7 @@ nav.scrolled .nav-logo{font-size:1rem}
     <div class="collab-grid">
 
       <div class="collab-card reveal">
-        <img src="Vidya.png" alt="Vidya Muralidharan" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <img src="Vidya.png" alt="Vidya Muralidharan"/>
         <h3>Vidya Muralidharan</h3>
         <p class="collab-specialty">Coaching, Talent Management &amp; Leadership Development</p>
         <p class="collab-bio">Vidya is an OD consultant, ICF-certified life and executive coach, and seasoned leadership development facilitator. With 34+ years of experience across top Indian corporates, she has led HR, L&amp;D, OD, and talent transformation roles across diverse industries. Vidya has coached over 1,800 leaders globally, bringing a blend of NLP, positive psychology, and deep organisational insight.</p>
@@ -669,7 +625,7 @@ nav.scrolled .nav-logo{font-size:1rem}
       </div>
 
       <div class="collab-card reveal">
-        <img src="Ganesh.png" alt="Ganesh Chella" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <img src="Ganesh.png" alt="Ganesh Chella"/>
         <h3>Ganesh Chella</h3>
         <p class="collab-specialty">Coaching &amp; Leadership Development</p>
         <p class="collab-bio">Ganesh is Co-founder &amp; Chief Solution Architect of CFI, working closely with clients to shape leadership development solutions that deliver sustainable results. A seasoned HR consultant with over four decades of experience, he has authored four books and supported over 200 organisations as the founder of Totus Consulting.</p>
@@ -685,7 +641,7 @@ nav.scrolled .nav-logo{font-size:1rem}
       </div>
 
       <div class="collab-card reveal">
-        <img src="Deeksha.png" alt="Deeksha Khera" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <img src="Deeksha.png" alt="Deeksha Khera"/>
         <h3>Deeksha Khera</h3>
         <p class="collab-specialty">Diversity, Equity &amp; Inclusion</p>
         <p class="collab-bio">Deeksha is a seasoned leadership facilitator and coach with over two decades of experience, specialising in DEI, inclusive leadership, unconscious bias, cross-cultural sensitivity, and intergenerational diversity. An ICF-accredited Leadership Coach (ACC) and NLP Practitioner with deep experience at Accenture, LinkedIn, Aon, and Jombay.</p>

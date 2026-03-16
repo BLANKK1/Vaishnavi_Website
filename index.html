@@ -274,14 +274,16 @@ nav{
 .collab-card-home:hover::before{transform:scaleX(1)}
 .collab-card-home:hover{box-shadow:0 16px 48px rgba(0,0,0,.09);transform:translateY(-4px)}
 .collab-avatar-home{
-  width:52px;height:52px;border-radius:12px;
-  background:var(--green-dark);color:#fff;
+  width:100%;height:280px;
+  overflow:hidden;margin-bottom:18px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
-  margin-bottom:18px;
+  background:none;border-radius:0;
+}
+.collab-avatar-home img{
+  width:100%;height:100%;object-fit:contain;display:block;
 }
 .collab-card-home h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:5px}
-.collab-card-home .specialty{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.collab-card-home .specialty{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;min-height:1.1em;display:block}
 .collab-card-home p{font-size:.875rem;color:var(--text-mid);line-height:1.8;flex:1}
 .collab-card-home .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
 .collab-card-home .ctag{background:#fff;border:1px solid var(--border);color:var(--green-dark);font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
@@ -420,7 +422,7 @@ footer{
     scroll-snap-align:start;
     padding:24px 20px;
   }
-  .collab-avatar-home{width:44px;height:44px;font-size:1.1rem;margin-bottom:14px}
+  .collab-avatar-home{height:220px;margin-bottom:14px}
   .collab-card-home h3{font-size:.95rem}
   .collab-card-home p{font-size:.82rem}
   .collab-card-home .ctag{font-size:.63rem}
@@ -535,7 +537,7 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
     <div class="cases-grid">
       <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
-        <div class="case-thumb c1">Design &amp; Engineering Firm</div>
+        <div class="case-thumb c1">Fast Growing Media Company</div>
         <div class="case-body">
           <p class="case-tag">Organisational Systems</p>
           <h3>Designing a Scalable Job Architecture for a Growing Design &amp; Engineering Firm</h3>
@@ -611,7 +613,7 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
     <div class="collab-grid-home">
       <div class="collab-card-home reveal">
-        <img src="Vidya.png" alt="Vidya Muralidharan" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <div class="collab-avatar-home"><img src="Vidya.png" alt="Vidya Muralidharan"/></div>
         <h3>Vidya Muralidharan</h3>
         <p class="specialty">Coaching, Talent Management &amp; Leadership Development</p>
         <p>An OD consultant, ICF-certified executive coach, and leadership development facilitator with 34+ years of experience. Vidya has coached over 1,800 leaders globally, bringing NLP, positive psychology, and deep organisational insight to every engagement.</p>
@@ -626,7 +628,7 @@ nav.scrolled .nav-logo{font-size:1rem}
         </a>
       </div>
       <div class="collab-card-home reveal">
-        <img src="Ganesh.png" alt="Ganesh Chella" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <div class="collab-avatar-home"><img src="Ganesh.png" alt="Ganesh Chella"/></div>
         <h3>Ganesh Chella</h3>
         <p class="specialty">Coaching &amp; Leadership Development</p>
         <p>Co-founder &amp; Chief Solution Architect of CFI and founder of Totus Consulting. With over four decades as a trusted HR advisor, Ganesh has authored four books and supported more than 200 organisations on leadership development and coaching.</p>
@@ -641,7 +643,7 @@ nav.scrolled .nav-logo{font-size:1rem}
         </a>
       </div>
       <div class="collab-card-home reveal">
-        <img src="Deeksha.png" alt="Deeksha Khera" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+        <div class="collab-avatar-home"><img src="Deeksha.png" alt="Deeksha Khera"/></div>
         <h3>Deeksha Khera</h3>
         <p class="specialty">Diversity, Equity &amp; Inclusion</p>
         <p>A seasoned facilitator and ICF-accredited coach with 20+ years specialising in DEI, inclusive leadership, and unconscious bias. Former roles at Accenture, LinkedIn, Aon, and Jombay give her a rare blend of corporate depth and coaching insight.</p>

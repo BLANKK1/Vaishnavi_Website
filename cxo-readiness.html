@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Assessing CXO Readiness — Value Talent Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1a3a2a;--green-mid:#2d5a3d;--green-btn:#2b4f38;
+  --cream:#f5f0e0;--cream-light:#faf7ef;
+  --gold:#a07c3a;--gold-light:#c4a052;
+  --text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#777;--border:#e2ddd0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;transition:height .3s,box-shadow .3s}
+nav.scrolled{height:56px!important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green-dark);font-weight:600}
+.btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:all .2s}
+.btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;padding:6px;border-radius:8px;transition:background .2s}
+.nav-hamburger:hover{background:var(--cream)}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--green-dark);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);z-index:199;flex-direction:column;padding:32px 28px 40px;overflow-y:auto;transform:translateY(-12px);opacity:0;transition:transform .3s ease,opacity .3s ease}
+.mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.mobile-menu ul li a{display:block;padding:14px 12px;font-size:1.05rem;font-weight:600;color:var(--text-dark);text-decoration:none;border-radius:8px;transition:background .2s,color .2s;border-bottom:1px solid var(--border)}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{background:var(--cream);color:var(--green-dark)}
+.mobile-menu-cta button{width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;padding:15px 24px;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:background .2s}
+.mobile-menu-cta button:hover{background:var(--green-dark)}
+
+.cs-hero{background:linear-gradient(135deg,#1a2a3a,#2a4a6b);padding:96px 56px;position:relative;overflow:hidden}
+.cs-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%)}
+.cs-hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:.78rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-bottom:24px}
+.breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:#fff}
+.breadcrumb span{color:rgba(255,255,255,.3)}
+.cs-tag{display:inline-block;background:rgba(196,160,82,.2);border:1px solid rgba(196,160,82,.35);color:var(--gold-light);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.cs-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.15;max-width:780px;margin-bottom:28px;animation:fadeUp .8s ease both}
+.cs-hero-meta{display:flex;gap:32px;flex-wrap:wrap;animation:fadeUp .8s .15s ease both}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.meta-value{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:600}
+
+.cs-body{max-width:1160px;margin:0 auto;padding:80px 56px;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:start}
+.cs-content h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-bottom:16px;margin-top:48px}
+.cs-content h2:first-child{margin-top:0}
+.cs-content p{font-size:.95rem;color:var(--text-mid);line-height:1.9;margin-bottom:16px}
+.cs-content ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.cs-content ul li{display:flex;align-items:flex-start;gap:12px;font-size:.93rem;color:var(--text-mid);line-height:1.6}
+.cs-content ul li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green-dark);flex-shrink:0;margin-top:7px}
+.pull-quote{border-left:4px solid var(--gold);padding:20px 24px;background:var(--cream-light);border-radius:0 10px 10px 0;margin:36px 0}
+.pull-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--text-dark);line-height:1.65}
+
+.cs-sidebar{position:sticky;top:90px;display:flex;flex-direction:column;gap:24px}
+.sidebar-card{background:var(--cream-light);border:1px solid var(--border);border-radius:14px;padding:28px}
+.sidebar-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.outcome-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.outcome-item:last-child{margin-bottom:0}
+.outcome-check{width:22px;height:22px;border-radius:50%;background:var(--green-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.outcome-check svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:3}
+.outcome-item p{font-size:.85rem;color:var(--text-mid);line-height:1.55}
+.sidebar-detail{display:flex;flex-direction:column;gap:14px}
+.sd-row{display:flex;flex-direction:column;gap:3px}
+.sd-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.sd-value{font-size:.88rem;color:var(--text-dark);font-weight:600}
+.btn-cta{display:block;background:var(--green-btn);color:#fff;border:none;border-radius:8px;padding:14px 24px;font-size:.88rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:all .2s;text-align:center;text-decoration:none;margin-top:8px}
+.btn-cta:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,58,42,.2)}
+
+.next-cases{background:var(--cream-light);padding:80px 56px;border-top:1px solid var(--border)}
+.next-cases-inner{max-width:1160px;margin:0 auto}
+.next-cases h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:36px}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.next-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s;text-decoration:none;display:block}
+.next-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
+.next-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center;padding:16px}
+.nt-1{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
+.nt-2{background:linear-gradient(135deg,#2a1a3a,#5a2a6b)}
+.next-body{padding:20px}
+.next-tag{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.next-body h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);line-height:1.35}
+
+.cta-strip{background:linear-gradient(135deg,var(--green-dark) 0%,#1f4a32 100%);padding:80px 56px;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(196,160,82,.1) 0%,transparent 65%)}
+.cta-strip h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:14px;position:relative}
+.cta-strip p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:460px;margin:0 auto 28px;line-height:1.85;position:relative}
+.btn-gold{background:var(--gold);color:#fff;border:none;border-radius:6px;padding:14px 36px;font-size:.92rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.03em;transition:all .2s;position:relative}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1rem}
+.footer-copy{font-size:.76rem}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:960px){
+  nav{padding:0 28px}.nav-links,.btn-nav{display:none}.nav-hamburger{display:flex}
+  .cs-hero{padding:72px 28px}.cs-body{grid-template-columns:1fr;gap:48px;padding:56px 28px}
+  .cs-sidebar{position:static}.next-cases{padding:64px 28px}.cta-strip{padding:64px 28px}
+  footer{padding:36px 28px;flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  nav{padding:0 20px;height:60px}.mobile-menu{top:60px}
+  .cs-hero{padding:56px 20px}.cs-hero h1{font-size:clamp(1.7rem,7vw,2.2rem)}
+  .cs-body{padding:40px 20px}.cs-content h2{font-size:1.35rem}
+  .next-cases{padding:48px 20px}.next-grid{grid-template-columns:1fr}
+  .cta-strip{padding:52px 20px}.cta-strip h2{font-size:1.6rem}
+  .btn-gold{width:100%;padding:14px 24px}
+  footer{padding:28px 20px;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Value Talent Advisory</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="case-studies.html" class="active">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
+    <li><a href="case-studies.html" class="active" onclick="closeMobileMenu()">Case Studies</a></li>
+    <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <button onclick="window.location.href='contact.html';closeMobileMenu()">Get in Touch</button>
+  </div>
+</div>
+
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="case-studies.html">Case Studies</a> <span>/</span> CXO Readiness</p>
+    <span class="cs-tag">Leadership Pipeline</span>
+    <h1>Assessing CXO Readiness for a Leading Financial Services Firm</h1>
+    <div class="cs-hero-meta">
+      <div class="meta-item"><span class="meta-label">Industry</span><span class="meta-value">Financial Services</span></div>
+      <div class="meta-item"><span class="meta-label">Focus Area</span><span class="meta-value">Leadership Pipeline</span></div>
+      <div class="meta-item"><span class="meta-label">Stakeholder</span><span class="meta-value">Board &amp; Senior Leadership</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-body">
+  <div class="cs-content reveal">
+
+    <h2>Context</h2>
+    <p>A leading financial services firm was preparing for its next phase of growth and needed clarity on the leadership capabilities required for future CXO roles. The organisation sought a structured approach to identify and develop leaders who could take on strategic responsibilities at the highest level.</p>
+
+    <h2>Approach</h2>
+    <p>Designed future-focused success profiles for business-critical leadership roles aligned with the firm's strategic priorities. Built and conducted a bespoke Assessment Centre to evaluate internal leaders against these profiles and assess their readiness for CXO positions.</p>
+
+    <h2>Impact on Business</h2>
+    <p>Provided the board with clear, evidence-based insights on the leadership pipeline and CXO readiness across the organisation. The findings informed succession planning and leadership development priorities, strengthening the firm's ability to build a future-ready executive team.</p>
+
+  </div>
+
+  <div class="cs-sidebar">
+    <div class="sidebar-card reveal">
+      <h3>Key Outcomes</h3>
+      <div class="outcome-item">
+        <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>Evidence-based insights delivered to the board, informing succession planning</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>Bespoke success profiles built for each CXO role</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>Individual development plans delivered for each leader assessed</p>
+      </div>
+    </div>
+    <div class="sidebar-card reveal">
+      <h3>Engagement Details</h3>
+      <div class="sidebar-detail">
+        <div class="sd-row"><span class="sd-label">Focus Area</span><span class="sd-value">Leadership Pipeline</span></div>
+        <div class="sd-row"><span class="sd-label">Type of Work</span><span class="sd-value">Assessment Centre, Succession Planning</span></div>
+        <div class="sd-row"><span class="sd-label">Sector</span><span class="sd-value">Financial Services</span></div>
+      </div>
+    </div>
+    <a href="contact.html" class="btn-cta">Discuss a Similar Challenge</a>
+  </div>
+</div>
+
+<div class="next-cases">
+  <div class="next-cases-inner">
+    <h2>More Case Studies</h2>
+    <div class="next-grid">
+      <a href="case-study-job-architecture.html" class="next-card">
+        <div class="next-thumb nt-1">Fast-Growing Media Company</div>
+        <div class="next-body">
+          <p class="next-tag">Organisational Systems</p>
+          <h3>Designing a Scalable Job Architecture for a Fast-Growing Media Company</h3>
+        </div>
+      </a>
+      <a href="case-study-cultural-pillars.html" class="next-card">
+        <div class="next-thumb nt-2">Leading Pharmaceutical Company</div>
+        <div class="next-body">
+          <p class="next-tag">Culture &amp; Values</p>
+          <h3>Articulating Cultural Pillars for a Leading Pharmaceutical Company</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <h2>Facing a Similar Challenge?</h2>
+  <p>A 30-minute discovery call is often all it takes to identify the highest-leverage opportunity in your organisation.</p>
+  <button class="btn-gold" onclick="window.location.href='contact.html'">Book a Discovery Call</button>
+</div>
+
+<footer>
+  <span class="footer-logo">Value Talent Advisory</span>
+  <span class="footer-copy">© 2026 Value Talent Advisory. All rights reserved.</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{mobileMenu.classList.contains('open')?closeMobileMenu():openMobileMenu()});
+function openMobileMenu(){mobileMenu.classList.add('open');hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+function closeMobileMenu(){mobileMenu.classList.remove('open');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+document.addEventListener('click',(e)=>{if(mobileMenu.classList.contains('open')&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))closeMobileMenu()});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()});
+(function(){var nav=document.querySelector('nav');if(!nav)return;function onScroll(){nav.classList.toggle('scrolled',window.scrollY>60)}if(!nav.dataset.shrinkBound){window.addEventListener('scroll',onScroll,{passive:true});nav.dataset.shrinkBound='1';onScroll()}})();
+</script>
+</body>
+</html>
