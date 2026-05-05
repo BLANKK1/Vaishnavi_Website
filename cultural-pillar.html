@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Articulating Cultural Pillars — Value Talent Advisory</title>
+<link rel="icon" type="image/png" href="/Images/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -39,9 +40,10 @@ nav.scrolled{height:56px!important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .mobile-menu-cta button{width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;padding:15px 24px;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:background .2s}
 .mobile-menu-cta button:hover{background:var(--green-dark)}
 
-.cs-hero{background:linear-gradient(135deg,#2a1a3a,#5a2d5a);padding:96px 56px;position:relative;overflow:hidden}
-.cs-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%)}
-.cs-hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
+.cs-hero{padding:96px 56px;position:relative;overflow:hidden;background-image:var(--hero-img,none);background-size:cover;background-position:center}
+.cs-hero::after{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#2a1a3a,#5a2d5a);opacity:.82;transition:opacity .35s ease}
+.cs-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 65%);z-index:1}
+.cs-hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:2}
 .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.4);letter-spacing:.05em;margin-bottom:24px}
 .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
 .breadcrumb a:hover{color:#fff}
@@ -84,9 +86,12 @@ nav.scrolled{height:56px!important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .next-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .next-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s;text-decoration:none;display:block}
 .next-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-.next-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center;padding:16px}
-.nt-1{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
-.nt-2{background:linear-gradient(135deg,#1a2a3a,#2a4a6b)}
+.next-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);text-align:center;padding:16px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-image:var(--thumb-img,none)}
+.next-thumb::after{content:'';position:absolute;inset:0;z-index:0;opacity:.75;transition:opacity .3s ease}
+.next-card:hover .next-thumb::after{opacity:.52}
+.next-thumb span{position:relative;z-index:1}
+.nt-1::after{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
+.nt-2::after{background:linear-gradient(135deg,#1a2a3a,#2a4a6b)}
 .next-body{padding:20px}
 .next-tag{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .next-body h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);line-height:1.35}
@@ -122,14 +127,51 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   footer{padding:28px 20px;gap:12px}
 }
 </style>
+
+  <!-- ═══ SEO META TAGS ═══ -->
+  <meta name="description" content="How Value Talent Advisory helped a leading Indian pharmaceutical company define and embed its cultural pillars — aligning leadership behaviours, hiring practices, and people processes with long-term growth."/>
+  <meta name="keywords" content="Employee Engagement, Performance Management, Job Evaluation, Talent Advisory, HR Consulting, Talent Advisory Firm, People Strategy, HR Advisory, Leadership Consulting, Org Design, Succession Planning, Talent Management, Organisational Design, Leadership Development, People Consulting, Culture Consulting, Cultural Pillars"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Value Talent Advisory"/>
+  <link rel="canonical" href="https://valuetalentadvisory.com/cultural-pillar"/>
+ 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Value Talent Advisory"/>
+  <meta property="og:title" content="Cultural Pillars Case Study | Value Talent Advisory"/>
+  <meta property="og:description" content="Articulating and embedding cultural pillars for a leading Indian pharma company. An HR advisory case study by Value Talent Advisory."/>
+  <meta property="og:url" content="https://valuetalentadvisory.com/cultural-pillar"/>
+  <meta property="og:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+ 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Cultural Pillars Case Study | Value Talent Advisory"/>
+  <meta name="twitter:description" content="Articulating and embedding cultural pillars for a leading Indian pharma company. An HR advisory case study by Value Talent Advisory."/>
+  <meta name="twitter:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+
+  <!-- ═══════════════════════ -->
+ 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Articulating Cultural Pillars for a Leading Pharmaceutical Company",
+  "author": { "@type": "Organization", "name": "Value Talent Advisory" },
+  "publisher": { "@type": "Organization", "name": "Value Talent Advisory", "url": "https://valuetalentadvisory.com" },
+  "url": "https://valuetalentadvisory.com/cultural-pillar",
+  "description": "A culture and HR advisory case study on defining and activating cultural pillars for a leading Indian pharmaceutical company."
+}
+</script>
+
 </head>
-<body>
+<body class = "cultural-pillar-page">
 
 <nav>
   <a href="index.html" class="nav-logo">Value Talent Advisory</a>
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="services.html">Services</a></li>
+    <li><a href="product.html">Product</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="case-studies.html" class="active">Case Studies</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -144,6 +186,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   <ul>
     <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
     <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="product.html" onclick="closeMobileMenu()">Product</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="case-studies.html" class="active" onclick="closeMobileMenu()">Case Studies</a></li>
     <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
@@ -153,7 +196,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   </div>
 </div>
 
-<div class="cs-hero">
+<div class="cs-hero" style="--hero-img: url('/Images/case-study-card-2.png')">
   <div class="cs-hero-inner">
     <p class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="case-studies.html">Case Studies</a> <span>/</span> Cultural Pillars</p>
     <span class="cs-tag">Culture &amp; Values</span>
@@ -212,15 +255,15 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   <div class="next-cases-inner">
     <h2>More Case Studies</h2>
     <div class="next-grid">
-      <a href="case-study-job-architecture.html" class="next-card">
-        <div class="next-thumb nt-1">Fast-Growing Media Company</div>
+      <a href="Job-Arch.html" class="next-card">
+        <div class="next-thumb nt-1" style="--thumb-img: url('/Images/case-study-card-1.png')"><span>Fast-Growing Media Company</span></div>
         <div class="next-body">
           <p class="next-tag">Organisational Systems</p>
           <h3>Designing a Scalable Job Architecture for a Fast-Growing Media Company</h3>
         </div>
       </a>
-      <a href="case-study-cxo-readiness.html" class="next-card">
-        <div class="next-thumb nt-2">Leading Financial Services Firm</div>
+      <a href="cxo-readiness.html" class="next-card">
+        <div class="next-thumb nt-2" style="--thumb-img: url('/Images/case-study-card-3.png')"><span>Leading Financial Services Firm</span></div>
         <div class="next-body">
           <p class="next-tag">Leadership Pipeline</p>
           <h3>Assessing CXO Readiness for a Financial Services Firm</h3>

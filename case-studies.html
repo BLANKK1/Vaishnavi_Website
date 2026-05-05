@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Case Studies - Value Talent Advisory</title>
+<link rel="icon" type="image/png" href="/Images/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -107,16 +108,42 @@ nav.scrolled{height:58px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
   transition:box-shadow .3s,transform .3s;
 }
 .case-featured:hover{box-shadow:0 20px 56px rgba(0,0,0,.1);transform:translateY(-4px)}
+
 .feat-visual{
-  background:linear-gradient(135deg,#1a3a2a,#2d5a3d);
   min-height:360px;display:flex;flex-direction:column;
   align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden;
   text-align:center;
+
+  /* Background image */
+  background-image:var(--feat-img, none);
+  background-size:cover;
+  background-position:center;
 }
-.feat-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(196,160,82,.1)}
-.feat-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
-.feat-title{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#fff;line-height:1.25;position:relative;z-index:1}
-.feat-context{display:inline-block;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;position:relative;z-index:1}
+
+/* Gradient overlay replaces the old solid background */
+.feat-visual::after{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,#1a3a2a,#2d5a3d);
+  opacity:0.78; /* ← tune this: lower = more photo shows through */
+  transition:opacity .35s ease;
+}
+.case-featured:hover .feat-visual::after{opacity:0.58;}
+
+/* Decorative bubble — keep it above the overlay */
+.feat-visual::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:300px;height:300px;border-radius:50%;
+  background:rgba(196,160,82,.1);
+  z-index:1;
+}
+
+/* All text content must sit above both pseudo-elements */
+.feat-eyebrow,.feat-title,.feat-context{position:relative;z-index:2;}
+
+.feat-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px;text-align:center;width:100%}
+.feat-title{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#fff;line-height:1.25;text-align:center;width:100%}
+.feat-context{display:inline-flex;align-self:center;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+
 .feat-body{padding:44px;background:#fff;display:flex;flex-direction:column;justify-content:center}
 .feat-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .feat-body h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:14px;line-height:1.3;color:var(--text-dark)}
@@ -128,19 +155,59 @@ nav.scrolled{height:58px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
 .feat-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;transition:transform .2s}
 .feat-link:hover{color:var(--gold);gap:12px}
 .feat-link:hover svg{transform:translateX(4px)}
-
 /* ── CARDS GRID ── */
 .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .case-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
 .case-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.1);transform:translateY(-4px)}
-.case-thumb{height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);text-align:center}
-.case-thumb::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
-.ct-1{background:linear-gradient(135deg,#1a3a2a,#2d5a3d)}
-.ct-2{background:linear-gradient(135deg,#3a2a1a,#6b4a2a)}
-.ct-3{background:linear-gradient(135deg,#1a2a3a,#2a4a6b)}
-.ct-4{background:linear-gradient(135deg,#2a1a3a,#5a2a6b)}
-.ct-5{background:linear-gradient(135deg,#1a3a35,#2a6b5a)}
-.ct-6{background:linear-gradient(135deg,#3a3a1a,#6b6b2a)}
+.case-card:hover .case-thumb::after {
+  opacity: 0.5;
+}
+.case-thumb {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .85);
+  text-align: center;
+
+  /* Background image layer */
+  background-image: var(--thumb-img, none);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradient overlay sits on top of the image */
+.case-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.72; /* ← controls transparency: lower = more image visible */
+  transition: opacity .3s ease;
+}
+
+/* Text sits above the overlay */
+.case-thumb > * ,
+.case-thumb {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep your gradient colors — now used as the overlay */
+.ct-1::after { background: linear-gradient(135deg, #1a3a2a, #2d5a3d); }
+.ct-2::after { background: linear-gradient(135deg, #3a2a1a, #6b4a2a); }
+.ct-3::after { background: linear-gradient(135deg, #1a2a3a, #2a4a6b); }
+.ct-4::after { background: linear-gradient(135deg, #2a1a3a, #5a2a6b); }
+.ct-5::after { background: linear-gradient(135deg, #1a3a35, #2a6b5a); }
+.ct-6::after { background: linear-gradient(135deg, #3a3a1a, #6b6b2a); }
 .case-body{padding:24px;flex:1;display:flex;flex-direction:column}
 .case-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .case-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.35;color:var(--text-dark)}
@@ -227,8 +294,9 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.55);padding:44px 56p
   nav{padding:0 20px;height:60px}
   nav.scrolled{height:52px}
   .mobile-menu{top:60px}
-  .filter-bar{padding:0;top:60px}
-  .filter-btn{padding:16px 16px;font-size:.72rem}
+  .filter-bar{padding:0 4px;top:60px}
+  .filter-bar-inner{justify-content:flex-start}
+  .filter-btn{padding:16px 14px;font-size:.72rem;letter-spacing:.04em}
 
   .page-hero{padding:60px 20px 48px}
   .page-hero h1{font-size:clamp(1.85rem,8vw,2.5rem)}
@@ -279,14 +347,39 @@ nav.scrolled .nav-logo{font-size:1rem}
 .ripple-host.ripple-dark .ripple-circle{background:rgba(26,58,42,.12)}
 
 </style>
+
+<!-- ═══ SEO META TAGS ═══ -->
+  <meta name="description" content="Real engagements, real outcomes. See how Value Talent Advisory has helped organisations with job architecture, CXO readiness assessment, cultural pillar development, and talent strategy worldwide."/>
+  <meta name="keywords" content="Employee Engagement, Performance Management, Job Evaluation, Talent Advisory, HR Consulting, Talent Advisory Firm, People Strategy, HR Advisory, Leadership Consulting, Org Design, Succession Planning, Talent Management, Organisational Design, Leadership Development, People Consulting, Culture Consulting, Hr case studies"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Value Talent Advisory"/>
+  <link rel="canonical" href="https://valuetalentadvisory.com/case-studies"/>
+ 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Value Talent Advisory"/>
+  <meta property="og:title" content="Case Studies | Value Talent Advisory"/>
+  <meta property="og:description" content="How Value Talent Advisory has helped growth-stage companies tackle job architecture, leadership readiness, culture, and talent strategy. Real organisations, real results."/>
+  <meta property="og:url" content="https://valuetalentadvisory.com/case-studies"/>
+  <meta property="og:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+ 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Case Studies | Value Talent Advisory"/>
+  <meta name="twitter:description" content="How Value Talent Advisory has helped growth-stage companies tackle job architecture, leadership readiness, culture, and talent strategy. Real organisations, real results."/>
+  <meta name="twitter:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+  
+  <!-- ═══════════════════════ -->
+
 </head>
-<body>
+<body class = "case-study-page">
 
 <nav id="mainNav">
   <a href="index.html" class="nav-logo">Value Talent Advisory</a>
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="services.html">Services</a></li>
+    <li><a href="product.html">Product</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="case-studies.html" class="active">Case Studies</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -302,6 +395,7 @@ nav.scrolled .nav-logo{font-size:1rem}
   <ul>
     <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
     <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="product.html" onclick="closeMobileMenu()">Product</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="case-studies.html" class="active" onclick="closeMobileMenu()">Case Studies</a></li>
     <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
@@ -334,7 +428,7 @@ nav.scrolled .nav-logo{font-size:1rem}
 <div class="cases-section">
 
   <!-- FEATURED -->
-  <div class="case-featured reveal" data-cat="org" onclick="window.location.href='Job-Arch.html'">
+  <div class="case-featured reveal" data-cat="org" onclick="window.location.href='Job-Arch.html'" style="--feat-img: url('/Images/case-study-card-1.png')">
     <div class="feat-visual">
       <span class="feat-eyebrow">Fast Growing Media Company</span>
       <p class="feat-title">Designing a Scalable Job Architecture for a Fast Growing Media Company</p>
@@ -359,7 +453,7 @@ nav.scrolled .nav-logo{font-size:1rem}
   <div class="cases-grid" id="casesGrid">
 
     <div class="case-card reveal" data-cat="culture" onclick="window.location.href='cultural-pillar.html'">
-      <div class="case-thumb ct-4">Leading Pharmaceutical Company</div>
+      <div class="case-thumb ct-4" style="--thumb-img: url('/Images/case-study-card-2.png')">Leading Pharmaceutical Company</div>
       <div class="case-body">
         <p class="case-tag">Culture &amp; Values</p>
         <h3>Articulating Cultural Pillars for a Leading Pharmaceutical Company</h3>
@@ -369,7 +463,8 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
 
     <div class="case-card reveal" data-cat="pipeline" onclick="window.location.href='cxo-readiness.html'">
-      <div class="case-thumb ct-3">Leading Financial Services Firm</div>
+      <div class="case-thumb ct-3" style="--thumb-img: url('/Images/case-study-card-3.png')">
+  Leading Financial Services Firm</div>
       <div class="case-body">
         <p class="case-tag">Leadership Pipeline</p>
         <h3>Assessing CXO Readiness for a Financial Services Firm</h3>
@@ -492,11 +587,15 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeMobileMenu()}
 /* ── NAV SHRINK ON SCROLL ── */
 (function(){
   var nav = document.querySelector('nav');
+  var filterBar = document.querySelector('.filter-bar');
   if(!nav) return;
   function onScroll(){
     nav.classList.toggle('scrolled', window.scrollY > 60);
+    // Keep filter bar flush under nav — no gap
+    if(filterBar){
+      filterBar.style.top = nav.offsetHeight + 'px';
+    }
   }
-  // avoid duplicate listener if page already has one
   if(!nav.dataset.shrinkBound){
     window.addEventListener('scroll', onScroll, {passive:true});
     nav.dataset.shrinkBound = '1';

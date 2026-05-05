@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Built To Scale | Talent-Led Growth Readiness Diagnostic | Value Talent Advisory</title>
+<link rel="icon" type="image/png" href="/Images/favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══ SEO META TAGS ═══ -->
+<meta name="description" content="Built To Scale is a 6-week talent-led growth readiness diagnostic by Value Talent Advisory. Identify and prioritise talent challenges holding your organisation back from scaling."/>
+<meta name="keywords" content="talent diagnostic, growth readiness, talent advisory, HR consulting, organisational diagnostic, people strategy, leadership readiness, scaling organisations, talent-led growth, Built To Scale"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Value Talent Advisory"/>
+<link rel="canonical" href="https://valuetalentadvisory.com/built-to-scale"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Value Talent Advisory"/>
+<meta property="og:title" content="Built To Scale | Talent-Led Growth Readiness Diagnostic"/>
+<meta property="og:description" content="A 6-week clarity intervention that helps you avoid months of misdirected effort. Identify, name, and prioritise the talent challenges holding your organisation back."/>
+<meta property="og:url" content="https://valuetalentadvisory.com/built-to-scale"/>
+<meta property="og:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Built To Scale | Value Talent Advisory"/>
+<meta name="twitter:description" content="A 6-week talent-led growth readiness diagnostic. Clarity on where your organisation stands — and what to do next."/>
+<meta name="twitter:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+<!-- ═══════════════════════ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Built To Scale",
+  "description": "A 6-week talent-led growth readiness diagnostic that helps organisations identify, name, and prioritise talent-related growth challenges.",
+  "brand": { "@type": "Organization", "name": "Value Talent Advisory", "url": "https://valuetalentadvisory.com" },
+  "url": "https://valuetalentadvisory.com/built-to-scale",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/LimitedAvailability", "priceCurrency": "INR" }
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1a3a2a;--green-mid:#2d5a3d;--green-btn:#2b4f38;
+  --cream:#f5f0e0;--cream-light:#faf7ef;
+  --gold:#a07c3a;--gold-light:#c4a052;
+  --text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#777;--border:#e2ddd0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:#fff;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;transition:height .3s,padding .3s;
+}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--green-dark);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:400;color:var(--text-mid);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green-dark);font-weight:600}
+.btn-nav{background:var(--green-btn);color:#fff;border:none;border-radius:6px;padding:11px 24px;font-size:.875rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;letter-spacing:.02em;transition:background .2s,transform .15s}
+.btn-nav:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* ── HAMBURGER ── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;cursor:pointer;
+  background:none;border:none;padding:6px;border-radius:8px;transition:background .2s;
+}
+.nav-hamburger:hover{background:var(--cream)}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--green-dark);border-radius:2px;transition:transform .3s ease, opacity .3s ease;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);
+  z-index:199;flex-direction:column;padding:32px 28px 40px;overflow-y:auto;
+  transform:translateY(-12px);opacity:0;transition:transform .3s ease, opacity .3s ease;
+}
+.mobile-menu.open{display:flex;transform:translateY(0);opacity:1}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.mobile-menu ul li a{
+  display:block;padding:14px 12px;font-size:1.05rem;font-weight:600;color:var(--text-dark);
+  text-decoration:none;border-radius:8px;letter-spacing:0.01em;transition:background .2s,color .2s;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu ul li:last-child a{border-bottom:none}
+.mobile-menu ul li a:hover,.mobile-menu ul li a.active{background:var(--cream);color:var(--green-dark)}
+.mobile-menu-cta button{
+  width:100%;background:var(--green-btn);color:#fff;border:none;border-radius:8px;
+  padding:15px 24px;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;
+  letter-spacing:0.02em;transition:background .2s;
+}
+.mobile-menu-cta button:hover{background:var(--green-dark)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── HERO ── */
+.bts-hero{
+  background:var(--green-dark);
+  min-height:86vh;display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.bts-hero::before{
+  content:'';position:absolute;top:-120px;right:-120px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,160,82,.15) 0%,transparent 65%);
+  pointer-events:none;
+}
+.bts-hero::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-left{
+  padding:100px 64px;display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;
+}
+.hero-breadcrumb{font-size:.78rem;color:rgba(255,255,255,.45);letter-spacing:.05em;margin-bottom:32px}
+.hero-breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+.hero-breadcrumb a:hover{color:#fff}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:20px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:2px;background:var(--gold-light)}
+.hero-left h1{
+  font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.5vw,4.2rem);
+  font-weight:900;line-height:1.05;color:#fff;margin-bottom:24px;
+  animation:fadeUp .8s ease both;
+}
+.hero-left h1 em{font-style:italic;color:var(--gold-light)}
+.hero-tagline{
+  font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.8;
+  max-width:440px;margin-bottom:40px;
+  animation:fadeUp .8s .15s ease both;
+}
+.hero-quote{
+  border-left:3px solid var(--gold);padding-left:20px;
+  font-size:.92rem;font-style:italic;color:rgba(255,255,255,.6);
+  line-height:1.7;max-width:400px;margin-bottom:44px;
+}
+.hero-cta-group{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .3s ease both}
+.btn-primary{
+  background:var(--gold);color:#fff;border:none;border-radius:7px;
+  padding:14px 30px;font-size:.9rem;font-weight:700;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:.04em;transition:background .2s,transform .15s;
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{
+  background:transparent;color:rgba(255,255,255,.8);
+  border:1.5px solid rgba(255,255,255,.3);border-radius:7px;
+  padding:14px 30px;font-size:.9rem;font-weight:600;font-family:'Lato',sans-serif;
+  cursor:pointer;letter-spacing:.04em;transition:all .2s;
+}
+.btn-outline:hover{border-color:rgba(255,255,255,.7);color:#fff}
+
+/* Hero right — stat cards */
+.hero-right{
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  padding:100px 64px 100px 24px;gap:20px;position:relative;z-index:1;
+}
+.hero-stat-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:28px 32px;width:100%;max-width:340px;
+  backdrop-filter:blur(8px);transition:background .2s,transform .2s;
+}
+.hero-stat-card:hover{background:rgba(255,255,255,.1);transform:translateX(4px)}
+.stat-num{
+  font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;
+  color:var(--gold-light);line-height:1;margin-bottom:8px;
+}
+.stat-label{font-size:.82rem;color:rgba(255,255,255,.55);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.stat-desc{font-size:.9rem;color:rgba(255,255,255,.75);margin-top:6px;line-height:1.5}
+
+/* ── WHY IT MATTERS ── */
+.why-section{
+  background:var(--cream-light);padding:96px 56px;
+}
+.why-inner{max-width:1100px;margin:0 auto}
+.section-label{text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:700;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:16px}
+.section-sub{color:var(--text-mid);font-size:.95rem;line-height:1.85;max-width:600px;margin-bottom:56px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.why-card{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:36px 32px;position:relative;overflow:hidden;
+  transition:box-shadow .25s,transform .25s;
+}
+.why-card:hover{box-shadow:0 12px 40px rgba(26,58,42,.1);transform:translateY(-4px)}
+.why-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--green-dark),var(--gold));
+}
+.why-icon{
+  width:48px;height:48px;border-radius:10px;
+  background:var(--cream);display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;font-size:1.4rem;
+}
+.why-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:10px;color:var(--green-dark)}
+.why-card p{font-size:.88rem;color:var(--text-mid);line-height:1.75}
+
+/* ── 3P FRAMEWORK ── */
+.framework-section{padding:96px 56px;background:#fff}
+.framework-inner{max-width:1100px;margin:0 auto}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:16px;overflow:hidden;margin-top:56px;box-shadow:0 20px 60px rgba(26,58,42,.12)}
+.p-card{
+  background:var(--green-dark);padding:52px 40px;position:relative;overflow:hidden;
+  transition:background .25s;
+}
+.p-card:nth-child(2){background:#22472f}
+.p-card:nth-child(3){background:#1e4030}
+.p-card:hover{background:var(--green-mid)}
+.p-card::after{
+  content:'';position:absolute;bottom:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:rgba(196,160,82,.08);pointer-events:none;
+}
+.p-letter{
+  font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;
+  color:rgba(255,255,255,.08);line-height:1;margin-bottom:-16px;
+}
+.p-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:12px;position:relative;z-index:1;
+}
+.p-title{
+  font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;
+  color:#fff;margin-bottom:14px;position:relative;z-index:1;
+}
+.p-question{
+  font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.7;
+  font-style:italic;position:relative;z-index:1;
+}
+.p-items{list-style:none;margin-top:20px;position:relative;z-index:1}
+.p-items li{
+  font-size:.84rem;color:rgba(255,255,255,.75);padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:10px;
+}
+.p-items li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold-light);flex-shrink:0}
+.p-items li:last-child{border-bottom:none}
+
+/* ── PROCESS ── */
+.process-section{background:var(--cream-light);padding:96px 56px}
+.process-inner{max-width:1100px;margin:0 auto}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.process-steps::before{
+  content:'';position:absolute;top:32px;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,var(--green-dark),var(--gold),var(--green-dark));
+  z-index:0;
+}
+.proc-step{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:0 16px;position:relative;z-index:1;
+}
+.proc-num{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--green-dark);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;
+  margin-bottom:20px;border:4px solid var(--cream-light);
+  box-shadow:0 0 0 3px var(--green-dark);
+}
+.proc-step h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--green-dark);margin-bottom:8px}
+.proc-step p{font-size:.82rem;color:var(--text-mid);line-height:1.65}
+.proc-week{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+
+/* ── WHAT YOU GET ── */
+.deliverables-section{padding:96px 56px;background:#fff}
+.deliverables-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.del-text .section-title{margin-bottom:12px}
+.del-text p{color:var(--text-mid);font-size:.95rem;line-height:1.85;margin-bottom:32px}
+.del-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.del-list li{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:18px 20px;background:var(--cream-light);border-radius:10px;
+  border:1px solid var(--border);transition:border-color .2s;
+}
+.del-list li:hover{border-color:var(--green-dark)}
+.del-check{
+  width:28px;height:28px;border-radius:50%;background:var(--green-dark);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+}
+.del-check svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.del-list li div h4{font-size:.9rem;font-weight:700;color:var(--text-dark);margin-bottom:3px}
+.del-list li div p{font-size:.82rem;color:var(--text-mid);line-height:1.6}
+
+/* Deliverables right panel */
+.del-panel{
+  background:var(--green-dark);border-radius:20px;padding:48px 44px;
+  position:relative;overflow:hidden;
+}
+.del-panel::before{
+  content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;
+  border-radius:50%;background:rgba(196,160,82,.12);
+}
+.del-panel-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;position:relative;z-index:1}
+.del-panel h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.del-panel p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:28px;position:relative;z-index:1}
+.del-panel-items{list-style:none;display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.del-panel-items li{
+  display:flex;align-items:center;gap:12px;
+  font-size:.88rem;color:rgba(255,255,255,.8);padding:12px 16px;
+  background:rgba(255,255,255,.06);border-radius:8px;border:1px solid rgba(255,255,255,.08);
+}
+.del-panel-items li span.dot{width:8px;height:8px;border-radius:50%;background:var(--gold-light);flex-shrink:0}
+
+/* ── OPTIONAL ADVISORY ── */
+.optional-section{background:var(--cream-light);padding:64px 56px}
+.optional-inner{max-width:1100px;margin:0 auto}
+.optional-banner{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:44px 48px;display:flex;align-items:center;gap:48px;
+}
+.opt-badge{
+  background:var(--cream);border:1px solid var(--border);border-radius:10px;
+  padding:10px 18px;font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);white-space:nowrap;flex-shrink:0;
+}
+.optional-banner h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.optional-banner p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
+.opt-items{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.opt-chip{
+  background:var(--cream-light);border:1px solid var(--border);border-radius:20px;
+  padding:6px 16px;font-size:.78rem;font-weight:600;color:var(--text-mid);
+}
+
+/* ── TEAM ── */
+.team-section{padding:96px 56px;background:#fff}
+.team-inner{max-width:1100px;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.team-card{
+  border:1px solid var(--border);border-radius:14px;padding:36px 32px;
+  transition:box-shadow .25s,transform .25s;
+}
+.team-card:hover{box-shadow:0 10px 36px rgba(26,58,42,.09);transform:translateY(-3px)}
+.team-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green-dark),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;
+  color:#fff;margin-bottom:20px;
+}
+.team-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--green-dark);margin-bottom:4px}
+.team-role{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.team-card p{font-size:.84rem;color:var(--text-mid);line-height:1.75}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--green-dark);padding:96px 56px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,160,82,.1) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-inner{max-width:620px;margin:0 auto;position:relative;z-index:1}
+.cta-section .section-label{color:var(--gold-light)}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin:16px 0 20px;line-height:1.15}
+.cta-section p{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:40px}
+.cta-meta{display:flex;justify-content:center;gap:40px;margin-top:36px;flex-wrap:wrap}
+.cta-meta-item{display:flex;align-items:center;gap:10px;font-size:.82rem;color:rgba(255,255,255,.5)}
+.cta-meta-item::before{content:'✓';color:var(--gold-light);font-weight:700}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--green-dark);border-top:1px solid rgba(255,255,255,.08);
+  padding:28px 56px;display:flex;align-items:center;justify-content:space-between;
+}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:rgba(255,255,255,.7)}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.35)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .bts-hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .why-grid,.framework-grid,.team-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr;gap:32px}
+  .process-steps::before{display:none}
+  .deliverables-inner{grid-template-columns:1fr}
+  .optional-banner{flex-direction:column;align-items:flex-start;gap:20px}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;height:60px}
+  .nav-links,.btn-nav{display:none}
+  .nav-hamburger{display:flex}
+  .mobile-menu{top:60px}
+  .bts-hero .hero-left{padding:60px 24px}
+  .why-section,.framework-section,.process-section,.deliverables-section,.team-section,.cta-section{padding:64px 24px}
+  .why-grid,.framework-grid,.team-grid{grid-template-columns:1fr}
+  .framework-grid{border-radius:12px}
+  .process-steps{grid-template-columns:1fr}
+  .deliverables-inner{gap:40px}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:24px}
+  .cta-meta{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Value Talent Advisory</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="product.html">Product</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="btn-nav" onclick="window.location.href='contact.html'">Get in Touch</button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
+    <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="product.html" onclick="closeMobileMenu()">Product</a></li>
+    <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
+    <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
+    <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <button onclick="window.location.href='contact.html';closeMobileMenu()">Get in Touch</button>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="bts-hero">
+  <div class="hero-left">
+    <p class="hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Built To Scale</p>
+    <div class="hero-eyebrow">A Diagnostic Product</div>
+    <h1>Built To<br/><em>Scale</em></h1>
+    <p class="hero-tagline">A talent-led growth readiness diagnostic for organisations navigating their next stage of growth. Understand where you stand — and what to do next.</p>
+    <blockquote class="hero-quote">"A 6-week clarity intervention that helps you avoid months of misdirected effort."</blockquote>
+    <div class="hero-cta-group">
+      <button class="btn-primary" onclick="window.location.href='contact.html'">Explore Built To Scale</button>
+      <button class="btn-outline" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">How It Works</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-card" style="animation:fadeUp .7s .1s ease both">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Weeks</div>
+      <div class="stat-desc">Structured, focused, and fully virtual</div>
+    </div>
+    <div class="hero-stat-card" style="animation:fadeUp .7s .25s ease both">
+      <div class="stat-num">3P</div>
+      <div class="stat-label">Framework</div>
+      <div class="stat-desc">People, Process &amp; Purpose — the foundations of scale</div>
+    </div>
+    <div class="hero-stat-card" style="animation:fadeUp .7s .4s ease both">
+      <div class="stat-num">3–5</div>
+      <div class="stat-label">Focused Actions</div>
+      <div class="stat-desc">Clear priorities you can act on immediately</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY IT MATTERS ── -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="reveal">
+      <p class="section-label">Why This Matters</p>
+      <h2 class="section-title">Growth creates complexity.<br/>Talent systems often can't keep up.</h2>
+      <p class="section-sub">Problems show up as "people issues" — but are harder to name. Leaders feel something is off, but struggle to articulate it. As organisations scale, people, systems, and culture strain under pressure.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🔍</div>
+        <h3>Identify the Real Problem</h3>
+        <p>Surface the talent-related growth challenges that are holding your organisation back — named, structured, and prioritised.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🧭</div>
+        <h3>Convert Ambiguity into Insight</h3>
+        <p>Turn vague discomfort into clear, actionable understanding. Know exactly where your organisation stands today.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">⚡</div>
+        <h3>Act with Confidence</h3>
+        <p>Walk away with 3–5 focused actions and a clear growth roadmap — not more questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3P FRAMEWORK ── -->
+<section class="framework-section">
+  <div class="framework-inner">
+    <div class="reveal">
+      <p class="section-label">The Framework</p>
+      <h2 class="section-title">The Built To Scale 3P Framework</h2>
+      <p class="section-sub">Three lenses that reveal the true foundations — or fractures — of your organisation's readiness to grow.</p>
+    </div>
+    <div class="framework-grid reveal">
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <div class="p-label">01 &nbsp;·&nbsp; People</div>
+        <div class="p-title">Do we have the right people to grow?</div>
+        <p class="p-question">Examines talent structure, leadership depth, and succession readiness.</p>
+        <ul class="p-items">
+          <li>Leadership pipeline clarity</li>
+          <li>High-potential identification</li>
+          <li>Role & responsibility documentation</li>
+          <li>Performance management systems</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <div class="p-label">02 &nbsp;·&nbsp; Process</div>
+        <div class="p-title">Do we have simple systems that support growth?</div>
+        <p class="p-question">Uncovers bottlenecks, undocumented workflows, and decision-making gaps.</p>
+        <ul class="p-items">
+          <li>Documented operational workflows</li>
+          <li>Structured onboarding frameworks</li>
+          <li>Decision rights and escalation paths</li>
+          <li>Hiring process consistency</li>
+        </ul>
+      </div>
+      <div class="p-card">
+        <div class="p-letter">P</div>
+        <div class="p-label">03 &nbsp;·&nbsp; Purpose</div>
+        <div class="p-title">Are we aligned in how we work together?</div>
+        <p class="p-question">Evaluates culture, values alignment, and the transmission of organisational DNA at scale.</p>
+        <ul class="p-items">
+          <li>Values documentation & activation</li>
+          <li>Culture rituals and recognition</li>
+          <li>Purpose-driven onboarding</li>
+          <li>Alignment beyond founder proximity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="process-section" id="how-it-works">
+  <div class="process-inner">
+    <div class="reveal">
+      <p class="section-label">Our Approach</p>
+      <h2 class="section-title">A structured six-week process</h2>
+      <p class="section-sub">Simple, diagnostic, and entirely virtual. Four data collection methods — one clear picture of where your organisation stands.</p>
+    </div>
+    <div class="process-steps">
+      <div class="proc-step reveal">
+        <div class="proc-num">01</div>
+        <div class="proc-week">Week 1</div>
+        <h4>Leadership Conversations</h4>
+        <p>In-depth discussions with the Founder/CEO and CHRO/HR Head to understand the business context and growth ambition.</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="proc-num">02</div>
+        <div class="proc-week">Weeks 2–3</div>
+        <h4>Artefact Review</h4>
+        <p>Review of existing systems, frameworks, and documentation to understand what structures are in place — and what is missing.</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="proc-num">03</div>
+        <div class="proc-week">Week 3–4</div>
+        <h4>Self-Assessment &amp; Employee Pulse</h4>
+        <p>A structured leadership self-assessment on organisational readiness, plus a light-touch employee pulse on how systems are experienced on the ground.</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="proc-num">04</div>
+        <div class="proc-week">Week 6</div>
+        <h4>Walkthrough &amp; Roadmap</h4>
+        <p>A 60-minute walkthrough discussion presenting findings, insights, and a clear 0–12 month growth roadmap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU GET ── -->
+<section class="deliverables-section">
+  <div class="deliverables-inner">
+    <div class="del-text reveal">
+      <p class="section-label">What You Get</p>
+      <h2 class="section-title">Clear insights.<br/>Practical direction.</h2>
+      <p>At the end of six weeks, you don't get a deck full of observations. You get a clear picture, focused priorities, and a conversation to make it all actionable.</p>
+      <ul class="del-list">
+        <li>
+          <div class="del-check"><svg viewBox="0 0 12 10"><polyline points="1.5,5.5 4.5,8.5 10.5,1.5"/></svg></div>
+          <div><h4>Simple Snapshot</h4><p>A clear picture of where your organisation stands across People, Process, and Purpose.</p></div>
+        </li>
+        <li>
+          <div class="del-check"><svg viewBox="0 0 12 10"><polyline points="1.5,5.5 4.5,8.5 10.5,1.5"/></svg></div>
+          <div><h4>What Works &amp; What Needs Attention</h4><p>Honest insights on strengths to protect and challenges to address — in plain language.</p></div>
+        </li>
+        <li>
+          <div class="del-check"><svg viewBox="0 0 12 10"><polyline points="1.5,5.5 4.5,8.5 10.5,1.5"/></svg></div>
+          <div><h4>3–5 Focused Actions</h4><p>A prioritised roadmap spanning 0–3, 3–6, and 6–12 months. No overwhelming to-do lists.</p></div>
+        </li>
+        <li>
+          <div class="del-check"><svg viewBox="0 0 12 10"><polyline points="1.5,5.5 4.5,8.5 10.5,1.5"/></svg></div>
+          <div><h4>60-Minute Walkthrough</h4><p>A live discussion with the Value Talent Advisory team to walk through findings and answer questions.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="del-panel reveal">
+      <div class="del-panel-label">Growth Roadmap Preview</div>
+      <h3>Your 12-Month Path Forward</h3>
+      <p>Findings are structured into a practical growth roadmap across three horizons.</p>
+      <ul class="del-panel-items">
+        <li><span class="dot"></span><strong>0–3 Months</strong>&nbsp;— Define job bands, document hiring process, implement performance framework</li>
+        <li><span class="dot"></span><strong>3–6 Months</strong>&nbsp;— Formalise onboarding, scale hiring infrastructure</li>
+        <li><span class="dot"></span><strong>6–12 Months</strong>&nbsp;— Build succession planning capability, activate culture systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPTIONAL ADVISORY ── -->
+<section class="optional-section">
+  <div class="optional-inner reveal">
+    <div class="optional-banner">
+      <div class="opt-badge">Optional Add-On</div>
+      <div>
+        <h3>Advisory Support Beyond the Diagnostic</h3>
+        <p>For organisations that want to move from insight to implementation, we offer optional advisory support to design and embed recommendations from the diagnostic.</p>
+        <div class="opt-items">
+          <span class="opt-chip">HR Capability Building Workshops</span>
+          <span class="opt-chip">Implementation Advisory</span>
+          <span class="opt-chip">Ongoing People Strategy Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM ── -->
+<section class="team-section">
+  <div class="team-inner">
+    <div class="reveal">
+      <p class="section-label">Who Delivers This</p>
+      <h2 class="section-title">Our Team</h2>
+      <p class="section-sub">Built To Scale is delivered by a founder-led team with deep expertise in talent systems for growing organisations.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">V</div>
+        <h3>Vaishnavi Chella</h3>
+        <div class="team-role">Founder, Value Talent Advisory</div>
+        <p>Specialises in bringing clarity and structure to organisations at critical growth inflection points. Partners with founders and leadership teams to design talent systems that enable scale — grounded in real business context.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">P</div>
+        <h3>Poornima C.V.</h3>
+        <div class="team-role">Principal Consultant</div>
+        <p>A seasoned consultant and HR leader with over two decades of experience shaping talent, culture, and leadership. In her last role, she headed the HR function at Ramco Systems.</p>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">H</div>
+        <h3>Hiba Niyaz</h3>
+        <div class="team-role">Associate, Value Talent Advisory</div>
+        <p>MBA from TAPMI, Manipal. Brings structure and sharp research-led insight into every diagnostic — connecting people data to real business context through expertise in organisational change and talent acquisition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <p class="section-label">Get Started</p>
+    <h2>Ready to understand where your organisation stands?</h2>
+    <p>Built To Scale is limited to a small set of organisations each quarter. Commercials are available on request. All diagnostics are conducted virtually.</p>
+    <button class="btn-primary" onclick="window.location.href='contact.html'" style="font-size:1rem;padding:16px 36px">Reach Out to Explore</button>
+    <div class="cta-meta">
+      <span class="cta-meta-item">Completed in 6 weeks</span>
+      <span class="cta-meta-item">Fully virtual</span>
+      <span class="cta-meta-item">Limited availability</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Value Talent Advisory</span>
+  <span class="footer-copy">© 2026 Value Talent Advisory. All rights reserved.</span>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(e => {
+  e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target) } })
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+});
+function openMobileMenu(){
+  mobileMenu.classList.add('open');hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';
+}
+function closeMobileMenu(){
+  mobileMenu.classList.remove('open');hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}
+document.addEventListener('click', e => {
+  if(mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMobileMenu();
+});
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeMobileMenu(); });
+
+// Nav shrink on scroll
+(function(){
+  var nav = document.querySelector('nav');
+  if(!nav) return;
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
+</body>
+</html>

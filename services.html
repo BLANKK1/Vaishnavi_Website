@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>What We Offer - Value Talent Advisory</title>
+<link rel="icon" type="image/png" href="/Images/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -153,6 +154,29 @@ nav{
 .block-visual-inner::before{
   content:'';position:absolute;top:-40px;right:-40px;
   width:200px;height:200px;border-radius:50%;background:rgba(196,160,82,.12);
+  z-index:1;
+}
+.block-visual-inner .visual-label,
+.block-visual-inner .visual-title,
+.block-visual-inner .visual-desc{position:relative;z-index:2}
+.block-visual-inner .card-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  opacity:0.38;mix-blend-mode:luminosity;
+  border-radius:14px;
+}
+.block-visual-inner .card-overlay{
+  position:absolute;inset:0;border-radius:14px;z-index:1;
+  background:linear-gradient(
+    to top,
+    rgba(10,30,20,0.92) 0%,
+    rgba(10,30,20,0.55) 45%,
+    rgba(10,30,20,0.15) 100%
+  );
+}
+.visual-desc{
+  font-size:.82rem;color:rgba(255,255,255,.7);
+  margin-top:8px;line-height:1.6;max-width:260px;
 }
 .visual-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px}
 .visual-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.3}
@@ -271,14 +295,51 @@ nav.scrolled .nav-logo{font-size:1rem}
 .ripple-host.ripple-dark .ripple-circle{background:rgba(26,58,42,.12)}
 
 </style>
+
+  <!-- ═══ SEO META TAGS ═══ -->
+  <meta name="description" content="Explore Value Talent Advisory's services — building organisational systems, strengthening talent and leadership pipelines, and embedding culture. Expert HR and talent advisory for growth-stage companies worldwide."/>
+  <meta name="keywords" content="Employee Engagement, Performance Management, Job Evaluation, Talent Advisory, HR Consulting, Talent Advisory Firm, People Strategy, HR Advisory, Leadership Consulting, Org Design, Succession Planning, Talent Management, Organisational Design, Leadership Development, People Consulting, Culture Consulting"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Value Talent Advisory"/>
+  <link rel="canonical" href="https://valuetalentadvisory.com/services"/>
+ 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Value Talent Advisory"/>
+  <meta property="og:title" content="Our Services | Value Talent Advisory"/>
+  <meta property="og:description" content="Organisational design, hiring frameworks, leadership pipeline, and culture advisory. Talent consulting built for organisations anywhere in the world."/>
+  <meta property="og:url" content="https://valuetalentadvisory.com/services"/>
+  <meta property="og:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+ 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Our Services | Value Talent Advisory"/>
+  <meta name="twitter:description" content="Organisational design, hiring frameworks, leadership pipeline, and culture advisory. Talent consulting built for organisations anywhere in the world."/>
+  <meta name="twitter:image" content="https://valuetalentadvisory.com/og-image.jpg"/>
+
+  <!-- ═══════════════════════ -->
+ 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Talent Advisory & HR Consulting Services",
+  "provider": { "@type": "Organization", "name": "Value Talent Advisory", "url": "https://valuetalentadvisory.com" },
+  "serviceType": ["Employee Engagement", "Performance Management", "Job Evaluation", "Organisational Design", "Talent Advisory", "HR Consulting", "Leadership Pipeline Development", "Culture Consulting", "Succession Planning"],
+  "areaServed": "Worldwide",
+  "description": "Three focused areas: building organisational systems, strengthening the talent and leadership pipeline, and reinforcing values and culture."
+}
+</script>
+
 </head>
-<body>
+<body class = "services-page">
 
 <nav>
   <a href="index.html" class="nav-logo">Value Talent Advisory</a>
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="product.html">Product</a></li>
     <li><a href="why-us.html">Why Us</a></li>
     <li><a href="case-studies.html">Case Studies</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -296,6 +357,7 @@ nav.scrolled .nav-logo{font-size:1rem}
   <ul>
     <li><a href="index.html#about" onclick="closeMobileMenu()">Home</a></li>
     <li><a href="services.html" class="active" onclick="closeMobileMenu()">Services</a></li>
+    <li><a href="product.html" onclick="closeMobileMenu()">Product</a></li>
     <li><a href="why-us.html" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="case-studies.html" onclick="closeMobileMenu()">Case Studies</a></li>
     <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
@@ -360,8 +422,11 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
     <div class="block-visual">
       <div class="block-visual-inner" style="background:linear-gradient(135deg,#1a3a2a,#2d5a3d)">
+        <img class="card-img" src="/Images/card-1.png" alt="Building Organisational Systems"/>
+        <div class="card-overlay"></div>
         <span class="visual-label">Focus Area 01</span>
         <p class="visual-title">Building Organisational Systems</p>
+        <p class="visual-desc">Designing the structural foundations to enable clarity, accountability, and performance at scale</p>
       </div>
     </div>
   </div>
@@ -399,8 +464,11 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
     <div class="block-visual">
       <div class="block-visual-inner" style="background:linear-gradient(135deg,#0f1f2a,#1a3a50)">
+        <img class="card-img" src="/Images/card-2.png" alt="Talent & Leadership Pipeline"/>
+        <div class="card-overlay"></div>
         <span class="visual-label">Focus Area 02</span>
         <p class="visual-title">Strengthening the Talent &amp; Leadership Pipeline</p>
+        <p class="visual-desc">Building leadership depth and succession readiness before the moment of need</p>
       </div>
     </div>
   </div>
@@ -437,8 +505,11 @@ nav.scrolled .nav-logo{font-size:1rem}
     </div>
     <div class="block-visual">
       <div class="block-visual-inner" style="background:linear-gradient(135deg,#2a1a2a,#5a2d5a)">
+        <img class="card-img" src="/Images/card-3.png" alt="Reinforcing Values & Culture"/>
+        <div class="card-overlay"></div>
         <span class="visual-label">Focus Area 03</span>
         <p class="visual-title">Reinforcing Values &amp; Culture</p>
+        <p class="visual-desc">Making culture intentional, visible, and durable across your organisation</p>
       </div>
     </div>
   </div>
@@ -453,7 +524,7 @@ nav.scrolled .nav-logo{font-size:1rem}
 
 <footer>
   <span class="footer-logo">Value Talent Advisory</span>
-  <span class="footer-copy">© 2025 Value Talent Advisory. All rights reserved.</span>
+  <span class="footer-copy">© 2026 Value Talent Advisory. All rights reserved.</span>
 </footer>
 
 <script>
